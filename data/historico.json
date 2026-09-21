@@ -1,0 +1,133 @@
+[
+ {
+  "fecha": "2026-09-21",
+  "usuarios": [
+   {
+    "id": 11403768,
+    "nombre": "ASTON JIMA",
+    "saldo": -3920354,
+    "valor_equipo": 62330000,
+    "patrimonio": 58409646,
+    "puntos": 286,
+    "posicion": 1
+   },
+   {
+    "id": 9961358,
+    "nombre": "REAL PANCH FC",
+    "saldo": 122100,
+    "valor_equipo": 50100000,
+    "patrimonio": 50222100,
+    "puntos": 235,
+    "posicion": 4
+   },
+   {
+    "id": 11403718,
+    "nombre": "Lord Calcius",
+    "saldo": -9853099,
+    "valor_equipo": 55200000,
+    "patrimonio": 45346901,
+    "puntos": 208,
+    "posicion": 8
+   },
+   {
+    "id": 11369052,
+    "nombre": "GONALTICOS",
+    "saldo": -2833808,
+    "valor_equipo": 46370000,
+    "patrimonio": 43536192,
+    "puntos": 224,
+    "posicion": 6
+   },
+   {
+    "id": 11651461,
+    "nombre": "Richard The III",
+    "saldo": 5776672,
+    "valor_equipo": 32620000,
+    "patrimonio": 38396672,
+    "puntos": 218,
+    "posicion": 7
+   },
+   {
+    "id": 12809840,
+    "nombre": "andreputin",
+    "saldo": 1289881,
+    "valor_equipo": 36210000,
+    "patrimonio": 37499881,
+    "puntos": 225,
+    "posicion": 5
+   },
+   {
+    "id": 14237999,
+    "nombre": "La Javicaleta",
+    "saldo": 108293,
+    "valor_equipo": 37150000,
+    "patrimonio": 37258293,
+    "puntos": 247,
+    "posicion": 2
+   },
+   {
+    "id": 9962118,
+    "nombre": "TABASCO FC",
+    "saldo": 11999428,
+    "valor_equipo": 25190000,
+    "patrimonio": 37189428,
+    "puntos": 238,
+    "posicion": 3
+   },
+   {
+    "id": 11403720,
+    "nombre": "PODRÍA SER TU PADRE jodete willem",
+    "saldo": 5242396,
+    "valor_equipo": 29850000,
+    "patrimonio": 35092396,
+    "puntos": 183,
+    "posicion": 9
+   },
+   {
+    "id": 9961690,
+    "nombre": "JABALINOS FC",
+    "saldo": 6468656,
+    "valor_equipo": 26640000,
+    "patrimonio": 33108656,
+    "puntos": 164,
+    "posicion": 11
+   },
+   {
+    "id": 9963115,
+    "nombre": "JOSAPO FUTBOLCLUB",
+    "saldo": -1710558,
+    "valor_equipo": 32580000,
+    "patrimonio": 30869442,
+    "puntos": 136,
+    "posicion": 14
+   },
+   {
+    "id": 9961449,
+    "nombre": "FERDORTMUND FC",
+    "saldo": -444800,
+    "valor_equipo": 31270000,
+    "patrimonio": 30825200,
+    "puntos": 181,
+    "posicion": 10
+   },
+   {
+    "id": 9962213,
+    "nombre": "NICOLAISON FC",
+    "saldo": -8589090,
+    "valor_equipo": 35720000,
+    "patrimonio": 27130910,
+    "puntos": 151,
+    "posicion": 12
+   },
+   {
+    "id": 9961274,
+    "nombre": "WILLOW",
+    "saldo": 280953,
+    "valor_equipo": 24650000,
+    "patrimonio": 24930953,
+    "puntos": 148,
+    "posicion": 13
+   }
+  ]
+ }
+]

@@ -1,0 +1,5 @@
+.env
+.venv/
+__pycache__/
+# Respuestas crudas de la API: se descargan enteras en cada ejecución.
+data/raw/
