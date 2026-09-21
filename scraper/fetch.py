@@ -50,27 +50,46 @@ def load_cached() -> dict:
     }
 
 
-def load_price_points(c: BiwengerClient, pares) -> dict:
-    """Precio de un jugador en una fecha concreta, para `pares` de (id, aaammdd).
+def load_daily_prices(c: BiwengerClient, player_ids, desde: int, hoy: int, precios_hoy: dict) -> dict:
+    """Precio diario de cada jugador desde el reset, en {id: {aaammdd: precio}}.
 
-    Solo guardamos los puntos que hacen falta (el día del reparto y el de cada intercambio),
-    no el histórico entero: son fechas fijas, así que a partir de la segunda ejecución no
-    hace falta pedir ningún precio.
+    El histórico completo de un jugador solo se pide la primera vez que aparece; a partir de
+    ahí el precio de hoy sale del listado de La Liga, que ya se descarga en una sola llamada.
     """
-    from .initial import price_at
-
-    path = RAW.parent / "precios.json"
+    path = RAW.parent / "precios_diarios.json"
     cache = json.loads(path.read_text()) if path.exists() else {}
-    if c is None:
-        return cache
-    faltan: dict[int, set] = {}
-    for pid, day in pares:
-        if f"{pid}:{day}" not in cache:
-            faltan.setdefault(pid, set()).add(day)
-    for pid, days in faltan.items():
+
+    nuevos = [p for p in player_ids if str(p) not in cache] if c else []
+    for pid in nuevos:
         hist = c.get(f"/players/la-liga/{pid}", fields="*,prices")["data"].get("prices", [])
-        for day in days:
-            cache[f"{pid}:{day}"] = price_at(hist, day) or 0
-    if faltan:
-        path.write_text(json.dumps(cache, sort_keys=True))
+        cache[str(pid)] = {str(d): v for d, v in hist if d >= desde}
+
+    cambia = bool(nuevos)
+    for pid, precio in precios_hoy.items():
+        dias = cache.get(str(pid))
+        if dias is not None and dias.get(str(hoy)) != precio:
+            dias[str(hoy)] = precio
+            cambia = True
+    if cambia:
+        path.write_text(json.dumps(cache, sort_keys=True, separators=(",", ":")))
     return cache
+
+
+def precio_lookup(cache: dict):
+    """Devuelve precio(id, aaammdd) con arrastre: el último precio conocido hasta esa fecha."""
+    import bisect
+
+    idx = {}
+    for pid, dias in cache.items():
+        claves = sorted(int(k) for k in dias)
+        idx[int(pid)] = (claves, [dias[str(k)] for k in claves])
+
+    def precio(pid: int, day: int) -> int:
+        entrada = idx.get(int(pid))
+        if not entrada:
+            return 0
+        claves, valores = entrada
+        i = bisect.bisect_right(claves, day)
+        return valores[i - 1] if i else 0
+
+    return precio

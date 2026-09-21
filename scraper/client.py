@@ -1,6 +1,7 @@
 """Cliente mínimo para la API no oficial de Biwenger."""
 import os
 import time
+from pathlib import Path
 
 import requests
 import truststore
@@ -18,8 +19,21 @@ class BiwengerClient:
         self._login(email, password)
         self._select_league(league_id)
 
+    @staticmethod
+    def _cargar_env() -> None:
+        """Lee .env si existe. En GitHub Actions las variables ya vienen del entorno y manda este."""
+        ruta = Path(__file__).resolve().parent.parent / ".env"
+        if not ruta.exists():
+            return
+        for linea in ruta.read_text(encoding="utf-8").splitlines():
+            linea = linea.strip()
+            if linea and not linea.startswith("#") and "=" in linea:
+                clave, valor = linea.split("=", 1)
+                os.environ.setdefault(clave.strip(), valor.strip())
+
     @classmethod
     def from_env(cls) -> "BiwengerClient":
+        cls._cargar_env()
         league = os.environ.get("BIWENGER_LEAGUE_ID")
         return cls(
             os.environ["BIWENGER_EMAIL"],

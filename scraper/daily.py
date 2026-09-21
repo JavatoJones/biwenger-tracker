@@ -8,8 +8,9 @@ from pathlib import Path
 
 from .balances import current_season_events, money_flows
 from .client import BiwengerClient
-from .fetch import RAW, fetch_all, load_cached, load_price_points
+from .fetch import RAW, fetch_all, load_cached, load_daily_prices, precio_lookup
 from .initial import initial_squads, start_dates, yymmdd
+from .series import serie_diaria
 from .trades import compute_positions, summarize
 
 DATA = RAW.parent
@@ -42,21 +43,19 @@ def run(offline: bool = False) -> dict:
     init = initial_squads(season, squads, reset_ts)
     altas = start_dates(season, reset_ts)
 
-    # Los únicos precios pasados que hacen falta: el día en que cada uno recibió su lote
-    # y el día de cada intercambio. Son fechas fijas, así que solo se piden una vez.
-    pares = {(p, yymmdd(altas.get(uid, reset_ts))) for uid, ps in init.items() for p in ps}
+    # Todo jugador que haya pasado por alguna plantilla: hace falta su precio de cada día
+    # para poder valorar los equipos hacia atrás.
+    relevantes = {p for s in init.values() for p in s}
+    relevantes |= {p["id"] for sq in squads.values() for p in sq}
     for e in season:
-        if e["type"] == "exchange":
-            dia = yymmdd(e["date"])
-            pares |= {(p, dia) for p in e["content"]["offeredPlayers"] + e["content"]["requestedPlayers"]}
-    # Jugadores que siguen en una plantilla pero ya no están en el listado de La Liga
-    # (cambiaron de competición). Biwenger los sigue valorando, así que pedimos su precio de hoy.
-    hoy = yymmdd(int(datetime.now().timestamp()))
-    fuera = {p["id"] for sq in squads.values() for p in sq if str(p["id"]) not in players}
-    pares |= {(pid, hoy) for pid in fuera}
+        if e["type"] in ("transfer", "market", "adminTransfer"):
+            relevantes |= {x["player"] for x in e["content"]}
+        elif e["type"] == "exchange":
+            relevantes |= set(e["content"]["offeredPlayers"] + e["content"]["requestedPlayers"])
 
-    puntos = load_price_points(c, pares)
-    precio = lambda pid, day: puntos.get(f"{pid}:{day}", 0)
+    hoy = yymmdd(int(datetime.now().timestamp()))
+    precios_hoy = {p: players[str(p)]["price"] for p in relevantes if str(p) in players}
+    precio = precio_lookup(load_daily_prices(c, relevantes, yymmdd(reset_ts), hoy, precios_hoy))
 
     def current_price(pid):
         ficha = players.get(str(pid))
@@ -107,11 +106,11 @@ def run(offline: bool = False) -> dict:
                       "latente": current_price(p["player"]) - p["cost"]} for p in openpos],
     })
 
-    hist = _load(DATA / "historico.json", [])
-    hist = [h for h in hist if h["fecha"] != today]
-    hist.append({"fecha": today, "usuarios": [
-        {k: u[k] for k in ("id", "nombre", "saldo", "valor_equipo", "patrimonio", "puntos", "posicion")} for u in users]})
-    hist.sort(key=lambda h: h["fecha"])
+    # El histórico se recalcula entero cada vez, así que cubre desde el primer día de liga
+    # y se corrige solo si algún día se afina el modelo.
+    hist = serie_diaria(season, squads, reset_ts, altas,
+                        {u["id"]: u["saldo_inicial"] for u in users},
+                        precio, int(datetime.now().timestamp()))
     _save(DATA / "historico.json", hist)
 
     return {"users": users, "closed": closed, "open": openpos, "dias": len(hist),

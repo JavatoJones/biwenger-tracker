@@ -30,10 +30,18 @@ def build() -> Path:
         "ein": p["how_in"], "din": _fecha(p["date_in"]),
     } for p in ops["abiertas"]]
 
+    # La gráfica solo necesita fechas y patrimonio por equipo, en columnas paralelas.
+    fechas = [d["fecha"] for d in hist]
+    series = {u["id"]: [] for u in liga["usuarios"]}
+    for dia in hist:
+        del_dia = {x["id"]: x["patrimonio"] for x in dia["usuarios"]}
+        for uid in series:
+            series[uid].append(del_dia.get(uid))
+
     payload = {
         "liga": liga["liga"], "actualizado": liga["actualizado"], "yo": liga["usuario_propio"],
         "usuarios": liga["usuarios"], "cerradas": cerradas, "abiertas": abiertas,
-        "historico": hist,
+        "evolucion": {"fechas": fechas, "series": series},
     }
     html = PLANTILLA.replace("__DATOS__", json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -50,7 +58,9 @@ PLANTILLA = r"""<title>Fantacis</title>
   --plano:#f3f5f3; --tarjeta:#fcfcfb; --hueco:#e9ebe8;
   --tinta:#0b0b0b; --tinta-2:#52514e; --tinta-3:#7c817d;
   --linea:#e1e3df; --borde:rgba(11,11,11,.10); --eje:#c3c2b7;
-  --acento:#2a78d6; --serie-1:#2a78d6; --serie-2:#eb6834;
+  --acento:#2a78d6;
+  --serie-1:#2a78d6; --serie-2:#eb6834; --serie-3:#1baf7a; --serie-4:#eda100;
+  --serie-5:#e87ba4; --serie-6:#008300; --serie-7:#4a3aa7; --serie-8:#e34948;
   --sube:#0a7d0a; --baja:#c23636; --sube-f:rgba(10,125,10,.12); --baja-f:rgba(194,54,54,.12);
   --radio:10px;
   --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -61,7 +71,9 @@ PLANTILLA = r"""<title>Fantacis</title>
   --plano:#0c0e0d; --tarjeta:#1a1a19; --hueco:#232523;
   --tinta:#f4f5f3; --tinta-2:#c3c2b7; --tinta-3:#898781;
   --linea:#2c2c2a; --borde:rgba(255,255,255,.10); --eje:#383835;
-  --acento:#3987e5; --serie-1:#3987e5; --serie-2:#d95926;
+  --acento:#3987e5;
+  --serie-1:#3987e5; --serie-2:#d95926; --serie-3:#199e70; --serie-4:#c98500;
+  --serie-5:#d55181; --serie-6:#008300; --serie-7:#9085e9; --serie-8:#e66767;
   --sube:#2cb72c; --baja:#e66767; --sube-f:rgba(44,183,44,.16); --baja-f:rgba(230,103,103,.16);
   color-scheme:dark;
 }}
@@ -69,7 +81,9 @@ PLANTILLA = r"""<title>Fantacis</title>
   --plano:#0c0e0d; --tarjeta:#1a1a19; --hueco:#232523;
   --tinta:#f4f5f3; --tinta-2:#c3c2b7; --tinta-3:#898781;
   --linea:#2c2c2a; --borde:rgba(255,255,255,.10); --eje:#383835;
-  --acento:#3987e5; --serie-1:#3987e5; --serie-2:#d95926;
+  --acento:#3987e5;
+  --serie-1:#3987e5; --serie-2:#d95926; --serie-3:#199e70; --serie-4:#c98500;
+  --serie-5:#d55181; --serie-6:#008300; --serie-7:#9085e9; --serie-8:#e66767;
   --sube:#2cb72c; --baja:#e66767; --sube-f:rgba(44,183,44,.16); --baja-f:rgba(230,103,103,.16);
   color-scheme:dark;
 }
@@ -95,7 +109,10 @@ button{font-family:inherit;font-size:13px;color:var(--tinta-2);background:var(--
   border:1px solid var(--borde);border-radius:8px;padding:7px 12px;cursor:pointer}
 button:hover{color:var(--tinta);border-color:var(--eje)}
 button:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
-button[aria-pressed="true"]{background:var(--tinta);color:var(--plano);border-color:var(--tinta)}
+/* Solo los botones que alternan vista se invierten. Ojo: si esto se aplicara a todo
+   `button[aria-pressed]` también pintaría las filas de la tabla, que también son botones,
+   y su texto quedaría del color del fondo. */
+.alterna[aria-pressed="true"]{background:var(--tinta);color:var(--plano);border-color:var(--tinta)}
 
 section{margin-top:40px}
 .encabezado-seccion{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;justify-content:space-between;margin-bottom:14px}
@@ -108,16 +125,32 @@ section{margin-top:40px}
   width:100%;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer;color:inherit;font-size:14px}
 .fila:first-of-type{border-top:0}
 .fila:hover{background:var(--hueco)}
-.fila[aria-pressed="true"]{background:var(--hueco);box-shadow:inset 3px 0 0 var(--acento)}
+.fila[aria-pressed="true"]{background:var(--hueco);color:var(--tinta);box-shadow:inset 3px 0 0 var(--acento)}
 .cabecera-tabla{display:grid;grid-template-columns:30px minmax(120px,1.35fr) minmax(150px,1.5fr) 108px 108px 96px;
   gap:12px;padding:9px 16px;background:var(--hueco);border-bottom:1px solid var(--linea)}
 .puesto{font-family:var(--titular);font-size:17px;color:var(--tinta-3);font-weight:600}
 .equipo{font-family:var(--titular);font-size:17px;font-weight:600;line-height:1.15;overflow-wrap:anywhere}
-.tuyo{display:inline-block;background:var(--acento);color:#fff;border-radius:4px;
-  font-family:var(--sans);font-size:10px;font-weight:600;padding:1px 5px;margin-left:6px;vertical-align:2px;letter-spacing:.04em}
+/* Filtros de la gráfica */
+.fichas{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+.ficha{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:5px 11px;
+  border:1px solid var(--borde);border-radius:999px;background:var(--tarjeta);color:var(--tinta-3);cursor:pointer}
+.ficha:hover{color:var(--tinta)}
+.ficha[aria-pressed="true"]{color:var(--tinta);border-color:var(--eje);background:var(--hueco)}
+.ficha svg{flex:none;opacity:.3}
+.ficha[aria-pressed="true"] svg{opacity:1}
+.mandos{display:flex;gap:8px;margin-bottom:12px}
+.lienzo{position:relative}
+.globo{position:absolute;pointer-events:none;background:var(--tarjeta);border:1px solid var(--eje);
+  border-radius:8px;padding:9px 11px;font-size:12.5px;box-shadow:0 4px 14px rgba(0,0,0,.14);
+  min-width:168px;z-index:2}
+.globo b{font-family:var(--titular);font-size:13px;display:block;margin-bottom:5px}
+.globo div{display:flex;align-items:center;gap:7px;justify-content:space-between;line-height:1.7}
+.globo span:first-child{display:inline-flex;align-items:center;gap:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .der{text-align:right}
-.barra{height:9px;border-radius:3px 4px 4px 3px;background:var(--acento);min-width:3px}
-.pista{background:var(--hueco);border-radius:4px;height:9px;overflow:hidden}
+/* `display:block` es imprescindible: son <span>, y en un elemento en línea el alto y el
+   ancho se ignoran, así que la barra no se veía. */
+.barra{display:block;height:9px;border-radius:3px 4px 4px 3px;background:var(--acento);min-width:3px}
+.pista{display:block;background:var(--hueco);border-radius:4px;height:9px;overflow:hidden}
 .pie-tabla{padding:10px 16px;border-top:1px solid var(--linea);color:var(--tinta-3);font-size:12.5px}
 
 /* Gráfico divergente */
@@ -186,6 +219,22 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     </div>
   </section>
 
+  <section id="s-evolucion">
+    <div class="encabezado-seccion">
+      <h2>Evolución del patrimonio</h2>
+      <p class="nota">Reconstruido día a día desde el reparto inicial. Elige qué equipos comparar.</p>
+    </div>
+    <div class="marco">
+      <div class="mandos">
+        <button type="button" class="alterna" id="ev-todos">Todos</button>
+        <button type="button" class="alterna" id="ev-ninguno">Ninguno</button>
+        <button type="button" class="alterna" id="ev-podio">Los cuatro primeros</button>
+      </div>
+      <div class="fichas" id="ev-fichas"></div>
+      <div class="lienzo" id="ev-lienzo"></div>
+    </div>
+  </section>
+
   <section id="s-resultado">
     <div class="encabezado-seccion">
       <h2>De dónde sale el dinero</h2>
@@ -204,20 +253,12 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     <div class="encabezado-seccion">
       <h2 id="titulo-detalle">Detalle</h2>
       <div class="acciones">
-        <button type="button" id="btn-cerradas" aria-pressed="true">Operaciones cerradas</button>
-        <button type="button" id="btn-abiertas" aria-pressed="false">Plantilla actual</button>
+        <button type="button" class="alterna" id="btn-cerradas" aria-pressed="true">Operaciones cerradas</button>
+        <button type="button" class="alterna" id="btn-abiertas" aria-pressed="false">Plantilla actual</button>
       </div>
     </div>
     <div class="rejilla-detalle" id="baldosas"></div>
     <div class="envoltura-tabla"><div id="tabla-detalle"></div></div>
-  </section>
-
-  <section id="s-evolucion">
-    <div class="encabezado-seccion">
-      <h2>Evolución del patrimonio</h2>
-      <p class="nota" id="nota-evolucion"></p>
-    </div>
-    <div class="marco" id="marco-evolucion"></div>
   </section>
 
   <footer>
@@ -271,7 +312,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     var ancho = Math.max(2, u.patrimonio / maxPat * 100);
     return '<button class="fila" type="button" data-id="' + u.id + '" aria-pressed="' + (u.id === sel) + '">' +
       '<span class="puesto num">' + (i + 1) + '</span>' +
-      '<span class="equipo">' + esc(u.nombre) + (u.id === D.yo ? '<span class="tuyo">TÚ</span>' : '') + '</span>' +
+      '<span class="equipo">' + esc(u.nombre) + '</span>' +
       '<span class="pista ocultar-movil"><span class="barra" style="width:' + ancho.toFixed(1) + '%"></span></span>' +
       '<span class="der num ocultar-movil ' + clase(u.saldo) + '">' + eur(u.saldo) + '</span>' +
       '<span class="der num ocultar-movil">' + eur(u.valor_equipo) + '</span>' +
@@ -367,48 +408,128 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
   document.getElementById("btn-abiertas").onclick = function(){ cambiarVista("abiertas"); };
   pintarDetalle();
 
-  // Evolución
-  var H = D.historico;
-  var marco = document.getElementById("marco-evolucion");
-  if (H.length < 2){
-    document.getElementById("nota-evolucion").textContent =
-      "El histórico se llena con cada actualización diaria.";
-    marco.innerHTML = '<p class="vacio">Solo hay una foto guardada, la del ' +
-      H[0].fecha.split("-").reverse().join("/") + '. Mañana habrá línea.</p>';
-  } else {
-    document.getElementById("nota-evolucion").textContent =
-      "Cada línea es un equipo; la resaltada es el que tengas seleccionado arriba.";
-    var W = 900, Hg = 300, m = {t:14, r:16, b:26, l:64};
-    var series = U.map(function(u){
-      return {id:u.id, nombre:u.nombre, pts:H.map(function(d){
-        var x = d.usuarios.filter(function(z){ return z.id === u.id; })[0];
-        return x ? x.patrimonio : null; })};
-    });
-    var todos = [].concat.apply([], series.map(function(s){ return s.pts; })).filter(function(v){ return v !== null; });
-    var lo = Math.min.apply(null, todos), hi = Math.max.apply(null, todos);
-    var pad = (hi - lo) * .08 || 1e6; lo -= pad; hi += pad;
-    var X = function(i){ return m.l + i * (W - m.l - m.r) / Math.max(1, H.length - 1); };
+  // Evolución del patrimonio
+  var FECHAS = D.evolucion.fechas, SERIES = D.evolucion.series;
+  // Ocho tonos validados para daltonismo. A partir del noveno equipo se reutiliza el tono
+  // pero con trazo discontinuo, para que la identidad nunca dependa solo del color.
+  var PAL = ["--serie-1","--serie-2","--serie-3","--serie-4","--serie-5","--serie-6","--serie-7","--serie-8"];
+  var orden = U.map(function(u){ return u.id; }).slice().sort(function(a,b){ return a - b; });
+  function estilo(id){
+    var i = orden.indexOf(id);
+    return {color:"var(" + PAL[i % 8] + ")", guion:i >= 8 ? "6 4" : null};
+  }
+  var visibles = {};
+  U.slice(0, 4).forEach(function(u){ visibles[u.id] = true; });
+  visibles[D.yo] = true;
+
+  var lienzo = document.getElementById("ev-lienzo");
+  function muestra(id){
+    var e = estilo(id);
+    return '<svg width="16" height="8" aria-hidden="true"><line x1="0" y1="4" x2="16" y2="4" ' +
+      'stroke="' + e.color + '" stroke-width="2.5" stroke-linecap="round"' +
+      (e.guion ? ' stroke-dasharray="' + e.guion + '"' : '') + '/></svg>';
+  }
+  document.getElementById("ev-fichas").innerHTML = U.map(function(u){
+    return '<button type="button" class="ficha" data-ev="' + u.id + '" aria-pressed="' +
+      !!visibles[u.id] + '">' + muestra(u.id) + esc(u.nombre) + '</button>';
+  }).join("");
+
+  var W = 940, Hg = 330, m = {t:16, r:18, b:30, l:70}, ejeX = [], escalaY = null;
+  function pintarGrafica(){
+    var activos = U.filter(function(u){ return visibles[u.id]; });
+    if (!activos.length){
+      lienzo.innerHTML = '<p class="vacio">Elige al menos un equipo para dibujar la gráfica.</p>';
+      return;
+    }
+    var vals = [];
+    activos.forEach(function(u){ (SERIES[u.id] || []).forEach(function(v){ if (v !== null) vals.push(v); }); });
+    var lo = Math.min.apply(null, vals), hi = Math.max.apply(null, vals);
+    var pad = (hi - lo) * .10 || 1e6; lo -= pad; hi += pad;
+    var X = function(i){ return m.l + i * (W - m.l - m.r) / Math.max(1, FECHAS.length - 1); };
     var Y = function(v){ return m.t + (hi - v) / (hi - lo) * (Hg - m.t - m.b); };
-    var ticks = [0,.25,.5,.75,1].map(function(t){ return lo + t * (hi - lo); });
-    var svg = '<svg class="grafico" viewBox="0 0 ' + W + ' ' + Hg + '" role="img" ' +
-      'aria-label="Evolución del patrimonio de cada equipo">';
-    ticks.forEach(function(v){
-      svg += '<line x1="' + m.l + '" x2="' + (W-m.r) + '" y1="' + Y(v).toFixed(1) + '" y2="' + Y(v).toFixed(1) +
+    ejeX = FECHAS.map(function(_, i){ return X(i); });
+    escalaY = Y;
+
+    var s = '<svg class="grafico" viewBox="0 0 ' + W + ' ' + Hg + '" role="img" aria-label="' +
+      'Patrimonio diario de ' + activos.length + ' equipos desde el 1 de agosto">';
+    [0,.25,.5,.75,1].forEach(function(t){
+      var v = lo + t * (hi - lo), y = Y(v).toFixed(1);
+      s += '<line x1="' + m.l + '" x2="' + (W-m.r) + '" y1="' + y + '" y2="' + y +
         '" stroke="var(--linea)" stroke-width="1"/>' +
-        '<text x="' + (m.l-9) + '" y="' + (Y(v)+4).toFixed(1) + '" text-anchor="end" font-size="11" ' +
+        '<text x="' + (m.l-10) + '" y="' + (Y(v)+4).toFixed(1) + '" text-anchor="end" font-size="11.5" ' +
         'fill="var(--tinta-3)" font-family="var(--sans)">' + millones(v) + '</text>';
     });
-    series.forEach(function(s){
-      var d = s.pts.map(function(v,i){ return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); }).join(" ");
-      svg += '<path d="' + d + '" fill="none" stroke="' + (s.id === sel ? "var(--acento)" : "var(--eje)") +
-        '" stroke-width="' + (s.id === sel ? 2.5 : 1.2) + '" stroke-linejoin="round" stroke-linecap="round"/>';
+    var paso = Math.ceil(FECHAS.length / 7);
+    FECHAS.forEach(function(f, i){
+      if (i % paso && i !== FECHAS.length - 1) return;
+      s += '<text x="' + X(i).toFixed(1) + '" y="' + (Hg-8) + '" text-anchor="middle" font-size="11.5" ' +
+        'fill="var(--tinta-3)" font-family="var(--sans)">' + f.slice(8) + "/" + f.slice(5,7) + '</text>';
     });
-    H.forEach(function(d,i){
-      svg += '<text x="' + X(i).toFixed(1) + '" y="' + (Hg-7) + '" text-anchor="middle" font-size="11" ' +
-        'fill="var(--tinta-3)" font-family="var(--sans)">' + d.fecha.slice(8) + "/" + d.fecha.slice(5,7) + '</text>';
+    activos.forEach(function(u){
+      var e = estilo(u.id), pts = SERIES[u.id] || [], d = "", abierto = false;
+      pts.forEach(function(v, i){
+        if (v === null){ abierto = false; return; }
+        d += (abierto ? "L" : "M") + X(i).toFixed(1) + " " + Y(v).toFixed(1) + " ";
+        abierto = true;
+      });
+      s += '<path d="' + d.trim() + '" fill="none" stroke="' + e.color + '" stroke-width="2" ' +
+        'stroke-linejoin="round" stroke-linecap="round"' +
+        (e.guion ? ' stroke-dasharray="' + e.guion + '"' : '') + '/>';
     });
-    marco.innerHTML = svg + '</svg>';
+    s += '<line id="ev-cursor" y1="' + m.t + '" y2="' + (Hg-m.b) + '" stroke="var(--eje)" ' +
+      'stroke-width="1" style="display:none"/>';
+    lienzo.innerHTML = s + '</svg><div class="globo" id="ev-globo" style="display:none"></div>';
   }
+
+  function alPasar(ev){
+    var svg = lienzo.querySelector("svg"), globo = document.getElementById("ev-globo");
+    if (!svg || !globo) return;
+    var caja = svg.getBoundingClientRect(), escala = W / caja.width;
+    var x = (ev.clientX - caja.left) * escala;
+    var i = 0, mejor = Infinity;
+    ejeX.forEach(function(px, k){ var dd = Math.abs(px - x); if (dd < mejor){ mejor = dd; i = k; } });
+    var cursor = document.getElementById("ev-cursor");
+    cursor.setAttribute("x1", ejeX[i]); cursor.setAttribute("x2", ejeX[i]);
+    cursor.style.display = "";
+
+    var activos = U.filter(function(u){ return visibles[u.id] && (SERIES[u.id] || [])[i] !== null &&
+      (SERIES[u.id] || [])[i] !== undefined; });
+    activos.sort(function(a,b){ return SERIES[b.id][i] - SERIES[a.id][i]; });
+    globo.innerHTML = '<b>' + FECHAS[i].split("-").reverse().join("/") + '</b>' + activos.map(function(u){
+      return '<div><span>' + muestra(u.id) + esc(u.nombre) + '</span>' +
+        '<span class="num">' + millones(SERIES[u.id][i]) + '</span></div>';
+    }).join("");
+    globo.style.display = "";
+    var izq = ejeX[i] / escala, aFuera = izq + 190 > caja.width;
+    globo.style.left = Math.max(4, aFuera ? izq - globo.offsetWidth - 12 : izq + 12) + "px";
+    globo.style.top = "6px";
+  }
+  lienzo.addEventListener("mousemove", alPasar);
+  lienzo.addEventListener("mouseleave", function(){
+    var c = document.getElementById("ev-cursor"), g = document.getElementById("ev-globo");
+    if (c) c.style.display = "none";
+    if (g) g.style.display = "none";
+  });
+
+  document.getElementById("ev-fichas").addEventListener("click", function(e){
+    var b = e.target.closest("[data-ev]");
+    if (!b) return;
+    var id = Number(b.dataset.ev);
+    visibles[id] = !visibles[id];
+    b.setAttribute("aria-pressed", !!visibles[id]);
+    pintarGrafica();
+  });
+  function fijarVisibles(fn){
+    U.forEach(function(u, i){ visibles[u.id] = fn(u, i); });
+    document.querySelectorAll("[data-ev]").forEach(function(b){
+      b.setAttribute("aria-pressed", !!visibles[Number(b.dataset.ev)]);
+    });
+    pintarGrafica();
+  }
+  document.getElementById("ev-todos").onclick = function(){ fijarVisibles(function(){ return true; }); };
+  document.getElementById("ev-ninguno").onclick = function(){ fijarVisibles(function(){ return false; }); };
+  document.getElementById("ev-podio").onclick = function(){ fijarVisibles(function(u, i){ return i < 4; }); };
+  pintarGrafica();
 
   // Tema
   document.getElementById("tema").onclick = function(){

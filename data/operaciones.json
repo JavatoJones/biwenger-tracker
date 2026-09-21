@@ -237,13 +237,13 @@
   {
    "user": 9962118,
    "player": 39350,
-   "cost": 260000,
+   "cost": 0,
    "date_in": 1785574576,
    "how_in": "reparto",
    "date_out": 1785735705,
    "revenue": 240300,
    "how_out": "transfer",
-   "profit": -19700,
+   "profit": 240300,
    "usuario": "TABASCO FC",
    "jugador": "Sierra"
   },
@@ -5368,6 +5368,71 @@
    "profit": -1580800,
    "usuario": "TABASCO FC",
    "jugador": "Pépé"
+  },
+  {
+   "user": 11403718,
+   "player": 28087,
+   "cost": 4125000,
+   "date_in": 1788757598,
+   "how_in": "market",
+   "date_out": 1790019380,
+   "revenue": 3483500,
+   "how_out": "transfer",
+   "profit": -641500,
+   "usuario": "Lord Calcius",
+   "jugador": "Marcos Alonso"
+  },
+  {
+   "user": 11403718,
+   "player": 40075,
+   "cost": 2600000,
+   "date_in": 1787510764,
+   "how_in": "clause",
+   "date_out": 1790019380,
+   "revenue": 5677600,
+   "how_out": "transfer",
+   "profit": 3077600,
+   "usuario": "Lord Calcius",
+   "jugador": "Espart"
+  },
+  {
+   "user": 11403718,
+   "player": 4070,
+   "cost": 1585000,
+   "date_in": 1786770126,
+   "how_in": "market",
+   "date_out": 1790019380,
+   "revenue": 1231300,
+   "how_out": "transfer",
+   "profit": -353700,
+   "usuario": "Lord Calcius",
+   "jugador": "Galilea"
+  },
+  {
+   "user": 11403768,
+   "player": 39673,
+   "cost": 746999,
+   "date_in": 1789794214,
+   "how_in": "market",
+   "date_out": 1790019380,
+   "revenue": 739200,
+   "how_out": "transfer",
+   "profit": -7799,
+   "usuario": "ASTON JIMA",
+   "jugador": "Julio Díaz"
+  },
+  {
+   "user": 9961274,
+   "player": 26678,
+   "cost": 1600000,
+   "date_in": 1789733983,
+   "how_in": "transfer",
+   "date_out": 1790026762,
+   "revenue": 1205700,
+   "how_out": "transfer",
+   "profit": -394300,
+   "usuario": "WILLOW",
+   "jugador": "Christensen"
   }
  ],
  "abiertas": [
@@ -5383,17 +5448,6 @@
    "latente": 560000
   },
   {
-   "user": 9962118,
-   "player": 35678,
-   "cost": 3040000,
-   "date_in": 1785574576,
-   "how_in": "reparto",
-   "usuario": "TABASCO FC",
-   "jugador": "Roberto Fernández",
-   "valor_hoy": 7590000,
-   "latente": 4550000
-  },
-  {
    "user": 9961358,
    "player": 42370,
    "cost": 1490000,
@@ -5403,6 +5457,17 @@
    "jugador": "Facundo Bernal",
    "valor_hoy": 2280000,
    "latente": 790000
+  },
+  {
+   "user": 9962118,
+   "player": 35678,
+   "cost": 3040000,
+   "date_in": 1785574576,
+   "how_in": "reparto",
+   "usuario": "TABASCO FC",
+   "jugador": "Roberto Fernández",
+   "valor_hoy": 7590000,
+   "latente": 4550000
   },
   {
    "user": 12809840,
@@ -5504,50 +5569,6 @@
    "latente": 690000
   },
   {
-   "user": 11403720,
-   "player": 5352,
-   "cost": 1400000,
-   "date_in": 1785574576,
-   "how_in": "reparto",
-   "usuario": "PODRÍA SER TU PADRE jodete willem",
-   "jugador": "Óscar Valentín",
-   "valor_hoy": 1550000,
-   "latente": 150000
-  },
-  {
-   "user": 11403720,
-   "player": 19192,
-   "cost": 540000,
-   "date_in": 1785574576,
-   "how_in": "reparto",
-   "usuario": "PODRÍA SER TU PADRE jodete willem",
-   "jugador": "Agirrezabala",
-   "valor_hoy": 3190000,
-   "latente": 2650000
-  },
-  {
-   "user": 11403720,
-   "player": 33691,
-   "cost": 200000,
-   "date_in": 1785574576,
-   "how_in": "reparto",
-   "usuario": "PODRÍA SER TU PADRE jodete willem",
-   "jugador": "#33691",
-   "valor_hoy": 180000,
-   "latente": -20000
-  },
-  {
-   "user": 11403720,
-   "player": 34717,
-   "cost": 170000,
-   "date_in": 1785574576,
-   "how_in": "reparto",
-   "usuario": "PODRÍA SER TU PADRE jodete willem",
-   "jugador": "Logan Costa",
-   "valor_hoy": 220000,
-   "latente": 50000
-  },
-  {
    "user": 9961449,
    "player": 37726,
    "cost": 200000,
@@ -5590,6 +5611,50 @@
    "jugador": "Riki Rodríguez",
    "valor_hoy": 520000,
    "latente": 220000
+  },
+  {
+   "user": 11403720,
+   "player": 5352,
+   "cost": 1400000,
+   "date_in": 1785574576,
+   "how_in": "reparto",
+   "usuario": "PODRÍA SER TU PADRE jodete willem",
+   "jugador": "Óscar Valentín",
+   "valor_hoy": 1550000,
+   "latente": 150000
+  },
+  {
+   "user": 11403720,
+   "player": 19192,
+   "cost": 540000,
+   "date_in": 1785574576,
+   "how_in": "reparto",
+   "usuario": "PODRÍA SER TU PADRE jodete willem",
+   "jugador": "Agirrezabala",
+   "valor_hoy": 3190000,
+   "latente": 2650000
+  },
+  {
+   "user": 11403720,
+   "player": 33691,
+   "cost": 200000,
+   "date_in": 1785574576,
+   "how_in": "reparto",
+   "usuario": "PODRÍA SER TU PADRE jodete willem",
+   "jugador": "#33691",
+   "valor_hoy": 180000,
+   "latente": -20000
+  },
+  {
+   "user": 11403720,
+   "player": 34717,
+   "cost": 170000,
+   "date_in": 1785574576,
+   "how_in": "reparto",
+   "usuario": "PODRÍA SER TU PADRE jodete willem",
+   "jugador": "Logan Costa",
+   "valor_hoy": 220000,
+   "latente": 50000
   },
   {
    "user": 9962213,
@@ -5878,17 +5943,6 @@
    "latente": 180000
   },
   {
-   "user": 11403718,
-   "player": 4070,
-   "cost": 1585000,
-   "date_in": 1786770126,
-   "how_in": "market",
-   "usuario": "Lord Calcius",
-   "jugador": "Galilea",
-   "valor_hoy": 1230000,
-   "latente": -355000
-  },
-  {
    "user": 11403768,
    "player": 18564,
    "cost": 5716999,
@@ -5986,17 +6040,6 @@
    "jugador": "Dani Martínez",
    "valor_hoy": 180000,
    "latente": -450000
-  },
-  {
-   "user": 11403718,
-   "player": 40075,
-   "cost": 2600000,
-   "date_in": 1787510764,
-   "how_in": "clause",
-   "usuario": "Lord Calcius",
-   "jugador": "Espart",
-   "valor_hoy": 5560000,
-   "latente": 2960000
   },
   {
    "user": 11403720,
@@ -6393,17 +6436,6 @@
    "jugador": "Saliba",
    "valor_hoy": 3380000,
    "latente": -808000
-  },
-  {
-   "user": 11403718,
-   "player": 28087,
-   "cost": 4125000,
-   "date_in": 1788757598,
-   "how_in": "market",
-   "usuario": "Lord Calcius",
-   "jugador": "Marcos Alonso",
-   "valor_hoy": 3230000,
-   "latente": -895000
   },
   {
    "user": 9961274,
@@ -6912,17 +6944,6 @@
    "latente": -150000
   },
   {
-   "user": 9961274,
-   "player": 26678,
-   "cost": 1600000,
-   "date_in": 1789733983,
-   "how_in": "transfer",
-   "usuario": "WILLOW",
-   "jugador": "Christensen",
-   "valor_hoy": 1180000,
-   "latente": -420000
-  },
-  {
    "user": 9961690,
    "player": 26276,
    "cost": 4000000,
@@ -7064,17 +7085,6 @@
    "jugador": "Isco",
    "valor_hoy": 8030000,
    "latente": -858888
-  },
-  {
-   "user": 11403768,
-   "player": 39673,
-   "cost": 746999,
-   "date_in": 1789794214,
-   "how_in": "market",
-   "usuario": "ASTON JIMA",
-   "jugador": "Julio Díaz",
-   "valor_hoy": 700000,
-   "latente": -46999
   },
   {
    "user": 11403768,
