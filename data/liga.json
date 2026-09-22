@@ -23,6 +23,7 @@
    "operaciones_cerradas": 32,
    "premios": 17083000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 12095000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -44,6 +45,7 @@
    "operaciones_cerradas": 26,
    "premios": 16355000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 11355000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -65,6 +67,7 @@
    "operaciones_cerradas": 47,
    "premios": 15420000,
    "gasto_clausulas": -1200000,
+   "bonus_jornadas": 10420000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -86,6 +89,7 @@
    "operaciones_cerradas": 37,
    "premios": 15780000,
    "gasto_clausulas": -150000,
+   "bonus_jornadas": 10780000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -107,6 +111,7 @@
    "operaciones_cerradas": 37,
    "premios": 16240000,
    "gasto_clausulas": -1200000,
+   "bonus_jornadas": 11240000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -128,6 +133,7 @@
    "operaciones_cerradas": 22,
    "premios": 16130000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 11130000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -149,6 +155,7 @@
    "operaciones_cerradas": 11,
    "premios": 15940000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 10940000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -170,6 +177,7 @@
    "operaciones_cerradas": 35,
    "premios": 16630000,
    "gasto_clausulas": -900000,
+   "bonus_jornadas": 11630000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -191,6 +199,7 @@
    "operaciones_cerradas": 18,
    "premios": 14160000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 9160000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -212,6 +221,7 @@
    "operaciones_cerradas": 55,
    "premios": 13822011,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 8810000,
    "saldo_verificado": true,
    "descuadre": 0
   },
@@ -233,27 +243,29 @@
    "operaciones_cerradas": 17,
    "premios": 14650000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 9650000,
    "saldo_verificado": false,
    "descuadre": 0
   },
   {
    "id": 9963115,
    "nombre": "JOSAPO FUTBOLCLUB",
-   "saldo": -1010558,
-   "valor_equipo": 32070000,
-   "patrimonio": 31059442,
-   "variacion_dia": -510000,
+   "saldo": 2892542,
+   "valor_equipo": 28250000,
+   "patrimonio": 31142542,
+   "variacion_dia": -320000,
    "puntos": 152,
    "posicion": 14,
-   "jugadores": 13,
+   "jugadores": 12,
    "valor_equipo_inicial": 11060000,
    "saldo_inicial": 8940000,
-   "realizado": 1243637,
-   "latente": -2155095,
-   "beneficio_total": -911458,
-   "operaciones_cerradas": 34,
+   "realizado": -353263,
+   "latente": -475095,
+   "beneficio_total": -828358,
+   "operaciones_cerradas": 35,
    "premios": 11970900,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 7030000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -275,6 +287,7 @@
    "operaciones_cerradas": 17,
    "premios": 13440000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 8440000,
    "saldo_verificado": false,
    "descuadre": 0
   },
@@ -296,6 +309,7 @@
    "operaciones_cerradas": 33,
    "premios": 13985000,
    "gasto_clausulas": 0,
+   "bonus_jornadas": 8985000,
    "saldo_verificado": false,
    "descuadre": 0
   }

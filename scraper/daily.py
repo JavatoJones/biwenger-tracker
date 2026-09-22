@@ -64,6 +64,9 @@ def run(offline: bool = False) -> dict:
     flow = money_flows(season)
     # Dinero que no viene de comprar y vender: primas y bonus de jornada.
     premios = money_flows([e for e in season if e["type"] in ("bonus", "roundFinished")])
+    # Solo lo cobrado por rendimiento en las jornadas. Se mira aparte porque la prima inicial
+    # es igual para todos y compararla no dice nada.
+    jornadas = money_flows([e for e in season if e["type"] == "roundFinished"])
     # Gasto en blindar jugadores subiendo su cláusula: sale del saldo y no es una operación.
     clausulas = money_flows([e for e in season if e["type"] == "clauseIncrement"])
     day0 = yymmdd(reset_ts)
@@ -86,6 +89,7 @@ def run(offline: bool = False) -> dict:
             "realizado": p.get("realizado", 0), "latente": p.get("latente", 0),
             "beneficio_total": p.get("total", 0), "operaciones_cerradas": p.get("n_cerradas", 0),
             "premios": premios.get(uid, 0), "gasto_clausulas": clausulas.get(uid, 0),
+            "bonus_jornadas": jornadas.get(uid, 0),
             "saldo_verificado": uid == mi_id and balance == mi_saldo,
             # El patrimonio debe salir de: capital inicial + premios - cláusulas + lo ganado operando.
             "descuadre": (balance + s["teamValue"]) - (CAPITAL_INICIAL + premios.get(uid, 0)

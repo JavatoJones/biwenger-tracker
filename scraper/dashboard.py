@@ -120,14 +120,22 @@ section{margin-top:40px}
 
 /* Clasificación */
 .tabla{background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);overflow:hidden}
-.fila{display:grid;grid-template-columns:30px minmax(120px,1.35fr) minmax(150px,1.5fr) 108px 108px 96px;
-  gap:12px;align-items:center;padding:11px 16px;border-top:1px solid var(--linea);
-  width:100%;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer;color:inherit;font-size:14px}
-.fila:first-of-type{border-top:0}
-.fila:hover{background:var(--hueco)}
-.fila[aria-pressed="true"]{background:var(--hueco);color:var(--tinta);box-shadow:inset 3px 0 0 var(--acento)}
-.cabecera-tabla{display:grid;grid-template-columns:30px minmax(120px,1.35fr) minmax(150px,1.5fr) 108px 108px 96px;
-  gap:12px;padding:9px 16px;background:var(--hueco);border-bottom:1px solid var(--linea)}
+#clasificacion table{min-width:auto}
+#clasificacion th{cursor:pointer;user-select:none;white-space:nowrap}
+#clasificacion th:hover{color:var(--tinta)}
+#clasificacion th[aria-sort]{color:var(--tinta)}
+#clasificacion th .flecha{margin-left:4px;font-size:10px}
+#clasificacion tr[data-id]{cursor:pointer}
+#clasificacion tr[aria-selected="true"]{background:var(--hueco)}
+#clasificacion tr[aria-selected="true"] td:first-child{box-shadow:inset 3px 0 0 var(--acento)}
+#clasificacion tr:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+/* La celda de la métrica ordenada lleva su propia barra de fondo, así la comparación
+   visual viaja con la columna elegida en vez de ocupar una columna fija. */
+.celda-barra{position:relative}
+.celda-barra .relleno{position:absolute;left:0;top:3px;bottom:3px;border-radius:2px;
+  background:var(--acento);opacity:.16}
+.celda-barra.neg .relleno{background:var(--baja);opacity:.22}
+.celda-barra .cifra{position:relative}
 .puesto{font-family:var(--titular);font-size:17px;color:var(--tinta-3);font-weight:600}
 .equipo{font-family:var(--titular);font-size:17px;font-weight:600;line-height:1.15;overflow-wrap:anywhere}
 /* Filtros de la gráfica */
@@ -158,13 +166,17 @@ section{margin-top:40px}
 .leyenda{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--tinta-2);margin-bottom:14px}
 .llave{display:inline-flex;align-items:center;gap:7px}
 .muestra{width:11px;height:11px;border-radius:3px;flex:none}
-.filas-div{display:grid;gap:9px}
-.fila-div{display:grid;grid-template-columns:minmax(96px,150px) 1fr;gap:12px;align-items:center;font-size:13px}
-.pista-div{position:relative;height:26px}
-.cero{position:absolute;top:-2px;bottom:-2px;width:1px;background:var(--eje)}
-.marca{position:absolute;height:9px;border-radius:2px}
-.marca.r{top:1px;background:var(--serie-1)}
-.marca.l{top:15px;background:var(--serie-2)}
+.filas-div{display:grid;gap:4px}
+.fila-div{display:grid;grid-template-columns:minmax(96px,150px) 1fr;gap:12px;align-items:center;
+  font-size:13px;padding:4px 6px;border-radius:7px;cursor:default}
+.fila-div:hover{background:var(--hueco)}
+.pista-div{position:relative;height:32px}
+.cero{position:absolute;top:0;bottom:0;width:1px;background:var(--eje)}
+.marca{position:absolute;height:8px;border-radius:2px}
+.marca.j{top:2px;background:var(--serie-3)}
+.marca.r{top:12px;background:var(--serie-1)}
+.marca.l{top:22px;background:var(--serie-2)}
+.globo .total{border-top:1px solid var(--linea);margin-top:6px;padding-top:6px;font-weight:600}
 
 /* Detalle */
 .rejilla-detalle{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:18px}
@@ -186,8 +198,8 @@ tbody tr:hover{background:var(--hueco)}
 .grafico{width:100%;height:auto;display:block}
 footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:var(--tinta-3);font-size:12.5px}
 @media (max-width:720px){
-  .fila,.cabecera-tabla{grid-template-columns:26px 1fr 96px;gap:10px}
-  .ocultar-movil{display:none}
+  .fila-div{grid-template-columns:minmax(78px,110px) 1fr;font-size:12px}
+  #clasificacion td,#clasificacion th{padding-left:10px;padding-right:10px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -206,15 +218,12 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
 
   <section id="s-clasificacion">
     <div class="encabezado-seccion">
-      <h2>Clasificación por patrimonio</h2>
-      <p class="nota">Patrimonio = saldo en caja + valor de la plantilla. Pulsa un equipo para ver sus operaciones.</p>
+      <h2>Clasificación</h2>
+      <p class="nota">Elige qué conceptos ver y pulsa una cabecera para ordenar. Pulsa un equipo para ver sus operaciones.</p>
     </div>
+    <div class="fichas" id="cl-columnas"></div>
     <div class="tabla">
-      <div class="cabecera-tabla rotulo">
-        <span>#</span><span>Equipo</span><span class="ocultar-movil">Patrimonio</span>
-        <span class="der ocultar-movil">Saldo</span><span class="der ocultar-movil">Plantilla</span><span class="der">Total</span>
-      </div>
-      <div id="clasificacion"></div>
+      <div class="envoltura-tabla" style="border:0;border-radius:0"><div id="clasificacion"></div></div>
       <div class="pie-tabla" id="pie-clasificacion"></div>
     </div>
   </section>
@@ -238,14 +247,20 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
   <section id="s-resultado">
     <div class="encabezado-seccion">
       <h2>De dónde sale el dinero</h2>
-      <p class="nota">Lo ya embolsado al vender frente a lo que se ganaría vendiendo hoy la plantilla.</p>
+      <p class="nota">Tres fuentes distintas: lo cobrado por rendimiento en las jornadas, lo embolsado
+        vendiendo jugadores y lo que todavía está metido en la plantilla.</p>
     </div>
     <div class="marco">
+      <div class="mandos" id="res-orden"></div>
       <div class="leyenda">
-        <span class="llave"><span class="muestra" style="background:var(--serie-1)"></span>Realizado, ventas ya cerradas</span>
+        <span class="llave"><span class="muestra" style="background:var(--serie-3)"></span>Bonus de jornada</span>
+        <span class="llave"><span class="muestra" style="background:var(--serie-1)"></span>Realizado, ventas cerradas</span>
         <span class="llave"><span class="muestra" style="background:var(--serie-2)"></span>Latente, plantilla actual</span>
       </div>
-      <div class="filas-div" id="divergente"></div>
+      <div class="lienzo">
+        <div class="filas-div" id="divergente"></div>
+        <div class="globo" id="res-globo" style="display:none"></div>
+      </div>
     </div>
   </section>
 
@@ -306,42 +321,136 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     'stroke-linecap="round" stroke-linejoin="round"/></svg>' +
     (yo && yo.saldo_verificado ? "Saldo verificado" : "Saldo sin verificar");
 
-  // Clasificación
-  var maxPat = Math.max.apply(null, U.map(function(u){ return u.patrimonio; }));
-  document.getElementById("clasificacion").innerHTML = U.map(function(u, i){
-    var ancho = Math.max(2, u.patrimonio / maxPat * 100);
-    return '<button class="fila" type="button" data-id="' + u.id + '" aria-pressed="' + (u.id === sel) + '">' +
-      '<span class="puesto num">' + (i + 1) + '</span>' +
-      '<span class="equipo">' + esc(u.nombre) + '</span>' +
-      '<span class="pista ocultar-movil"><span class="barra" style="width:' + ancho.toFixed(1) + '%"></span></span>' +
-      '<span class="der num ocultar-movil ' + clase(u.saldo) + '">' + eur(u.saldo) + '</span>' +
-      '<span class="der num ocultar-movil">' + eur(u.valor_equipo) + '</span>' +
-      '<span class="der num" style="font-weight:600">' + millones(u.patrimonio) + '</span>' +
-    '</button>';
+  // Clasificación: columnas elegibles y ordenación por cualquiera de ellas
+  var COLS = [
+    {k:"patrimonio",     t:"Patrimonio", d:"Saldo más valor de la plantilla"},
+    {k:"saldo",          t:"Efectivo",   d:"Dinero disponible en caja", firma:true},
+    {k:"valor_equipo",   t:"Plantilla",  d:"Valor de mercado de sus jugadores"},
+    {k:"realizado",      t:"Realizado",  d:"Ganado en las ventas ya cerradas", firma:true},
+    {k:"latente",        t:"Latente",    d:"Lo que ganaría vendiendo hoy su plantilla", firma:true},
+    {k:"bonus_jornadas", t:"Bonus",      d:"Cobrado por rendimiento en las jornadas"},
+    {k:"puntos",         t:"Puntos",     d:"Puntos de la clasificación oficial", plano:true}
+  ];
+  var visiblesCol = {patrimonio:true, saldo:true, valor_equipo:true, bonus_jornadas:true};
+  var ordenPor = "patrimonio", ordenAsc = false;
+
+  document.getElementById("cl-columnas").innerHTML = COLS.map(function(c){
+    return '<button type="button" class="ficha" data-col="' + c.k + '" title="' + esc(c.d) + '" ' +
+      'aria-pressed="' + !!visiblesCol[c.k] + '">' + c.t + '</button>';
   }).join("");
+
+  function pintarClasificacion(){
+    var cols = COLS.filter(function(c){ return visiblesCol[c.k]; });
+    if (!cols.length){ visiblesCol.patrimonio = true; cols = [COLS[0]];
+      document.querySelector('[data-col="patrimonio"]').setAttribute("aria-pressed", "true"); }
+    if (!visiblesCol[ordenPor]) ordenPor = cols[0].k;
+
+    var filas = U.slice().sort(function(a,b){
+      return (ordenAsc ? 1 : -1) * (a[ordenPor] - b[ordenPor]); });
+    var tope = Math.max.apply(null, U.map(function(u){ return Math.abs(u[ordenPor]); })) || 1;
+
+    var cab = '<tr><th style="cursor:default">#</th><th style="cursor:default">Equipo</th>' +
+      cols.map(function(c){
+        var act = c.k === ordenPor;
+        return '<th class="der" data-orden="' + c.k + '"' + (act ? ' aria-sort="' +
+          (ordenAsc ? "ascending" : "descending") + '"' : '') + ' title="' + esc(c.d) + '">' + c.t +
+          (act ? '<span class="flecha">' + (ordenAsc ? "▲" : "▼") + '</span>' : '') + '</th>';
+      }).join("") + '</tr>';
+
+    var cuerpo = filas.map(function(u, i){
+      var celdas = cols.map(function(c){
+        var v = u[c.k];
+        var texto = c.plano ? v.toLocaleString("es-ES") : (c.firma ? eurFirmado(v) : eur(v));
+        if (c.k !== ordenPor)
+          return '<td class="der num ' + (c.firma ? clase(v) : "") + '">' + texto + '</td>';
+        return '<td class="der num celda-barra ' + (v < 0 ? "neg" : "") + '" style="font-weight:600">' +
+          '<span class="relleno" style="width:' + (Math.abs(v) / tope * 100).toFixed(1) + '%"></span>' +
+          '<span class="cifra ' + (c.firma ? clase(v) : "") + '">' + texto + '</span></td>';
+      }).join("");
+      return '<tr data-id="' + u.id + '" tabindex="0" role="button" aria-selected="' + (u.id === sel) + '">' +
+        '<td class="puesto num">' + (i + 1) + '</td>' +
+        '<td class="equipo">' + esc(u.nombre) + '</td>' + celdas + '</tr>';
+    }).join("");
+
+    document.getElementById("clasificacion").innerHTML =
+      '<table><thead>' + cab + '</thead><tbody>' + cuerpo + '</tbody></table>';
+  }
+
+  document.getElementById("cl-columnas").addEventListener("click", function(e){
+    var b = e.target.closest("[data-col]");
+    if (!b) return;
+    var k = b.dataset.col;
+    visiblesCol[k] = !visiblesCol[k];
+    b.setAttribute("aria-pressed", !!visiblesCol[k]);
+    pintarClasificacion();
+  });
+  pintarClasificacion();
   var enRojo = U.filter(function(u){ return u.saldo < 0; }).length;
   document.getElementById("pie-clasificacion").textContent =
     U.length + " equipos · " + enRojo + " con el saldo en números rojos · " +
     "diferencia entre el primero y el último: " + eur(U[0].patrimonio - U[U.length-1].patrimonio);
 
-  // Realizado vs latente
-  var tope = Math.max.apply(null, U.map(function(u){
-    return Math.max(Math.abs(u.realizado), Math.abs(u.latente)); }));
-  var porBeneficio = U.slice().sort(function(a,b){ return b.beneficio_total - a.beneficio_total; });
-  document.getElementById("divergente").innerHTML = porBeneficio.map(function(u){
-    function marca(v, cls){
-      var ancho = Math.abs(v) / tope * 50;
-      var izq = v >= 0 ? 50 : 50 - ancho;
-      return '<span class="marca ' + cls + '" style="left:' + izq.toFixed(2) + '%;width:' +
-        Math.max(0.4, ancho).toFixed(2) + '%"></span>';
-    }
-    return '<div class="fila-div">' +
-      '<span style="overflow-wrap:anywhere">' + esc(u.nombre) + '</span>' +
-      '<span class="pista-div" title="' + esc(u.nombre) + ' — realizado ' + eurFirmado(u.realizado) +
-        ', latente ' + eurFirmado(u.latente) + '">' +
-        '<span class="cero" style="left:50%"></span>' + marca(u.realizado, "r") + marca(u.latente, "l") +
-      '</span></div>';
-  }).join("");
+  // De dónde sale el dinero
+  var FUENTES = [
+    {k:"bonus_jornadas", cls:"j", t:"Bonus de jornada", col:"var(--serie-3)"},
+    {k:"realizado",      cls:"r", t:"Realizado",        col:"var(--serie-1)"},
+    {k:"latente",        cls:"l", t:"Latente",          col:"var(--serie-2)"}
+  ];
+  var suma = function(u){ return u.bonus_jornadas + u.realizado + u.latente; };
+  var ordenRes = "total";
+  document.getElementById("res-orden").innerHTML =
+    '<button type="button" class="alterna" data-res="total" aria-pressed="true">Total</button>' +
+    FUENTES.map(function(f){
+      return '<button type="button" class="alterna" data-res="' + f.k + '" aria-pressed="false">' +
+        f.t + '</button>';
+    }).join("");
+
+  function pintarFuentes(){
+    var clave = function(u){ return ordenRes === "total" ? suma(u) : u[ordenRes]; };
+    var tope = Math.max.apply(null, U.map(function(u){
+      return Math.max.apply(null, FUENTES.map(function(f){ return Math.abs(u[f.k]); })); })) || 1;
+    var filas = U.slice().sort(function(a,b){ return clave(b) - clave(a); });
+    document.getElementById("divergente").innerHTML = filas.map(function(u){
+      var marcas = FUENTES.map(function(f){
+        var v = u[f.k], ancho = Math.abs(v) / tope * 50;
+        return '<span class="marca ' + f.cls + '" style="left:' +
+          (v >= 0 ? 50 : 50 - ancho).toFixed(2) + '%;width:' + Math.max(0.4, ancho).toFixed(2) + '%"></span>';
+      }).join("");
+      return '<div class="fila-div" data-res-id="' + u.id + '">' +
+        '<span style="overflow-wrap:anywhere">' + esc(u.nombre) + '</span>' +
+        '<span class="pista-div"><span class="cero" style="left:50%"></span>' + marcas + '</span></div>';
+    }).join("");
+  }
+
+  var globoRes = document.getElementById("res-globo");
+  document.getElementById("divergente").addEventListener("mousemove", function(e){
+    var fila = e.target.closest("[data-res-id]");
+    if (!fila){ globoRes.style.display = "none"; return; }
+    var u = porId[Number(fila.dataset.resId)];
+    globoRes.innerHTML = '<b>' + esc(u.nombre) + '</b>' + FUENTES.map(function(f){
+      return '<div><span><span class="muestra" style="background:' + f.col + '"></span>' + f.t +
+        '</span><span class="num ' + clase(u[f.k]) + '">' + eurFirmado(u[f.k]) + '</span></div>';
+    }).join("") + '<div class="total"><span>Suma</span><span class="num ' + clase(suma(u)) +
+      '">' + eurFirmado(suma(u)) + '</span></div>';
+    globoRes.style.display = "";
+    // El globo se posiciona dentro de .lienzo, así que las coordenadas van contra ese marco.
+    var caja = globoRes.parentElement.getBoundingClientRect();
+    var x = e.clientX - caja.left + 16, y = e.clientY - caja.top + 14;
+    globoRes.style.left = Math.min(x, caja.width - globoRes.offsetWidth - 6) + "px";
+    globoRes.style.top = Math.min(y, caja.height - globoRes.offsetHeight - 2) + "px";
+  });
+  document.getElementById("divergente").addEventListener("mouseleave", function(){
+    globoRes.style.display = "none";
+  });
+  document.getElementById("res-orden").addEventListener("click", function(e){
+    var b = e.target.closest("[data-res]");
+    if (!b) return;
+    ordenRes = b.dataset.res;
+    this.querySelectorAll("[data-res]").forEach(function(x){
+      x.setAttribute("aria-pressed", x.dataset.res === ordenRes); });
+    pintarFuentes();
+  });
+  pintarFuentes();
 
   // Detalle
   function pintarDetalle(){
@@ -388,15 +497,30 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       }).join("") + '</tbody></table>';
   }
 
-  document.getElementById("clasificacion").addEventListener("click", function(e){
-    var b = e.target.closest("[data-id]");
-    if (!b) return;
-    sel = Number(b.dataset.id);
-    this.querySelectorAll(".fila").forEach(function(x){
-      x.setAttribute("aria-pressed", Number(x.dataset.id) === sel);
+  function elegirEquipo(id, mover){
+    sel = id;
+    document.querySelectorAll("#clasificacion tr[data-id]").forEach(function(x){
+      x.setAttribute("aria-selected", Number(x.dataset.id) === sel);
     });
     pintarDetalle();
-    document.getElementById("s-detalle").scrollIntoView({behavior:"smooth", block:"start"});
+    pintarGrafica();
+    if (mover) document.getElementById("s-detalle").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+  document.getElementById("clasificacion").addEventListener("click", function(e){
+    var th = e.target.closest("[data-orden]");
+    if (th){
+      var k = th.dataset.orden;
+      ordenAsc = k === ordenPor ? !ordenAsc : false;
+      ordenPor = k;
+      return pintarClasificacion();
+    }
+    var tr = e.target.closest("tr[data-id]");
+    if (tr) elegirEquipo(Number(tr.dataset.id), true);
+  });
+  document.getElementById("clasificacion").addEventListener("keydown", function(e){
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var tr = e.target.closest("tr[data-id]");
+    if (tr){ e.preventDefault(); elegirEquipo(Number(tr.dataset.id), true); }
   });
   function cambiarVista(v){
     vista = v;

@@ -5472,6 +5472,19 @@
    "profit": -1904400,
    "usuario": "GONALTICOS",
    "jugador": "Pablo García"
+  },
+  {
+   "user": 9963115,
+   "player": 8670,
+   "cost": 5500000,
+   "date_in": 1788086007,
+   "how_in": "transfer",
+   "date_out": 1790065551,
+   "revenue": 3903100,
+   "how_out": "transfer",
+   "profit": -1596900,
+   "usuario": "JOSAPO FUTBOLCLUB",
+   "jugador": "Roro Riquelme"
   }
  ],
  "abiertas": [
@@ -6310,17 +6323,6 @@
    "jugador": "Veiga",
    "valor_hoy": 3560000,
    "latente": -540000
-  },
-  {
-   "user": 9963115,
-   "player": 8670,
-   "cost": 5500000,
-   "date_in": 1788086007,
-   "how_in": "transfer",
-   "usuario": "JOSAPO FUTBOLCLUB",
-   "jugador": "Roro Riquelme",
-   "valor_hoy": 3820000,
-   "latente": -1680000
   },
   {
    "user": 9962213,
