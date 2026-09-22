@@ -50,21 +50,47 @@ def load_cached() -> dict:
     }
 
 
-def load_daily_prices(c: BiwengerClient, player_ids, desde: int, hoy: int, precios_hoy: dict) -> dict:
+def load_daily_prices(c: BiwengerClient, player_ids, desde: int, hoy: int, precios_hoy: dict,
+                      criticos=()) -> dict:
     """Precio diario de cada jugador desde el reset, en {id: {aaammdd: precio}}.
 
     El histórico completo de un jugador solo se pide la primera vez que aparece; a partir de
     ahí el precio de hoy sale del listado de La Liga, que ya se descarga en una sola llamada.
+
+    `criticos` son los jugadores del reparto inicial: necesitan sí o sí un precio en la fecha
+    de inicio, así que se comprueba que lo tengan y se repescan si no.
     """
     path = RAW.parent / "precios_diarios.json"
     cache = json.loads(path.read_text()) if path.exists() else {}
+    primer_dia = lambda pid: min((int(k) for k in cache.get(str(pid), {})), default=None)
+
+    def guardar(pid: int) -> None:
+        hist = c.get(f"/players/la-liga/{pid}", fields="*,prices")["data"].get("prices", [])
+        # Se conserva el último dato anterior al reset: sin él no hay precio que arrastrar
+        # al primer día, y el jugador quedaría valorado en cero.
+        previos = [x for x in hist if x[0] < desde]
+        dias = {str(d): v for d, v in hist if d >= desde}
+        if previos:
+            d, v = previos[-1]
+            dias[str(d)] = v
+        cache[str(pid)] = dias
 
     nuevos = [p for p in player_ids if str(p) not in cache] if c else []
-    for pid in nuevos:
-        hist = c.get(f"/players/la-liga/{pid}", fields="*,prices")["data"].get("prices", [])
-        cache[str(pid)] = {str(d): v for d, v in hist if d >= desde}
+    repescar = [p for p in criticos
+                if str(p) in cache and (primer_dia(p) or 0) > desde] if c else []
+    for pid in nuevos + repescar:
+        guardar(pid)
 
-    cambia = bool(nuevos)
+    # Si ni con el histórico completo hay dato previo, se fija su primer precio conocido en
+    # la fecha de inicio: es la mejor estimación posible y evita volver a pedirlo cada día.
+    sellados = 0
+    for pid in criticos:
+        d0 = primer_dia(pid)
+        if d0 is not None and d0 > desde:
+            cache[str(pid)][str(desde)] = cache[str(pid)][str(d0)]
+            sellados += 1
+
+    cambia = bool(nuevos or repescar or sellados)
     for pid, precio in precios_hoy.items():
         dias = cache.get(str(pid))
         if dias is not None and dias.get(str(hoy)) != precio:

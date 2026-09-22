@@ -237,13 +237,13 @@
   {
    "user": 9962118,
    "player": 39350,
-   "cost": 0,
+   "cost": 260000,
    "date_in": 1785574576,
    "how_in": "reparto",
    "date_out": 1785735705,
    "revenue": 240300,
    "how_out": "transfer",
-   "profit": 240300,
+   "profit": -19700,
    "usuario": "TABASCO FC",
    "jugador": "Sierra"
   },
@@ -5485,6 +5485,19 @@
    "profit": -1596900,
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Roro Riquelme"
+  },
+  {
+   "user": 9963115,
+   "player": 5697,
+   "cost": 4520000,
+   "date_in": 1786968762,
+   "how_in": "clause",
+   "date_out": 1790069319,
+   "revenue": 5828100,
+   "how_out": "transfer",
+   "profit": 1308100,
+   "usuario": "JOSAPO FUTBOLCLUB",
+   "jugador": "Mariano"
   }
  ],
  "abiertas": [
@@ -6026,17 +6039,6 @@
    "jugador": "Sivera",
    "valor_hoy": 4850000,
    "latente": 700000
-  },
-  {
-   "user": 9963115,
-   "player": 5697,
-   "cost": 4520000,
-   "date_in": 1786968762,
-   "how_in": "clause",
-   "usuario": "JOSAPO FUTBOLCLUB",
-   "jugador": "Mariano",
-   "valor_hoy": 5560000,
-   "latente": 1040000
   },
   {
    "user": 9961449,

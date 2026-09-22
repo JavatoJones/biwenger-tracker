@@ -55,7 +55,9 @@ def run(offline: bool = False) -> dict:
 
     hoy = yymmdd(int(datetime.now().timestamp()))
     precios_hoy = {p: players[str(p)]["price"] for p in relevantes if str(p) in players}
-    precio = precio_lookup(load_daily_prices(c, relevantes, yymmdd(reset_ts), hoy, precios_hoy))
+    criticos = {p for s in init.values() for p in s}
+    precio = precio_lookup(load_daily_prices(c, relevantes, yymmdd(reset_ts), hoy,
+                                             precios_hoy, criticos))
 
     def current_price(pid):
         ficha = players.get(str(pid))
@@ -70,6 +72,11 @@ def run(offline: bool = False) -> dict:
     # Gasto en blindar jugadores subiendo su cláusula: sale del saldo y no es una operación.
     clausulas = money_flows([e for e in season if e["type"] == "clauseIncrement"])
     day0 = yymmdd(reset_ts)
+    # Un jugador del reparto valorado en cero significa que falta su precio: falsearía el
+    # saldo de partida de su dueño, así que se avisa en vez de dejarlo pasar.
+    sin_precio = [(uid, p) for uid, ps in init.items()
+                  for p in ps if precio(p, yymmdd(altas.get(uid, reset_ts))) == 0]
+
     closed, openpos = compute_positions(season, squads, reset_ts, precio, altas)
     perf = summarize(closed, openpos, current_price)
 
@@ -118,7 +125,7 @@ def run(offline: bool = False) -> dict:
     _save(DATA / "historico.json", hist)
 
     return {"users": users, "closed": closed, "open": openpos, "dias": len(hist),
-            "my_balance": mi_saldo, "my_id": mi_id}
+            "my_balance": mi_saldo, "my_id": mi_id, "sin_precio": sin_precio}
 
 
 if __name__ == "__main__":
@@ -131,3 +138,7 @@ if __name__ == "__main__":
     for u in r["users"]:
         print(f"{u['nombre'][:30]:30} {u['saldo']:>12,} {u['valor_equipo']:>12,} {u['patrimonio']:>12,} {u['premios']:>11,} {u['realizado']:>12,} {u['latente']:>12,} {u['descuadre']:>10,}")
     print(f"\noperaciones cerradas: {len(r['closed'])} | posiciones abiertas: {len(r['open'])} | dias en historico: {r['dias']}")
+    if r["sin_precio"]:
+        print(f"AVISO: {len(r['sin_precio'])} jugadores del reparto sin precio -> {r['sin_precio'][:6]}")
+    else:
+        print("Todos los jugadores del reparto tienen precio en su fecha de inicio")
