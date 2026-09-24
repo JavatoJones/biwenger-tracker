@@ -155,7 +155,8 @@ section{margin-top:40px}
   font-size:13px;padding:6px 8px;border-radius:6px}
 .mapa-lista .fila-rel:hover{background:var(--hueco)}
 .mapa-lista .via{border:0;background:none;padding:0;color:var(--tinta-3)}
-.mapa-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.mapa-tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.mapa-tiles .pie{font-size:11.5px;color:var(--tinta-3);margin-top:2px}
 .mapa-tiles div{background:var(--hueco);border-radius:8px;padding:9px 11px}
 .mapa-lista .fila-rel{cursor:pointer;border:1px solid transparent}
 .mapa-lista .fila-rel[aria-pressed="true"]{background:var(--hueco);border-color:var(--eje)}
@@ -354,6 +355,12 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     return s + (Math.abs(n)/1e6).toLocaleString("es-ES",{minimumFractionDigits:1,maximumFractionDigits:1}) + " M€";
   }
   function clase(n){ return n > 0 ? "pos" : n < 0 ? "neg" : ""; }
+  function pct(resultado, invertido){
+    if (!invertido) return "—";
+    var v = resultado / invertido * 100;
+    return (v > 0 ? "+" : v < 0 ? MENOS : "") +
+      Math.abs(v).toLocaleString("es-ES", {maximumFractionDigits:1}) + "%";
+  }
   function esc(s){ return String(s).replace(/[&<>"]/g, function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
 
@@ -654,14 +661,30 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       'que ha cambiado de manos entre los equipos de la liga"><defs>' + puntas + '</defs>' +
       arcos + nodos + '</svg><div class="globo" id="mapa-globo" style="display:none"></div>';
 
-    var r = (MER.por_manager || {})[sel] || {pagado:0, cobrado:0, neto:0, socios:0, operaciones:0};
+    var r = (MER.por_manager || {})[sel] || {pagado:0, cobrado:0, socios:0, operaciones:0};
+    // Comprando, lo invertido es lo que pagó. Vendiendo, lo invertido es lo que a él le
+    // costaron esos jugadores, que es sobre lo que se mide si la venta le salió a cuenta.
+    var compras = {invertido:0, resultado:0}, ventas = {invertido:0, resultado:0};
+    MER.flujos.forEach(function(f){
+      f.jugadores.forEach(function(j){
+        if (f.pagador === sel){
+          compras.invertido += j.euros;
+          compras.resultado += j.resultado || 0;
+        }
+        if (f.cobrador === sel && j.coste_vendedor != null){
+          ventas.invertido += j.coste_vendedor;
+          ventas.resultado += j.resultado_vendedor || 0;
+        }
+      });
+    });
     document.getElementById("mapa-tiles").innerHTML = [
-      ["Ha cobrado", eur(r.cobrado), "sube"],
-      ["Ha pagado", eur(r.pagado), "baja"],
-      ["Saldo del trapicheo", eurFirmado(r.neto), clase(r.neto)]
+      ["Ha pagado", r.pagado, compras, "comprando a rivales"],
+      ["Ha cobrado", r.cobrado, ventas, "vendiendo a rivales"]
     ].map(function(t){
-      return '<div><div class="rotulo">' + t[0] + '</div><div class="v num ' + t[2] + '">' +
-        t[1] + '</div></div>';
+      return '<div><div class="rotulo">' + t[0] + '</div><div class="v num">' + eur(t[1]) +
+        '</div><div class="pie num ' + clase(t[2].resultado) + '">' + eurFirmado(t[2].resultado) +
+        " · " + pct(t[2].resultado, t[2].invertido) + '</div>' +
+        '<div class="pie">' + t[3] + '</div></div>';
     }).join("");
 
     var suyos = MER.flujos.filter(function(f){ return f.pagador === sel || f.cobrador === sel; });
@@ -698,7 +721,8 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       (f.operaciones === 1 ? " operación" : " operaciones") + ", " + eur(f.euros) + '</h3>' +
       '<div class="envoltura-tabla"><table><thead><tr><th>Jugador</th><th>Vía</th><th>Fecha</th>' +
       '<th class="der">Pagó</th><th>Después</th><th class="der">Vale o vendió</th>' +
-      '<th class="der">Resultado</th></tr></thead><tbody>' +
+      '<th class="der">Resultado</th><th class="der">Rentab.</th>' +
+      '<th class="der">Ganó el vendedor</th></tr></thead><tbody>' +
       f.jugadores.map(function(j){
         var vivo = j.estado === "en plantilla";
         return '<tr><td class="jugador">' + esc(j.jugador) + '</td>' +
@@ -709,10 +733,15 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
           (j.fecha_salida ? " " + fechaCorta(j.fecha_salida) : "") + '</span></td>' +
           '<td class="der num">' + eur(j.salida || 0) + '</td>' +
           '<td class="der num ' + clase(j.resultado) + '" style="font-weight:600">' +
-          eurFirmado(j.resultado || 0) + '</td></tr>';
+          eurFirmado(j.resultado || 0) + '</td>' +
+          '<td class="der num ' + clase(j.resultado) + '">' + pct(j.resultado || 0, j.euros) + '</td>' +
+          '<td class="der num ' + clase(j.resultado_vendedor) + '">' +
+          (j.resultado_vendedor == null ? "—" : eurFirmado(j.resultado_vendedor) + " · " +
+            pct(j.resultado_vendedor, j.coste_vendedor)) + '</td></tr>';
       }).join("") + '</tbody><tfoot><tr><td colspan="6" class="der">Balance para ' +
       esc(porId[f.pagador].nombre) + '</td><td class="der num ' + clase(suma) +
-      '" style="font-weight:600">' + eurFirmado(suma) + '</td></tr></tfoot></table></div>';
+      '" style="font-weight:600">' + eurFirmado(suma) + '</td>' +
+      '<td class="der num ' + clase(suma) + '">' + pct(suma, f.euros) + '</td><td></td></tr></tfoot></table></div>';
   }
   function fechaCorta(ts){
     if (!ts) return "";

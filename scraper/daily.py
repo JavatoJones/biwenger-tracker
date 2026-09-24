@@ -133,11 +133,17 @@ def run(offline: bool = False) -> dict:
             "estado": "en plantilla", "salida": hoy_vale, "resultado": hoy_vale - p["cost"],
             "fecha_salida": None, "via_salida": None}
 
+    # Y al otro lado del trato: lo que le costó al vendedor el jugador que soltó, para poder
+    # medir también la rentabilidad de quien cobra.
+    venta = {(t["user"], t["player"], t["date_out"]): {
+        "coste_vendedor": t["cost"], "resultado_vendedor": t["profit"]} for t in closed}
+
     trapicheos = flujos(season)
     _save(DATA / "mercado.json", {
         "flujos": [{**f, "jugadores": [
             {**j, "jugador": nom_jug(j["id"]),
-             **desenlace.get((f["pagador"], j["id"], j["fecha"]), {})}
+             **desenlace.get((f["pagador"], j["id"], j["fecha"]), {}),
+             **venta.get((f["cobrador"], j["id"], j["fecha"]), {})}
             for j in f["jugadores"]]} for f in trapicheos],
         "por_manager": resumen_por_manager(trapicheos),
     })

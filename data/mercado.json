@@ -16,7 +16,9 @@
      "salida": 19040000,
      "resultado": 390000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 18701000,
+     "resultado_vendedor": -51000
     },
     {
      "id": 35763,
@@ -28,7 +30,9 @@
      "salida": 3975600,
      "resultado": -1904400,
      "fecha_salida": 1790056569,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 380000,
+     "resultado_vendedor": 5500000
     }
    ]
   },
@@ -48,7 +52,9 @@
      "salida": 14070000,
      "resultado": -2130000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 12856000,
+     "resultado_vendedor": 3344000
     }
    ]
   },
@@ -68,7 +74,9 @@
      "salida": 12465400,
      "resultado": 465400,
      "fecha_salida": 1789725884,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 10674000,
+     "resultado_vendedor": 1326000
     },
     {
      "id": 18382,
@@ -80,7 +88,9 @@
      "salida": 1800000,
      "resultado": 450000,
      "fecha_salida": 1788431157,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1329000,
+     "resultado_vendedor": 21000
     }
    ]
   },
@@ -100,7 +110,9 @@
      "salida": 10219200,
      "resultado": -1580800,
      "fecha_salida": 1789993716,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 10640000,
+     "resultado_vendedor": 1160000
     }
    ]
   },
@@ -120,7 +132,9 @@
      "salida": 3730000,
      "resultado": -270000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 3969999,
+     "resultado_vendedor": 30001
     },
     {
      "id": 30502,
@@ -132,7 +146,9 @@
      "salida": 3654100,
      "resultado": -295900,
      "fecha_salida": 1789890573,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 5150000,
+     "resultado_vendedor": -1200000
     },
     {
      "id": 26678,
@@ -144,7 +160,9 @@
      "salida": 1600000,
      "resultado": 250000,
      "fecha_salida": 1789733983,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 665213,
+     "resultado_vendedor": 684787
     }
    ]
   },
@@ -164,7 +182,9 @@
      "salida": 4480000,
      "resultado": -3167547,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 3556999,
+     "resultado_vendedor": 4090548
     },
     {
      "id": 8695,
@@ -176,7 +196,9 @@
      "salida": 1101400,
      "resultado": -358600,
      "fecha_salida": 1787864858,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 580000,
+     "resultado_vendedor": 880000
     }
    ]
   },
@@ -196,7 +218,9 @@
      "salida": 11800000,
      "resultado": 1160000,
      "fecha_salida": 1788987226,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 10120000,
+     "resultado_vendedor": 360000
     },
     {
      "id": 22690,
@@ -208,7 +232,9 @@
      "salida": 1490000,
      "resultado": 140000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 350000,
+     "resultado_vendedor": 1000000
     }
    ]
   },
@@ -228,7 +254,9 @@
      "salida": 5828100,
      "resultado": 1308100,
      "fecha_salida": 1790069319,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 150000,
+     "resultado_vendedor": 4370000
     },
     {
      "id": 1721,
@@ -240,7 +268,9 @@
      "salida": 1800000,
      "resultado": -100001,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 1625000,
+     "resultado_vendedor": 275001
     }
    ]
   },
@@ -260,7 +290,9 @@
      "salida": 3950000,
      "resultado": -1200000,
      "fecha_salida": 1789725884,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 4599000,
+     "resultado_vendedor": 551000
     },
     {
      "id": 24734,
@@ -272,7 +304,9 @@
      "salida": 750000,
      "resultado": -250000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 996000,
+     "resultado_vendedor": 4000
     }
    ]
   },
@@ -292,7 +326,9 @@
      "salida": 3903100,
      "resultado": -1596900,
      "fecha_salida": 1790065551,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 966999,
+     "resultado_vendedor": 4533001
     },
     {
      "id": 10117,
@@ -304,7 +340,9 @@
      "salida": 150000,
      "resultado": -115000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 160000,
+     "resultado_vendedor": 105000
     }
    ]
   },
@@ -324,7 +362,9 @@
      "salida": 4200000,
      "resultado": -550000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 4456999,
+     "resultado_vendedor": 293001
     }
    ]
   },
@@ -344,7 +384,9 @@
      "salida": 4670000,
      "resultado": -30000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 3777777,
+     "resultado_vendedor": 922223
     }
    ]
   },
@@ -364,7 +406,9 @@
      "salida": 3680000,
      "resultado": -620000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 4248000,
+     "resultado_vendedor": 52000
     }
    ]
   },
@@ -384,7 +428,9 @@
      "salida": 1630000,
      "resultado": -1695000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 950000,
+     "resultado_vendedor": 2375000
     },
     {
      "id": 12734,
@@ -396,7 +442,9 @@
      "salida": 400020,
      "resultado": 20,
      "fecha_salida": 1788434619,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 400000,
+     "resultado_vendedor": 0
     }
    ]
   },
@@ -416,7 +464,9 @@
      "salida": 3360000,
      "resultado": 10000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 3879000,
+     "resultado_vendedor": -529000
     },
     {
      "id": 35765,
@@ -428,7 +478,9 @@
      "salida": 180000,
      "resultado": -120000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 150090,
+     "resultado_vendedor": 149910
     }
    ]
   },
@@ -448,7 +500,9 @@
      "salida": 2490000,
      "resultado": -1010000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 3229000,
+     "resultado_vendedor": 271000
     }
    ]
   },
@@ -468,7 +522,9 @@
      "salida": 2743700,
      "resultado": -526300,
      "fecha_salida": 1788846872,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 3170000,
+     "resultado_vendedor": 100000
     }
    ]
   },
@@ -488,7 +544,9 @@
      "salida": 1730700,
      "resultado": 230700,
      "fecha_salida": 1786960627,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1888888,
+     "resultado_vendedor": -388888
     },
     {
      "id": 23572,
@@ -500,7 +558,9 @@
      "salida": 430000,
      "resultado": -845000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 230000,
+     "resultado_vendedor": 1045000
     }
    ]
   },
@@ -520,7 +580,9 @@
      "salida": 3961500,
      "resultado": -1148500,
      "fecha_salida": 1789136295,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 5085645,
+     "resultado_vendedor": -135645
     }
    ]
   },
@@ -540,7 +602,9 @@
      "salida": 1130000,
      "resultado": -670000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 1350000,
+     "resultado_vendedor": 450000
     },
     {
      "id": 12734,
@@ -552,7 +616,9 @@
      "salida": 490000,
      "resultado": 89980,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 400000,
+     "resultado_vendedor": 20
     },
     {
      "id": 12734,
@@ -564,7 +630,9 @@
      "salida": 400000,
      "resultado": 0,
      "fecha_salida": 1788432362,
-     "via_salida": "admin"
+     "via_salida": "admin",
+     "coste_vendedor": 162090,
+     "resultado_vendedor": 237910
     }
    ]
   },
@@ -584,7 +652,9 @@
      "salida": 5677600,
      "resultado": 3077600,
      "fecha_salida": 1790019380,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 290000,
+     "resultado_vendedor": 2310000
     }
    ]
   },
@@ -604,7 +674,9 @@
      "salida": 1350000,
      "resultado": -860000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 1715000,
+     "resultado_vendedor": 495000
     }
    ]
   },
@@ -624,7 +696,9 @@
      "salida": 1191300,
      "resultado": -808700,
      "fecha_salida": 1788704964,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1400000,
+     "resultado_vendedor": 600000
     }
    ]
   },
@@ -644,7 +718,9 @@
      "salida": 1722700,
      "resultado": -277300,
      "fecha_salida": 1789829061,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1505000,
+     "resultado_vendedor": 495000
     }
    ]
   },
@@ -664,7 +740,9 @@
      "salida": 2070000,
      "resultado": 570000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 1402500,
+     "resultado_vendedor": 97500
     },
     {
      "id": 37526,
@@ -676,7 +754,9 @@
      "salida": 150000,
      "resultado": -325000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 151090,
+     "resultado_vendedor": 323910
     }
    ]
   },
@@ -696,7 +776,9 @@
      "salida": 1502100,
      "resultado": -297900,
      "fecha_salida": 1789854578,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 2050000,
+     "resultado_vendedor": -250000
     }
    ]
   },
@@ -716,7 +798,9 @@
      "salida": 2360000,
      "resultado": 70000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 1735000,
+     "resultado_vendedor": 445000
     }
    ]
   },
@@ -736,7 +820,9 @@
      "salida": 1205700,
      "resultado": -394300,
      "fecha_salida": 1790026762,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1350000,
+     "resultado_vendedor": 250000
     }
    ]
   },
@@ -756,7 +842,9 @@
      "salida": 2000000,
      "resultado": 495000,
      "fecha_salida": 1789727746,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 1430885,
+     "resultado_vendedor": 74115
     }
    ]
   },
@@ -776,7 +864,9 @@
      "salida": 1500000,
      "resultado": 97500,
      "fecha_salida": 1789409914,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 250000,
+     "resultado_vendedor": 1152500
     }
    ]
   },
@@ -796,7 +886,9 @@
      "salida": 3677400,
      "resultado": 307400,
      "fecha_salida": 1789060654,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 3630100,
+     "resultado_vendedor": -210100
     }
    ]
   },
@@ -816,7 +908,9 @@
      "salida": 630000,
      "resultado": -370000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 740000,
+     "resultado_vendedor": 260000
     }
    ]
   },
@@ -836,7 +930,9 @@
      "salida": 1000000,
      "resultado": 400000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 525003,
+     "resultado_vendedor": 74997
     },
     {
      "id": 15642,
@@ -848,7 +944,9 @@
      "salida": 145200,
      "resultado": -204800,
      "fecha_salida": 1788707002,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 160000,
+     "resultado_vendedor": 190000
     }
    ]
   },
@@ -868,7 +966,9 @@
      "salida": 2370100,
      "resultado": 1647600,
      "fecha_salida": 1789762802,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 160000,
+     "resultado_vendedor": 562500
     }
    ]
   },
@@ -888,7 +988,9 @@
      "salida": 474900,
      "resultado": -125100,
      "fecha_salida": 1787008786,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 240000,
+     "resultado_vendedor": 360000
     }
    ]
   },
@@ -908,7 +1010,9 @@
      "salida": 150000,
      "resultado": -400000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 250000,
+     "resultado_vendedor": 300000
     }
    ]
   },
@@ -928,7 +1032,9 @@
      "salida": 240000,
      "resultado": -260000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 255000,
+     "resultado_vendedor": 245000
     }
    ]
   },
@@ -948,7 +1054,9 @@
      "salida": 175000,
      "resultado": 0,
      "fecha_salida": 1789057534,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 150000,
+     "resultado_vendedor": 25000
     },
     {
      "id": 24255,
@@ -960,7 +1068,9 @@
      "salida": 150000,
      "resultado": -25000,
      "fecha_salida": 1789738826,
-     "via_salida": "cambio"
+     "via_salida": "cambio",
+     "coste_vendedor": 200000,
+     "resultado_vendedor": -25000
     }
    ]
   },
@@ -980,7 +1090,9 @@
      "salida": 300000,
      "resultado": 0,
      "fecha_salida": 1789460655,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 152090,
+     "resultado_vendedor": 147910
     }
    ]
   },
@@ -1000,7 +1112,9 @@
      "salida": 150000,
      "resultado": -150000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 300000,
+     "resultado_vendedor": 0
     }
    ]
   },
@@ -1020,7 +1134,9 @@
      "salida": 150000,
      "resultado": -150000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 150000,
+     "resultado_vendedor": 150000
     }
    ]
   },
@@ -1040,7 +1156,9 @@
      "salida": 143300,
      "resultado": -106700,
      "fecha_salida": 1788763950,
-     "via_salida": "transfer"
+     "via_salida": "transfer",
+     "coste_vendedor": 150000,
+     "resultado_vendedor": 100000
     }
    ]
   },
@@ -1060,7 +1178,9 @@
      "salida": 150000,
      "resultado": -75000,
      "fecha_salida": 1789738826,
-     "via_salida": "cambio"
+     "via_salida": "cambio",
+     "coste_vendedor": 150000,
+     "resultado_vendedor": 75000
     }
    ]
   },
@@ -1080,7 +1200,9 @@
      "salida": 150000,
      "resultado": -25000,
      "fecha_salida": null,
-     "via_salida": null
+     "via_salida": null,
+     "coste_vendedor": 175000,
+     "resultado_vendedor": 0
     }
    ]
   }
