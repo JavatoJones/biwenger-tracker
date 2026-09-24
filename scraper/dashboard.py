@@ -662,24 +662,20 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       arcos + nodos + '</svg><div class="globo" id="mapa-globo" style="display:none"></div>';
 
     var r = (MER.por_manager || {})[sel] || {pagado:0, cobrado:0, socios:0, operaciones:0};
-    // Comprando, lo invertido es lo que pagó. Vendiendo, lo invertido es lo que a él le
-    // costaron esos jugadores, que es sobre lo que se mide si la venta le salió a cuenta.
+    // Siempre se mide el fichaje desde quien lo paga: lo que le rindió el jugador frente a
+    // lo que soltó por él. Cuando el elegido vende, lo interesante es cómo le fue al que compró.
     var compras = {invertido:0, resultado:0}, ventas = {invertido:0, resultado:0};
     MER.flujos.forEach(function(f){
       f.jugadores.forEach(function(j){
-        if (f.pagador === sel){
-          compras.invertido += j.euros;
-          compras.resultado += j.resultado || 0;
-        }
-        if (f.cobrador === sel && j.coste_vendedor != null){
-          ventas.invertido += j.coste_vendedor;
-          ventas.resultado += j.resultado_vendedor || 0;
-        }
+        var destino = f.pagador === sel ? compras : f.cobrador === sel ? ventas : null;
+        if (!destino) return;
+        destino.invertido += j.euros;
+        destino.resultado += j.resultado || 0;
       });
     });
     document.getElementById("mapa-tiles").innerHTML = [
-      ["Ha pagado", r.pagado, compras, "comprando a rivales"],
-      ["Ha cobrado", r.cobrado, ventas, "vendiendo a rivales"]
+      ["Ha pagado", r.pagado, compras, "cómo le salieron esos fichajes"],
+      ["Ha cobrado", r.cobrado, ventas, "cómo les salieron a quienes compraron"]
     ].map(function(t){
       return '<div><div class="rotulo">' + t[0] + '</div><div class="v num">' + eur(t[1]) +
         '</div><div class="pie num ' + clase(t[2].resultado) + '">' + eurFirmado(t[2].resultado) +
@@ -721,8 +717,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       (f.operaciones === 1 ? " operación" : " operaciones") + ", " + eur(f.euros) + '</h3>' +
       '<div class="envoltura-tabla"><table><thead><tr><th>Jugador</th><th>Vía</th><th>Fecha</th>' +
       '<th class="der">Pagó</th><th>Después</th><th class="der">Vale o vendió</th>' +
-      '<th class="der">Resultado</th><th class="der">Rentab.</th>' +
-      '<th class="der">Ganó el vendedor</th></tr></thead><tbody>' +
+      '<th class="der">Resultado</th><th class="der">Rentab.</th></tr></thead><tbody>' +
       f.jugadores.map(function(j){
         var vivo = j.estado === "en plantilla";
         return '<tr><td class="jugador">' + esc(j.jugador) + '</td>' +
@@ -734,14 +729,12 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
           '<td class="der num">' + eur(j.salida || 0) + '</td>' +
           '<td class="der num ' + clase(j.resultado) + '" style="font-weight:600">' +
           eurFirmado(j.resultado || 0) + '</td>' +
-          '<td class="der num ' + clase(j.resultado) + '">' + pct(j.resultado || 0, j.euros) + '</td>' +
-          '<td class="der num ' + clase(j.resultado_vendedor) + '">' +
-          (j.resultado_vendedor == null ? "—" : eurFirmado(j.resultado_vendedor) + " · " +
-            pct(j.resultado_vendedor, j.coste_vendedor)) + '</td></tr>';
+          '<td class="der num ' + clase(j.resultado) + '">' + pct(j.resultado || 0, j.euros) +
+          '</td></tr>';
       }).join("") + '</tbody><tfoot><tr><td colspan="6" class="der">Balance para ' +
       esc(porId[f.pagador].nombre) + '</td><td class="der num ' + clase(suma) +
       '" style="font-weight:600">' + eurFirmado(suma) + '</td>' +
-      '<td class="der num ' + clase(suma) + '">' + pct(suma, f.euros) + '</td><td></td></tr></tfoot></table></div>';
+      '<td class="der num ' + clase(suma) + '">' + pct(suma, f.euros) + '</td></tr></tfoot></table></div>';
   }
   function fechaCorta(ts){
     if (!ts) return "";
