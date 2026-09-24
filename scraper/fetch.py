@@ -35,7 +35,8 @@ def fetch_all(c: BiwengerClient) -> dict:
 
     balance = c.get("/account")["data"]["leagues"]
     balance = next(l for l in balance if l["id"] == c.league_id)["user"]["balance"]
-    return {"league": league, "board": board, "squads": squads, "players": competition["players"], "my_balance": balance}
+    return {"league": league, "board": board, "squads": squads,
+            "players": competition["players"], "teams": competition["teams"], "my_balance": balance}
 
 
 def load_cached() -> dict:
@@ -46,6 +47,7 @@ def load_cached() -> dict:
         "league": league, "board": leer("board_full"),
         "squads": {int(k): v for k, v in leer("squads").items()},
         "players": leer("players_laliga")["data"]["players"],
+        "teams": leer("players_laliga")["data"]["teams"],
         "my_balance": None,
     }
 

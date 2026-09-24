@@ -27,6 +27,21 @@ Dos detalles que costaron encontrar y conviene no perder:
 - **Altas tardías.** Quien entra con la liga empezada recibe un lote de jugadores, algunos ya
   usados por otros. Su lote se valora en su fecha de alta, no en la del reset.
 
+## Alineaciones probables
+
+La sección de la próxima jornada se nutre de [FutbolFantasy](https://www.futbolfantasy.com/laliga/posibles-alineaciones).
+Se eligió esa fuente y no JornadaPerfecta porque esta última prohíbe en su `robots.txt` el acceso
+de rastreadores de IA. FutbolFantasy lo permite todo; aun así el scraper se identifica con un
+User-Agent propio, espera un segundo entre peticiones y solo baja una vez al día.
+
+Cuando la web aún duda publica un porcentaje de titularidad; cuando se decide, marca el once
+como definitivo y pasa a decir solo "Titular" o "Suplente". El dashboard refleja ambos estados.
+Cada jugador se empareja con su ficha de Biwenger buscando solo entre los dos equipos del
+partido, para que un apellido repetido no pueda confundirse.
+
+Si la descarga falla, la actualización del resto de datos continúa y se conserva la última
+alineación buena, con un aviso en el registro.
+
 ## Puesta en marcha
 
 1. Crea `.env` a partir de `.env.example` con tu correo y contraseña de Biwenger.
@@ -45,6 +60,8 @@ En GitHub hacen falta tres secretos del repositorio: `BIWENGER_EMAIL`, `BIWENGER
 | `scraper/balances.py` | Flujos de dinero y saldos |
 | `scraper/initial.py` | Plantillas de partida y precios históricos |
 | `scraper/trades.py` | Rentabilidad de cada operación |
+| `scraper/series.py` | Patrimonio de cada día desde el reparto inicial |
+| `scraper/alineaciones.py` | Onces probables de la próxima jornada |
 | `scraper/daily.py` | Orquesta todo y escribe `data/` |
 | `scraper/dashboard.py` | Genera `docs/index.html` |
 | `data/historico.json` | Una foto por día; es lo que alimenta el gráfico de evolución |
