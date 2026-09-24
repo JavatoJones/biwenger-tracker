@@ -18,7 +18,7 @@ def flujos(season_events: list[dict]) -> list[dict]:
             return
         p = pares[(pagador, cobrador)]
         p["euros"] += euros
-        p["jugadores"].append({"jugador": jugador, "euros": euros, "fecha": fecha, "via": via})
+        p["jugadores"].append({"id": jugador, "euros": euros, "fecha": fecha, "via": via})
 
     for e in season_events:
         t, c, cuando = e["type"], e["content"], e["date"]
@@ -34,9 +34,13 @@ def flujos(season_events: list[dict]) -> list[dict]:
         elif t == "exchange":
             neto = c["amount"] - c["requestedAmount"]
             if neto:
-                paga, cobra = (c["from"]["id"], c["to"]["id"]) if neto > 0 else (c["to"]["id"], c["from"]["id"])
-                piezas = c["offeredPlayers"] + c["requestedPlayers"]
-                anota(paga, cobra, abs(neto), piezas[0] if piezas else None, cuando, "cambio")
+                # El jugador que se anota es el que recibe quien paga: es su fichaje, y es el
+                # que permite saber después si le salió bien.
+                if neto > 0:
+                    paga, cobra, recibe = c["from"]["id"], c["to"]["id"], c["requestedPlayers"]
+                else:
+                    paga, cobra, recibe = c["to"]["id"], c["from"]["id"], c["offeredPlayers"]
+                anota(paga, cobra, abs(neto), recibe[0] if recibe else None, cuando, "cambio")
 
     salida = []
     for (pagador, cobrador), p in pares.items():

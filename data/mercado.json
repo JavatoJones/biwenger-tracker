@@ -7,16 +7,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Bellingham",
+     "id": 30477,
      "euros": 18650000,
      "fecha": 1789725884,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Bellingham",
+     "estado": "en plantilla",
+     "salida": 19040000,
+     "resultado": 390000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Pablo García",
+     "id": 35763,
      "euros": 5880000,
      "fecha": 1788628056,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Pablo García",
+     "estado": "vendido",
+     "salida": 3975600,
+     "resultado": -1904400,
+     "fecha_salida": 1790056569,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -27,10 +39,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Arda Güler",
+     "id": 31027,
      "euros": 16200000,
      "fecha": 1789725884,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Arda Güler",
+     "estado": "en plantilla",
+     "salida": 14070000,
+     "resultado": -2130000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -41,16 +59,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Budimir",
+     "id": 18398,
      "euros": 12000000,
      "fecha": 1788718894,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Budimir",
+     "estado": "vendido",
+     "salida": 12465400,
+     "resultado": 465400,
+     "fecha_salida": 1789725884,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Raul García",
+     "id": 18382,
      "euros": 1350000,
      "fecha": 1788285660,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Raul García",
+     "estado": "vendido",
+     "salida": 1800000,
+     "resultado": 450000,
+     "fecha_salida": 1788431157,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -61,10 +91,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Pépé",
+     "id": 34479,
      "euros": 11800000,
      "fecha": 1788987226,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Pépé",
+     "estado": "vendido",
+     "salida": 10219200,
+     "resultado": -1580800,
+     "fecha_salida": 1789993716,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -75,22 +111,40 @@
    "operaciones": 3,
    "jugadores": [
     {
-     "jugador": "Ratiu",
+     "id": 26276,
      "euros": 4000000,
      "fecha": 1789733983,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Ratiu",
+     "estado": "en plantilla",
+     "salida": 3730000,
+     "resultado": -270000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Bryan Zaragoza",
+     "id": 30502,
      "euros": 3950000,
      "fecha": 1789725884,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Bryan Zaragoza",
+     "estado": "vendido",
+     "salida": 3654100,
+     "resultado": -295900,
+     "fecha_salida": 1789890573,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Christensen",
+     "id": 26678,
      "euros": 1350000,
      "fecha": 1788793642,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Christensen",
+     "estado": "vendido",
+     "salida": 1600000,
+     "resultado": 250000,
+     "fecha_salida": 1789733983,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -101,16 +155,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Amatucci",
+     "id": 42425,
      "euros": 7647547,
      "fecha": 1787958451,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Amatucci",
+     "estado": "en plantilla",
+     "salida": 4480000,
+     "resultado": -3167547,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Areso",
+     "id": 8695,
      "euros": 1460000,
      "fecha": 1787215704,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Areso",
+     "estado": "vendido",
+     "salida": 1101400,
+     "resultado": -358600,
+     "fecha_salida": 1787864858,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -121,16 +187,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Ayoze",
+     "id": 34479,
      "euros": 5350000,
      "fecha": 1787693053,
-     "via": "cambio"
+     "via": "cambio",
+     "jugador": "Pépé",
+     "estado": "vendido",
+     "salida": 11800000,
+     "resultado": 1160000,
+     "fecha_salida": 1788987226,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Tete Morente",
+     "id": 22690,
      "euros": 1350000,
      "fecha": 1789122270,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Tete Morente",
+     "estado": "en plantilla",
+     "salida": 1490000,
+     "resultado": 140000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -141,16 +219,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Mariano",
+     "id": 5697,
      "euros": 4520000,
      "fecha": 1786968762,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Mariano",
+     "estado": "vendido",
+     "salida": 5828100,
+     "resultado": 1308100,
+     "fecha_salida": 1790069319,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Manu Sánchez",
+     "id": 1721,
      "euros": 1900001,
      "fecha": 1789462287,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Manu Sánchez",
+     "estado": "en plantilla",
+     "salida": 1800000,
+     "resultado": -100001,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -161,16 +251,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Bryan Zaragoza",
+     "id": 30502,
      "euros": 5150000,
      "fecha": 1788791430,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Bryan Zaragoza",
+     "estado": "vendido",
+     "salida": 3950000,
+     "resultado": -1200000,
+     "fecha_salida": 1789725884,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Jesús Vázquez",
+     "id": 24734,
      "euros": 1000000,
      "fecha": 1789734713,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Jesús Vázquez",
+     "estado": "en plantilla",
+     "salida": 750000,
+     "resultado": -250000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -181,16 +283,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Roro Riquelme",
+     "id": 8670,
      "euros": 5500000,
      "fecha": 1788086007,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Roro Riquelme",
+     "estado": "vendido",
+     "salida": 3903100,
+     "resultado": -1596900,
+     "fecha_salida": 1790065551,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Iván Villar",
+     "id": 10117,
      "euros": 265000,
      "fecha": 1787224670,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Iván Villar",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -115000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -201,10 +315,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Ceballos",
+     "id": 2044,
      "euros": 4750000,
      "fecha": 1790169035,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Ceballos",
+     "estado": "en plantilla",
+     "salida": 4200000,
+     "resultado": -550000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -215,10 +335,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Ángel Pérez",
+     "id": 39885,
      "euros": 4700000,
      "fecha": 1789047085,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Ángel Pérez",
+     "estado": "en plantilla",
+     "salida": 4670000,
+     "resultado": -30000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -229,10 +355,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Guedes",
+     "id": 10745,
      "euros": 4300000,
      "fecha": 1789480248,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Guedes",
+     "estado": "en plantilla",
+     "salida": 3680000,
+     "resultado": -620000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -243,16 +375,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Akhomach",
+     "id": 25159,
      "euros": 3325000,
      "fecha": 1789973791,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Akhomach",
+     "estado": "en plantilla",
+     "salida": 1630000,
+     "resultado": -1695000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Javi Morcillo",
+     "id": 12734,
      "euros": 400000,
      "fecha": 1788432362,
-     "via": "admin"
+     "via": "admin",
+     "jugador": "Javi Morcillo",
+     "estado": "vendido",
+     "salida": 400020,
+     "resultado": 20,
+     "fecha_salida": 1788434619,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -263,16 +407,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Koke",
+     "id": 1083,
      "euros": 3350000,
      "fecha": 1789455357,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Koke",
+     "estado": "en plantilla",
+     "salida": 3360000,
+     "resultado": 10000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Angel Ortiz",
+     "id": 35765,
      "euros": 300000,
      "fecha": 1789743617,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Angel Ortiz",
+     "estado": "en plantilla",
+     "salida": 180000,
+     "resultado": -120000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -283,10 +439,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Jorge Salinas",
+     "id": 41270,
      "euros": 3500000,
      "fecha": 1786437679,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Jorge Salinas",
+     "estado": "en plantilla",
+     "salida": 2490000,
+     "resultado": -1010000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -297,10 +459,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Dituro",
+     "id": 17482,
      "euros": 3270000,
      "fecha": 1787897103,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Dituro",
+     "estado": "vendido",
+     "salida": 2743700,
+     "resultado": -526300,
+     "fecha_salida": 1788846872,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -311,16 +479,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Torró",
+     "id": 19485,
      "euros": 1500000,
      "fecha": 1786801894,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Torró",
+     "estado": "vendido",
+     "salida": 1730700,
+     "resultado": 230700,
+     "fecha_salida": 1786960627,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Rubén Sánchez",
+     "id": 23572,
      "euros": 1275000,
      "fecha": 1788561733,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Rubén Sánchez",
+     "estado": "en plantilla",
+     "salida": 430000,
+     "resultado": -845000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -331,10 +511,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Mario Soriano",
+     "id": 41072,
      "euros": 2700000,
      "fecha": 1786694063,
-     "via": "cambio"
+     "via": "cambio",
+     "jugador": "Mario Soriano",
+     "estado": "vendido",
+     "salida": 3961500,
+     "resultado": -1148500,
+     "fecha_salida": 1789136295,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -345,22 +531,40 @@
    "operaciones": 3,
    "jugadores": [
     {
-     "jugador": "Raul García",
+     "id": 18382,
      "euros": 1800000,
      "fecha": 1788431157,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Raul García",
+     "estado": "en plantilla",
+     "salida": 1130000,
+     "resultado": -670000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Javi Morcillo",
+     "id": 12734,
      "euros": 400020,
      "fecha": 1788434619,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Javi Morcillo",
+     "estado": "en plantilla",
+     "salida": 490000,
+     "resultado": 89980,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Javi Morcillo",
+     "id": 12734,
      "euros": 400000,
      "fecha": 1788431157,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Javi Morcillo",
+     "estado": "vendido",
+     "salida": 400000,
+     "resultado": 0,
+     "fecha_salida": 1788432362,
+     "via_salida": "admin"
     }
    ]
   },
@@ -371,10 +575,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Espart",
+     "id": 40075,
      "euros": 2600000,
      "fecha": 1787510764,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Espart",
+     "estado": "vendido",
+     "salida": 5677600,
+     "resultado": 3077600,
+     "fecha_salida": 1790019380,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -385,10 +595,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Bretones",
+     "id": 33971,
      "euros": 2210000,
      "fecha": 1789467840,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Bretones",
+     "estado": "en plantilla",
+     "salida": 1350000,
+     "resultado": -860000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -399,10 +615,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Alemão",
+     "id": 37450,
      "euros": 2000000,
      "fecha": 1786525640,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Alemão",
+     "estado": "vendido",
+     "salida": 1191300,
+     "resultado": -808700,
+     "fecha_salida": 1788704964,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -413,10 +635,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Buonanotte",
+     "id": 41608,
      "euros": 2000000,
      "fecha": 1789727746,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Buonanotte",
+     "estado": "vendido",
+     "salida": 1722700,
+     "resultado": -277300,
+     "fecha_salida": 1789829061,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -427,16 +655,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Pedrosa",
+     "id": 16889,
      "euros": 1500000,
      "fecha": 1789409914,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Pedrosa",
+     "estado": "en plantilla",
+     "salida": 2070000,
+     "resultado": 570000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Iturbe",
+     "id": 37526,
      "euros": 475000,
      "fecha": 1789060654,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Iturbe",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -325000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -447,10 +687,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Mario Martín",
+     "id": 2368,
      "euros": 1800000,
      "fecha": 1787907774,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Mario Martín",
+     "estado": "vendido",
+     "salida": 1502100,
+     "resultado": -297900,
+     "fecha_salida": 1789854578,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -461,10 +707,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Raba",
+     "id": 24509,
      "euros": 1800000,
      "fecha": 1789738826,
-     "via": "cambio"
+     "via": "cambio",
+     "jugador": "Danjuma",
+     "estado": "en plantilla",
+     "salida": 2360000,
+     "resultado": 70000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -475,10 +727,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Christensen",
+     "id": 26678,
      "euros": 1600000,
      "fecha": 1789733983,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Christensen",
+     "estado": "vendido",
+     "salida": 1205700,
+     "resultado": -394300,
+     "fecha_salida": 1790026762,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -489,10 +747,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Buonanotte",
+     "id": 41608,
      "euros": 1505000,
      "fecha": 1788341725,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Buonanotte",
+     "estado": "vendido",
+     "salida": 2000000,
+     "resultado": 495000,
+     "fecha_salida": 1789727746,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -503,10 +767,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Pedrosa",
+     "id": 16889,
      "euros": 1402500,
      "fecha": 1787936726,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Pedrosa",
+     "estado": "vendido",
+     "salida": 1500000,
+     "resultado": 97500,
+     "fecha_salida": 1789409914,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -517,10 +787,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Tárrega",
+     "id": 19299,
      "euros": 1000000,
      "fecha": 1788271288,
-     "via": "cambio"
+     "via": "cambio",
+     "jugador": "Sergio Gómez",
+     "estado": "vendido",
+     "salida": 3677400,
+     "resultado": 307400,
+     "fecha_salida": 1789060654,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -531,10 +807,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Eddahchouri",
+     "id": 41073,
      "euros": 1000000,
      "fecha": 1789480248,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Eddahchouri",
+     "estado": "en plantilla",
+     "salida": 630000,
+     "resultado": -370000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -545,16 +827,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Recio",
+     "id": 41419,
      "euros": 600000,
      "fecha": 1788103948,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Recio",
+     "estado": "en plantilla",
+     "salida": 1000000,
+     "resultado": 400000,
+     "fecha_salida": null,
+     "via_salida": null
     },
     {
-     "jugador": "Lobete",
+     "id": 15642,
      "euros": 350000,
      "fecha": 1788364324,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Lobete",
+     "estado": "vendido",
+     "salida": 145200,
+     "resultado": -204800,
+     "fecha_salida": 1788707002,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -565,10 +859,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Hinojo",
+     "id": 14466,
      "euros": 722500,
      "fecha": 1786905755,
-     "via": "clause"
+     "via": "clause",
+     "jugador": "Hinojo",
+     "estado": "vendido",
+     "salida": 2370100,
+     "resultado": 1647600,
+     "fecha_salida": 1789762802,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -579,10 +879,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Boselli",
+     "id": 39801,
      "euros": 600000,
      "fecha": 1786778537,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Boselli",
+     "estado": "vendido",
+     "salida": 474900,
+     "resultado": -125100,
+     "fecha_salida": 1787008786,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -593,10 +899,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Sannadi",
+     "id": 33938,
      "euros": 550000,
      "fecha": 1788537733,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Sannadi",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -400000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -607,10 +919,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Beitia",
+     "id": 36538,
      "euros": 500000,
      "fecha": 1789054159,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Beitia",
+     "estado": "en plantilla",
+     "salida": 240000,
+     "resultado": -260000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -621,16 +939,28 @@
    "operaciones": 2,
    "jugadores": [
     {
-     "jugador": "Córdoba",
+     "id": 35308,
      "euros": 175000,
      "fecha": 1789057534,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Córdoba",
+     "estado": "vendido",
+     "salida": 175000,
+     "resultado": 0,
+     "fecha_salida": 1789057534,
+     "via_salida": "transfer"
     },
     {
-     "jugador": "Fariñas",
+     "id": 24255,
      "euros": 175000,
      "fecha": 1789057534,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Fariñas",
+     "estado": "vendido",
+     "salida": 150000,
+     "resultado": -25000,
+     "fecha_salida": 1789738826,
+     "via_salida": "cambio"
     }
    ]
   },
@@ -641,10 +971,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Paco Cortés",
+     "id": 39736,
      "euros": 300000,
      "fecha": 1789060654,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Paco Cortés",
+     "estado": "vendido",
+     "salida": 300000,
+     "resultado": 0,
+     "fecha_salida": 1789460655,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -655,10 +991,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Paco Cortés",
+     "id": 39736,
      "euros": 300000,
      "fecha": 1789460655,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Paco Cortés",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -150000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -669,10 +1011,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Zakharyan",
+     "id": 31475,
      "euros": 300000,
      "fecha": 1789725884,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Zakharyan",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -150000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   },
@@ -683,10 +1031,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Barzic",
+     "id": 27575,
      "euros": 250000,
      "fecha": 1787907774,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Barzic",
+     "estado": "vendido",
+     "salida": 143300,
+     "resultado": -106700,
+     "fecha_salida": 1788763950,
+     "via_salida": "transfer"
     }
    ]
   },
@@ -697,10 +1051,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Becerra",
+     "id": 39223,
      "euros": 225000,
      "fecha": 1789478234,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Becerra",
+     "estado": "vendido",
+     "salida": 150000,
+     "resultado": -75000,
+     "fecha_salida": 1789738826,
+     "via_salida": "cambio"
     }
    ]
   },
@@ -711,10 +1071,16 @@
    "operaciones": 1,
    "jugadores": [
     {
-     "jugador": "Córdoba",
+     "id": 35308,
      "euros": 175000,
      "fecha": 1789057534,
-     "via": "traspaso"
+     "via": "traspaso",
+     "jugador": "Córdoba",
+     "estado": "en plantilla",
+     "salida": 150000,
+     "resultado": -25000,
+     "fecha_salida": null,
+     "via_salida": null
     }
    ]
   }

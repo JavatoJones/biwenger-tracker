@@ -157,6 +157,13 @@ section{margin-top:40px}
 .mapa-lista .via{border:0;background:none;padding:0;color:var(--tinta-3)}
 .mapa-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .mapa-tiles div{background:var(--hueco);border-radius:8px;padding:9px 11px}
+.mapa-lista .fila-rel{cursor:pointer;border:1px solid transparent}
+.mapa-lista .fila-rel[aria-pressed="true"]{background:var(--hueco);border-color:var(--eje)}
+#mapa-detalle{margin-top:16px}
+#mapa-detalle h3{font-size:14px;margin-bottom:8px}
+.estado{font-size:11px;border-radius:4px;padding:1px 6px;white-space:nowrap;
+  border:1px solid var(--borde);color:var(--tinta-2)}
+.estado.vive{background:var(--sube-f);color:var(--sube);border-color:transparent}
 .mapa-tiles .v{font-family:var(--titular);font-size:19px;font-weight:700;margin-top:2px}
 @media (max-width:860px){.mapa-caja{grid-template-columns:1fr}}
 
@@ -301,6 +308,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
           <div class="mapa-lista" id="mapa-lista"></div>
         </div>
       </div>
+      <div id="mapa-detalle"></div>
     </div>
   </section>
 
@@ -574,7 +582,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
   pintarDetalle();
 
   // Mapa de trapicheos
-  var MER = D.mercado, lienzoMapa = document.getElementById("mapa-lienzo");
+  var MER = D.mercado, lienzoMapa = document.getElementById("mapa-lienzo"), flujoAbierto = null;
   var CX = 430, CY = 430, R = 292;
   var puestoDe = {};
   U.forEach(function(u, i){ puestoDe[u.id] = i; });
@@ -663,7 +671,8 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     document.getElementById("mapa-lista").innerHTML = (suyos.length ? suyos : MER.flujos.slice(0, 10))
       .map(function(f){
         var cobra = f.cobrador === sel;
-        return '<div class="fila-rel" data-flujo="' + MER.flujos.indexOf(f) + '">' +
+        return '<div class="fila-rel" data-flujo="' + MER.flujos.indexOf(f) + '" role="button" ' +
+          'tabindex="0" aria-pressed="' + (MER.flujos.indexOf(f) === flujoAbierto) + '">' +
           '<span>' + (f.pagador === sel || cobra
             ? (cobra ? "← cobra de " : "→ paga a ") + esc(porId[cobra ? f.pagador : f.cobrador].nombre)
             : esc(porId[f.pagador].nombre) + " → " + esc(porId[f.cobrador].nombre)) +
@@ -671,6 +680,44 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
           '<span class="num ' + (f.pagador === sel ? "neg" : cobra ? "pos" : "") + '">' +
           eur(f.euros) + '</span></div>';
       }).join("");
+    pintarDetalleTrato();
+  }
+
+  // Desglose de un trato: qué jugadores lo componen y cómo le fue a quien pagó.
+  function pintarDetalleTrato(){
+    var caja = document.getElementById("mapa-detalle");
+    if (flujoAbierto == null || !MER.flujos[flujoAbierto]){
+      caja.innerHTML = '<p class="nota">Pulsa un trato de la lista para ver qué fichajes lo ' +
+        'componen y cómo le salieron a quien pagó.</p>';
+      return;
+    }
+    var f = MER.flujos[flujoAbierto];
+    var suma = f.jugadores.reduce(function(a, j){ return a + (j.resultado || 0); }, 0);
+    caja.innerHTML = '<h3>' + esc(porId[f.pagador].nombre) + " fichó a " +
+      esc(porId[f.cobrador].nombre) + ': ' + f.operaciones +
+      (f.operaciones === 1 ? " operación" : " operaciones") + ", " + eur(f.euros) + '</h3>' +
+      '<div class="envoltura-tabla"><table><thead><tr><th>Jugador</th><th>Vía</th><th>Fecha</th>' +
+      '<th class="der">Pagó</th><th>Después</th><th class="der">Vale o vendió</th>' +
+      '<th class="der">Resultado</th></tr></thead><tbody>' +
+      f.jugadores.map(function(j){
+        var vivo = j.estado === "en plantilla";
+        return '<tr><td class="jugador">' + esc(j.jugador) + '</td>' +
+          '<td><span class="via">' + esc(j.via) + '</span></td>' +
+          '<td class="num">' + fechaCorta(j.fecha) + '</td>' +
+          '<td class="der num">' + eur(j.euros) + '</td>' +
+          '<td><span class="estado' + (vivo ? " vive" : "") + '">' + esc(j.estado || "?") +
+          (j.fecha_salida ? " " + fechaCorta(j.fecha_salida) : "") + '</span></td>' +
+          '<td class="der num">' + eur(j.salida || 0) + '</td>' +
+          '<td class="der num ' + clase(j.resultado) + '" style="font-weight:600">' +
+          eurFirmado(j.resultado || 0) + '</td></tr>';
+      }).join("") + '</tbody><tfoot><tr><td colspan="6" class="der">Balance para ' +
+      esc(porId[f.pagador].nombre) + '</td><td class="der num ' + clase(suma) +
+      '" style="font-weight:600">' + eurFirmado(suma) + '</td></tr></tfoot></table></div>';
+  }
+  function fechaCorta(ts){
+    if (!ts) return "";
+    var d = new Date(ts * 1000);
+    return ("0" + d.getDate()).slice(-2) + "/" + ("0" + (d.getMonth() + 1)).slice(-2);
   }
 
   function globoFlujo(e, idx){
@@ -701,9 +748,27 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     var g = document.getElementById("mapa-globo");
     if (g) g.style.display = "none";
   });
+  function abrirTrato(idx){
+    flujoAbierto = flujoAbierto === idx ? null : idx;
+    document.querySelectorAll("#mapa-lista .fila-rel").forEach(function(x){
+      x.setAttribute("aria-pressed", Number(x.dataset.flujo) === flujoAbierto);
+    });
+    pintarDetalleTrato();
+  }
   lienzoMapa.addEventListener("click", function(e){
+    var a = e.target.closest("[data-flujo]");
+    if (a) return abrirTrato(Number(a.dataset.flujo));
     var n = e.target.closest("[data-nodo]");
-    if (n) elegirEquipo(Number(n.dataset.nodo), false);
+    if (n){ flujoAbierto = null; elegirEquipo(Number(n.dataset.nodo), false); }
+  });
+  document.getElementById("mapa-lista").addEventListener("click", function(e){
+    var r = e.target.closest("[data-flujo]");
+    if (r) abrirTrato(Number(r.dataset.flujo));
+  });
+  document.getElementById("mapa-lista").addEventListener("keydown", function(e){
+    if (e.key !== "Enter" && e.key !== " ") return;
+    var r = e.target.closest("[data-flujo]");
+    if (r){ e.preventDefault(); abrirTrato(Number(r.dataset.flujo)); }
   });
   pintarMapa();
 

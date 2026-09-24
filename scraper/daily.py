@@ -120,10 +120,25 @@ def run(offline: bool = False) -> dict:
 
     # El histórico se recalcula entero cada vez, así que cubre desde el primer día de liga
     # y se corrige solo si algún día se afina el modelo.
+    # Cada compra a un rival abrió una posición: se le pega su desenlace para poder decir
+    # si aquel fichaje salió bien o mal.
+    desenlace = {}
+    for t in closed:
+        desenlace[(t["user"], t["player"], t["date_in"])] = {
+            "estado": "vendido", "salida": t["revenue"], "resultado": t["profit"],
+            "fecha_salida": t["date_out"], "via_salida": t["how_out"]}
+    for p in openpos:
+        hoy_vale = current_price(p["player"])
+        desenlace[(p["user"], p["player"], p["date_in"])] = {
+            "estado": "en plantilla", "salida": hoy_vale, "resultado": hoy_vale - p["cost"],
+            "fecha_salida": None, "via_salida": None}
+
     trapicheos = flujos(season)
     _save(DATA / "mercado.json", {
-        "flujos": [{**f, "jugadores": [{**j, "jugador": nom_jug(j["jugador"])} for j in f["jugadores"]]}
-                   for f in trapicheos],
+        "flujos": [{**f, "jugadores": [
+            {**j, "jugador": nom_jug(j["id"]),
+             **desenlace.get((f["pagador"], j["id"], j["fecha"]), {})}
+            for j in f["jugadores"]]} for f in trapicheos],
         "por_manager": resumen_por_manager(trapicheos),
     })
 
