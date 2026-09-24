@@ -5563,6 +5563,71 @@
    "profit": 467715,
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Arguibide"
+  },
+  {
+   "user": 9961358,
+   "player": 1927,
+   "cost": 7501000,
+   "date_in": 1789448589,
+   "how_in": "market",
+   "date_out": 1790154617,
+   "revenue": 6651800,
+   "how_out": "transfer",
+   "profit": -849200,
+   "usuario": "REAL PANCH FC",
+   "jugador": "Gerard Moreno"
+  },
+  {
+   "user": 9961358,
+   "player": 1612,
+   "cost": 3970000,
+   "date_in": 1785906118,
+   "how_in": "market",
+   "date_out": 1790154617,
+   "revenue": 3360400,
+   "how_out": "transfer",
+   "profit": -609600,
+   "usuario": "REAL PANCH FC",
+   "jugador": "Antonio Blanco"
+  },
+  {
+   "user": 9961358,
+   "player": 25815,
+   "cost": 150000,
+   "date_in": 1786856581,
+   "how_in": "market",
+   "date_out": 1790154617,
+   "revenue": 1080900,
+   "how_out": "transfer",
+   "profit": 930900,
+   "usuario": "REAL PANCH FC",
+   "jugador": "Nacho Pérez"
+  },
+  {
+   "user": 11403768,
+   "player": 2044,
+   "cost": 4456999,
+   "date_in": 1789621250,
+   "how_in": "market",
+   "date_out": 1790169035,
+   "revenue": 4750000,
+   "how_out": "transfer",
+   "profit": 293001,
+   "usuario": "ASTON JIMA",
+   "jugador": "Ceballos"
+  },
+  {
+   "user": 9962213,
+   "player": 26299,
+   "cost": 650000,
+   "date_in": 1789102961,
+   "how_in": "market",
+   "date_out": 1790230730,
+   "revenue": 349400,
+   "how_out": "transfer",
+   "profit": -300600,
+   "usuario": "NICOLAISON FC",
+   "jugador": "Manu Bueno"
   }
  ],
  "abiertas": [
@@ -5574,8 +5639,8 @@
    "how_in": "reparto",
    "usuario": "ASTON JIMA",
    "jugador": "Denis Suárez",
-   "valor_hoy": 1330000,
-   "latente": 490000
+   "valor_hoy": 1310000,
+   "latente": 470000
   },
   {
    "user": 9961358,
@@ -5585,8 +5650,8 @@
    "how_in": "reparto",
    "usuario": "REAL PANCH FC",
    "jugador": "Facundo Bernal",
-   "valor_hoy": 2220000,
-   "latente": 730000
+   "valor_hoy": 2200000,
+   "latente": 710000
   },
   {
    "user": 9962118,
@@ -5596,8 +5661,8 @@
    "how_in": "reparto",
    "usuario": "TABASCO FC",
    "jugador": "Roberto Fernández",
-   "valor_hoy": 7760000,
-   "latente": 4720000
+   "valor_hoy": 7870000,
+   "latente": 4830000
   },
   {
    "user": 12809840,
@@ -5607,8 +5672,8 @@
    "how_in": "reparto",
    "usuario": "andreputin",
    "jugador": "Iker Muñoz",
-   "valor_hoy": 1890000,
-   "latente": 1690000
+   "valor_hoy": 1850000,
+   "latente": 1650000
   },
   {
    "user": 12809840,
@@ -5618,8 +5683,8 @@
    "how_in": "reparto",
    "usuario": "andreputin",
    "jugador": "Kike Salas",
-   "valor_hoy": 3050000,
-   "latente": -70000
+   "valor_hoy": 3060000,
+   "latente": -60000
   },
   {
    "user": 12809840,
@@ -5629,8 +5694,8 @@
    "how_in": "reparto",
    "usuario": "andreputin",
    "jugador": "Álvaro Valles",
-   "valor_hoy": 5760000,
-   "latente": 2050000
+   "valor_hoy": 5830000,
+   "latente": 2120000
   },
   {
    "user": 12809840,
@@ -5640,8 +5705,8 @@
    "how_in": "reparto",
    "usuario": "andreputin",
    "jugador": "Isaac Romero",
-   "valor_hoy": 2040000,
-   "latente": 350000
+   "valor_hoy": 2020000,
+   "latente": 330000
   },
   {
    "user": 12809840,
@@ -5651,8 +5716,8 @@
    "how_in": "reparto",
    "usuario": "andreputin",
    "jugador": "Peque",
-   "valor_hoy": 1470000,
-   "latente": 1130000
+   "valor_hoy": 1440000,
+   "latente": 1100000
   },
   {
    "user": 12809840,
@@ -5684,8 +5749,8 @@
    "how_in": "reparto",
    "usuario": "GONALTICOS",
    "jugador": "Agoumé",
-   "valor_hoy": 3700000,
-   "latente": 2040000
+   "valor_hoy": 3720000,
+   "latente": 2060000
   },
   {
    "user": 9961449,
@@ -5706,8 +5771,8 @@
    "how_in": "reparto",
    "usuario": "FERDORTMUND FC",
    "jugador": "Castrín",
-   "valor_hoy": 2170000,
-   "latente": 880000
+   "valor_hoy": 2180000,
+   "latente": 890000
   },
   {
    "user": 9961449,
@@ -5717,8 +5782,8 @@
    "how_in": "reparto",
    "usuario": "FERDORTMUND FC",
    "jugador": "Dolan",
-   "valor_hoy": 2150000,
-   "latente": 480000
+   "valor_hoy": 2120000,
+   "latente": 450000
   },
   {
    "user": 9961449,
@@ -5739,8 +5804,8 @@
    "how_in": "reparto",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Óscar Valentín",
-   "valor_hoy": 1530000,
-   "latente": 130000
+   "valor_hoy": 1520000,
+   "latente": 120000
   },
   {
    "user": 11403720,
@@ -5750,8 +5815,8 @@
    "how_in": "reparto",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Agirrezabala",
-   "valor_hoy": 3180000,
-   "latente": 2640000
+   "valor_hoy": 3160000,
+   "latente": 2620000
   },
   {
    "user": 11403720,
@@ -5783,8 +5848,8 @@
    "how_in": "reparto",
    "usuario": "NICOLAISON FC",
    "jugador": "Deossa",
-   "valor_hoy": 2000000,
-   "latente": 1770000
+   "valor_hoy": 2160000,
+   "latente": 1930000
   },
   {
    "user": 9962213,
@@ -5805,8 +5870,8 @@
    "how_in": "reparto",
    "usuario": "NICOLAISON FC",
    "jugador": "Quagliata",
-   "valor_hoy": 2870000,
-   "latente": 1140000
+   "valor_hoy": 2860000,
+   "latente": 1130000
   },
   {
    "user": 9963115,
@@ -5838,8 +5903,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Radu",
-   "valor_hoy": 3680000,
-   "latente": -70000
+   "valor_hoy": 3700000,
+   "latente": -50000
   },
   {
    "user": 9961358,
@@ -5849,8 +5914,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Alfonso Herrero",
-   "valor_hoy": 4140000,
-   "latente": -85000
+   "valor_hoy": 4160000,
+   "latente": -65000
   },
   {
    "user": 11403720,
@@ -5860,8 +5925,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Jonny",
-   "valor_hoy": 2270000,
-   "latente": 919996
+   "valor_hoy": 2250000,
+   "latente": 899996
   },
   {
    "user": 11403720,
@@ -5871,8 +5936,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Valverde",
-   "valor_hoy": 10430000,
-   "latente": -2780000
+   "valor_hoy": 10180000,
+   "latente": -3030000
   },
   {
    "user": 12809840,
@@ -5882,8 +5947,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Barja",
-   "valor_hoy": 940000,
-   "latente": 383334
+   "valor_hoy": 930000,
+   "latente": 373334
   },
   {
    "user": 11651461,
@@ -5893,8 +5958,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Terrats",
-   "valor_hoy": 4380000,
-   "latente": 1880000
+   "valor_hoy": 4420000,
+   "latente": 1920000
   },
   {
    "user": 9962213,
@@ -5904,8 +5969,8 @@
    "how_in": "market",
    "usuario": "NICOLAISON FC",
    "jugador": "Laporte",
-   "valor_hoy": 5760000,
-   "latente": -360000
+   "valor_hoy": 5790000,
+   "latente": -330000
   },
   {
    "user": 11651461,
@@ -5915,19 +5980,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Camello",
-   "valor_hoy": 8180000,
-   "latente": 5830000
-  },
-  {
-   "user": 9961358,
-   "player": 1612,
-   "cost": 3970000,
-   "date_in": 1785906118,
-   "how_in": "market",
-   "usuario": "REAL PANCH FC",
-   "jugador": "Antonio Blanco",
-   "valor_hoy": 3320000,
-   "latente": -650000
+   "valor_hoy": 8420000,
+   "latente": 6070000
   },
   {
    "user": 9963115,
@@ -5948,8 +6002,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Catena",
-   "valor_hoy": 3100000,
-   "latente": -910000
+   "valor_hoy": 3060000,
+   "latente": -950000
   },
   {
    "user": 12809840,
@@ -5959,8 +6013,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Lo Celso",
-   "valor_hoy": 2400000,
-   "latente": -2488888
+   "valor_hoy": 2360000,
+   "latente": -2528888
   },
   {
    "user": 9961449,
@@ -5981,8 +6035,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Pubill",
-   "valor_hoy": 5640000,
-   "latente": -850000
+   "valor_hoy": 5600000,
+   "latente": -890000
   },
   {
    "user": 11369052,
@@ -6003,8 +6057,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Sierra",
-   "valor_hoy": 4180000,
-   "latente": 3523001
+   "valor_hoy": 4250000,
+   "latente": 3593001
   },
   {
    "user": 9962213,
@@ -6014,8 +6068,8 @@
    "how_in": "transfer",
    "usuario": "NICOLAISON FC",
    "jugador": "Jorge Salinas",
-   "valor_hoy": 2520000,
-   "latente": -980000
+   "valor_hoy": 2490000,
+   "latente": -1010000
   },
   {
    "user": 14237999,
@@ -6047,8 +6101,8 @@
    "how_in": "market",
    "usuario": "TABASCO FC",
    "jugador": "David Soria",
-   "valor_hoy": 5700000,
-   "latente": -164445
+   "valor_hoy": 5720000,
+   "latente": -144445
   },
   {
    "user": 9961274,
@@ -6058,8 +6112,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Ximo Navarro",
-   "valor_hoy": 1580000,
-   "latente": 110000
+   "valor_hoy": 1560000,
+   "latente": 90000
   },
   {
    "user": 11403768,
@@ -6069,19 +6123,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Iñigo Vicente",
-   "valor_hoy": 6780000,
-   "latente": 1063001
-  },
-  {
-   "user": 9961358,
-   "player": 25815,
-   "cost": 150000,
-   "date_in": 1786856581,
-   "how_in": "market",
-   "usuario": "REAL PANCH FC",
-   "jugador": "Nacho Pérez",
-   "valor_hoy": 1000000,
-   "latente": 850000
+   "valor_hoy": 6680000,
+   "latente": 963001
   },
   {
    "user": 9961274,
@@ -6091,8 +6134,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Sivera",
-   "valor_hoy": 4880000,
-   "latente": 730000
+   "valor_hoy": 4910000,
+   "latente": 760000
   },
   {
    "user": 9961449,
@@ -6102,8 +6145,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Toljan",
-   "valor_hoy": 960000,
-   "latente": -270000
+   "valor_hoy": 990000,
+   "latente": -240000
   },
   {
    "user": 9961690,
@@ -6113,8 +6156,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Lago",
-   "valor_hoy": 2090000,
-   "latente": 1823999
+   "valor_hoy": 2160000,
+   "latente": 1893999
   },
   {
    "user": 9963115,
@@ -6146,8 +6189,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Ponce",
-   "valor_hoy": 330000,
-   "latente": -240010
+   "valor_hoy": 320000,
+   "latente": -250010
   },
   {
    "user": 11403720,
@@ -6157,8 +6200,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Abde Rebbach",
-   "valor_hoy": 1640000,
-   "latente": 190000
+   "valor_hoy": 1660000,
+   "latente": 210000
   },
   {
    "user": 11651461,
@@ -6168,8 +6211,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Iván Martín",
-   "valor_hoy": 3150000,
-   "latente": -100000
+   "valor_hoy": 3090000,
+   "latente": -160000
   },
   {
    "user": 12809840,
@@ -6179,8 +6222,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Adeyemi",
-   "valor_hoy": 9540000,
-   "latente": 873334
+   "valor_hoy": 9660000,
+   "latente": 993334
   },
   {
    "user": 11651461,
@@ -6190,8 +6233,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Boselli",
-   "valor_hoy": 330000,
-   "latente": -105000
+   "valor_hoy": 320000,
+   "latente": -115000
   },
   {
    "user": 11403768,
@@ -6212,8 +6255,8 @@
    "how_in": "cambio",
    "usuario": "NICOLAISON FC",
    "jugador": "Ayoze",
-   "valor_hoy": 4130000,
-   "latente": -1000000
+   "valor_hoy": 4190000,
+   "latente": -940000
   },
   {
    "user": 11403768,
@@ -6223,8 +6266,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Pablo Ramón",
-   "valor_hoy": 1950000,
-   "latente": -366999
+   "valor_hoy": 1910000,
+   "latente": -406999
   },
   {
    "user": 11403720,
@@ -6234,8 +6277,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Álvaro Carreras",
-   "valor_hoy": 1270000,
-   "latente": 50000
+   "valor_hoy": 1250000,
+   "latente": 30000
   },
   {
    "user": 11651461,
@@ -6245,8 +6288,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Luismi Cruz",
-   "valor_hoy": 3540000,
-   "latente": 1840000
+   "valor_hoy": 3560000,
+   "latente": 1860000
   },
   {
    "user": 11651461,
@@ -6256,8 +6299,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Suazo",
-   "valor_hoy": 2440000,
-   "latente": 440000
+   "valor_hoy": 2510000,
+   "latente": 510000
   },
   {
    "user": 14237999,
@@ -6267,8 +6310,8 @@
    "how_in": "market",
    "usuario": "La Javicaleta",
    "jugador": "Zabiri",
-   "valor_hoy": 5440000,
-   "latente": 4163769
+   "valor_hoy": 5540000,
+   "latente": 4263769
   },
   {
    "user": 9961274,
@@ -6278,8 +6321,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Brugué",
-   "valor_hoy": 3540000,
-   "latente": 2690000
+   "valor_hoy": 3590000,
+   "latente": 2740000
   },
   {
    "user": 12809840,
@@ -6300,8 +6343,8 @@
    "how_in": "market",
    "usuario": "La Javicaleta",
    "jugador": "Ochieng",
-   "valor_hoy": 1330000,
-   "latente": 1046667
+   "valor_hoy": 1320000,
+   "latente": 1036667
   },
   {
    "user": 9961449,
@@ -6311,8 +6354,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Comesaña",
-   "valor_hoy": 2340000,
-   "latente": -2150000
+   "valor_hoy": 2300000,
+   "latente": -2190000
   },
   {
    "user": 9961358,
@@ -6322,8 +6365,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Hancko",
-   "valor_hoy": 3950000,
-   "latente": -221000
+   "valor_hoy": 3960000,
+   "latente": -211000
   },
   {
    "user": 9961274,
@@ -6333,8 +6376,8 @@
    "how_in": "clause",
    "usuario": "WILLOW",
    "jugador": "Amatucci",
-   "valor_hoy": 4470000,
-   "latente": -3177547
+   "valor_hoy": 4480000,
+   "latente": -3167547
   },
   {
    "user": 11403768,
@@ -6344,8 +6387,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Mbappé",
-   "valor_hoy": 25340000,
-   "latente": 730000
+   "valor_hoy": 25440000,
+   "latente": 830000
   },
   {
    "user": 11403720,
@@ -6355,8 +6398,8 @@
    "how_in": "market",
    "usuario": "PODRÍA SER TU PADRE jodete willem",
    "jugador": "Veiga",
-   "valor_hoy": 3610000,
-   "latente": -490000
+   "valor_hoy": 3650000,
+   "latente": -450000
   },
   {
    "user": 9962213,
@@ -6366,8 +6409,8 @@
    "how_in": "transfer",
    "usuario": "NICOLAISON FC",
    "jugador": "Recio",
-   "valor_hoy": 980000,
-   "latente": 380000
+   "valor_hoy": 1000000,
+   "latente": 400000
   },
   {
    "user": 11369052,
@@ -6410,8 +6453,8 @@
    "how_in": "market",
    "usuario": "GONALTICOS",
    "jugador": "Kang-in Lee",
-   "valor_hoy": 9330000,
-   "latente": 121000
+   "valor_hoy": 9400000,
+   "latente": 191000
   },
   {
    "user": 9962118,
@@ -6421,8 +6464,8 @@
    "how_in": "market",
    "usuario": "TABASCO FC",
    "jugador": "Pathé Ciss",
-   "valor_hoy": 3090000,
-   "latente": -1111
+   "valor_hoy": 3100000,
+   "latente": 8889
   },
   {
    "user": 9962118,
@@ -6432,8 +6475,8 @@
    "how_in": "transfer",
    "usuario": "TABASCO FC",
    "jugador": "Raul García",
-   "valor_hoy": 1140000,
-   "latente": -660000
+   "valor_hoy": 1130000,
+   "latente": -670000
   },
   {
    "user": 9962118,
@@ -6443,8 +6486,8 @@
    "how_in": "transfer",
    "usuario": "TABASCO FC",
    "jugador": "Javi Morcillo",
-   "valor_hoy": 470000,
-   "latente": 69980
+   "valor_hoy": 490000,
+   "latente": 89980
   },
   {
    "user": 9962213,
@@ -6465,8 +6508,8 @@
    "how_in": "clause",
    "usuario": "JABALINOS FC",
    "jugador": "Rubén Sánchez",
-   "valor_hoy": 410000,
-   "latente": -865000
+   "valor_hoy": 430000,
+   "latente": -845000
   },
   {
    "user": 11403768,
@@ -6476,8 +6519,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Unai Simón",
-   "valor_hoy": 5130000,
-   "latente": 273001
+   "valor_hoy": 5090000,
+   "latente": 233001
   },
   {
    "user": 11403718,
@@ -6487,8 +6530,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Saliba",
-   "valor_hoy": 3260000,
-   "latente": -928000
+   "valor_hoy": 3210000,
+   "latente": -978000
   },
   {
    "user": 9961274,
@@ -6498,8 +6541,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Koski",
-   "valor_hoy": 2430000,
-   "latente": -120000
+   "valor_hoy": 2520000,
+   "latente": -30000
   },
   {
    "user": 14237999,
@@ -6509,8 +6552,8 @@
    "how_in": "market",
    "usuario": "La Javicaleta",
    "jugador": "Gulácsi",
-   "valor_hoy": 2600000,
-   "latente": 822223
+   "valor_hoy": 2620000,
+   "latente": 842223
   },
   {
    "user": 11403718,
@@ -6520,8 +6563,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Yamal",
-   "valor_hoy": 22930000,
-   "latente": 1093000
+   "valor_hoy": 23110000,
+   "latente": 1273000
   },
   {
    "user": 11403768,
@@ -6531,8 +6574,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Yeboah",
-   "valor_hoy": 380000,
-   "latente": 23001
+   "valor_hoy": 370000,
+   "latente": 13001
   },
   {
    "user": 11403768,
@@ -6542,8 +6585,8 @@
    "how_in": "transfer",
    "usuario": "ASTON JIMA",
    "jugador": "Ángel Pérez",
-   "valor_hoy": 4650000,
-   "latente": -50000
+   "valor_hoy": 4670000,
+   "latente": -30000
   },
   {
    "user": 9962118,
@@ -6553,8 +6596,8 @@
    "how_in": "transfer",
    "usuario": "TABASCO FC",
    "jugador": "Beitia",
-   "valor_hoy": 220000,
-   "latente": -280000
+   "valor_hoy": 240000,
+   "latente": -260000
   },
   {
    "user": 9961449,
@@ -6586,8 +6629,8 @@
    "how_in": "market",
    "usuario": "TABASCO FC",
    "jugador": "Pedro Díaz",
-   "valor_hoy": 1240000,
-   "latente": 29967
+   "valor_hoy": 1250000,
+   "latente": 39967
   },
   {
    "user": 9961449,
@@ -6597,8 +6640,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Thiago Fernández",
-   "valor_hoy": 1190000,
-   "latente": -660000
+   "valor_hoy": 1180000,
+   "latente": -670000
   },
   {
    "user": 9961274,
@@ -6608,8 +6651,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Borja Iglesias",
-   "valor_hoy": 3300000,
-   "latente": -1250000
+   "valor_hoy": 3330000,
+   "latente": -1220000
   },
   {
    "user": 9963115,
@@ -6619,8 +6662,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Iñaki Williams",
-   "valor_hoy": 3230000,
-   "latente": -471850
+   "valor_hoy": 3190000,
+   "latente": -511850
   },
   {
    "user": 9962213,
@@ -6634,17 +6677,6 @@
    "latente": -330000
   },
   {
-   "user": 9962213,
-   "player": 26299,
-   "cost": 650000,
-   "date_in": 1789102961,
-   "how_in": "market",
-   "usuario": "NICOLAISON FC",
-   "jugador": "Manu Bueno",
-   "valor_hoy": 350000,
-   "latente": -300000
-  },
-  {
    "user": 11403718,
    "player": 22690,
    "cost": 1350000,
@@ -6652,8 +6684,8 @@
    "how_in": "transfer",
    "usuario": "Lord Calcius",
    "jugador": "Tete Morente",
-   "valor_hoy": 1460000,
-   "latente": 110000
+   "valor_hoy": 1490000,
+   "latente": 140000
   },
   {
    "user": 14237999,
@@ -6663,8 +6695,8 @@
    "how_in": "market",
    "usuario": "La Javicaleta",
    "jugador": "Jon Martín",
-   "valor_hoy": 3020000,
-   "latente": -435555
+   "valor_hoy": 2990000,
+   "latente": -465555
   },
   {
    "user": 9961690,
@@ -6674,8 +6706,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Ryan",
-   "valor_hoy": 4540000,
-   "latente": -827000
+   "valor_hoy": 4520000,
+   "latente": -847000
   },
   {
    "user": 9961690,
@@ -6685,8 +6717,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Julián Alvarez",
-   "valor_hoy": 7120000,
-   "latente": -1746000
+   "valor_hoy": 7140000,
+   "latente": -1726000
   },
   {
    "user": 9961449,
@@ -6696,8 +6728,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Robert Navarro",
-   "valor_hoy": 4310000,
-   "latente": -200000
+   "valor_hoy": 4360000,
+   "latente": -150000
   },
   {
    "user": 11403718,
@@ -6707,8 +6739,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Dituro",
-   "valor_hoy": 2110000,
-   "latente": -288000
+   "valor_hoy": 2090000,
+   "latente": -308000
   },
   {
    "user": 11369052,
@@ -6718,8 +6750,8 @@
    "how_in": "transfer",
    "usuario": "GONALTICOS",
    "jugador": "Pedrosa",
-   "valor_hoy": 1920000,
-   "latente": 420000
+   "valor_hoy": 2070000,
+   "latente": 570000
   },
   {
    "user": 9961358,
@@ -6729,19 +6761,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "El Hilali",
-   "valor_hoy": 2850000,
-   "latente": -815000
-  },
-  {
-   "user": 9961358,
-   "player": 1927,
-   "cost": 7501000,
-   "date_in": 1789448589,
-   "how_in": "market",
-   "usuario": "REAL PANCH FC",
-   "jugador": "Gerard Moreno",
-   "valor_hoy": 6840000,
-   "latente": -661000
+   "valor_hoy": 2880000,
+   "latente": -785000
   },
   {
    "user": 9963115,
@@ -6751,8 +6772,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Kochorashvili",
-   "valor_hoy": 1830000,
-   "latente": -91888
+   "valor_hoy": 1820000,
+   "latente": -101888
   },
   {
    "user": 9961358,
@@ -6773,8 +6794,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Puado",
-   "valor_hoy": 740000,
-   "latente": 360000
+   "valor_hoy": 930000,
+   "latente": 550000
   },
   {
    "user": 9963115,
@@ -6784,8 +6805,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Juan Cruz",
-   "valor_hoy": 1580000,
-   "latente": -191111
+   "valor_hoy": 1560000,
+   "latente": -211111
   },
   {
    "user": 14237999,
@@ -6795,8 +6816,8 @@
    "how_in": "transfer",
    "usuario": "La Javicaleta",
    "jugador": "Koke",
-   "valor_hoy": 3320000,
-   "latente": -30000
+   "valor_hoy": 3360000,
+   "latente": 10000
   },
   {
    "user": 9961690,
@@ -6817,8 +6838,8 @@
    "how_in": "transfer",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Manu Sánchez",
-   "valor_hoy": 1810000,
-   "latente": -90001
+   "valor_hoy": 1800000,
+   "latente": -100001
   },
   {
    "user": 9961274,
@@ -6828,8 +6849,8 @@
    "how_in": "transfer",
    "usuario": "WILLOW",
    "jugador": "Bretones",
-   "valor_hoy": 1360000,
-   "latente": -850000
+   "valor_hoy": 1350000,
+   "latente": -860000
   },
   {
    "user": 11403718,
@@ -6839,8 +6860,8 @@
    "how_in": "transfer",
    "usuario": "Lord Calcius",
    "jugador": "Eddahchouri",
-   "valor_hoy": 620000,
-   "latente": -380000
+   "valor_hoy": 630000,
+   "latente": -370000
   },
   {
    "user": 11651461,
@@ -6850,8 +6871,8 @@
    "how_in": "transfer",
    "usuario": "Richard The III",
    "jugador": "Guedes",
-   "valor_hoy": 3720000,
-   "latente": -580000
+   "valor_hoy": 3680000,
+   "latente": -620000
   },
   {
    "user": 9961358,
@@ -6861,8 +6882,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Raphinha",
-   "valor_hoy": 21860000,
-   "latente": 1259000
+   "valor_hoy": 22080000,
+   "latente": 1479000
   },
   {
    "user": 9961274,
@@ -6872,8 +6893,8 @@
    "how_in": "market",
    "usuario": "WILLOW",
    "jugador": "Marcos Fernández",
-   "valor_hoy": 2110000,
-   "latente": -640000
+   "valor_hoy": 2210000,
+   "latente": -540000
   },
   {
    "user": 12809840,
@@ -6883,8 +6904,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Cucho",
-   "valor_hoy": 5470000,
-   "latente": -641111
+   "valor_hoy": 5510000,
+   "latente": -601111
   },
   {
    "user": 11403718,
@@ -6894,8 +6915,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Valentini",
-   "valor_hoy": 530000,
-   "latente": -45000
+   "valor_hoy": 570000,
+   "latente": -5000
   },
   {
    "user": 9963115,
@@ -6905,8 +6926,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Berenguer",
-   "valor_hoy": 3160000,
-   "latente": -461850
+   "valor_hoy": 3130000,
+   "latente": -491850
   },
   {
    "user": 9961690,
@@ -6916,19 +6937,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Tchouameni",
-   "valor_hoy": 4920000,
-   "latente": -626000
-  },
-  {
-   "user": 11403768,
-   "player": 2044,
-   "cost": 4456999,
-   "date_in": 1789621250,
-   "how_in": "market",
-   "usuario": "ASTON JIMA",
-   "jugador": "Ceballos",
-   "valor_hoy": 4180000,
-   "latente": -276999
+   "valor_hoy": 4860000,
+   "latente": -686000
   },
   {
    "user": 11403718,
@@ -6938,8 +6948,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Yuri",
-   "valor_hoy": 2880000,
-   "latente": -76000
+   "valor_hoy": 2920000,
+   "latente": -36000
   },
   {
    "user": 11651461,
@@ -6949,8 +6959,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Courtois",
-   "valor_hoy": 5780000,
-   "latente": -520000
+   "valor_hoy": 5790000,
+   "latente": -510000
   },
   {
    "user": 11369052,
@@ -6960,8 +6970,8 @@
    "how_in": "transfer",
    "usuario": "GONALTICOS",
    "jugador": "Bellingham",
-   "valor_hoy": 18990000,
-   "latente": 340000
+   "valor_hoy": 19040000,
+   "latente": 390000
   },
   {
    "user": 14237999,
@@ -6971,8 +6981,8 @@
    "how_in": "transfer",
    "usuario": "La Javicaleta",
    "jugador": "Arda Güler",
-   "valor_hoy": 13910000,
-   "latente": -2290000
+   "valor_hoy": 14070000,
+   "latente": -2130000
   },
   {
    "user": 9961274,
@@ -6993,8 +7003,8 @@
    "how_in": "transfer",
    "usuario": "JABALINOS FC",
    "jugador": "Ratiu",
-   "valor_hoy": 3710000,
-   "latente": -290000
+   "valor_hoy": 3730000,
+   "latente": -270000
   },
   {
    "user": 14237999,
@@ -7004,8 +7014,8 @@
    "how_in": "transfer",
    "usuario": "La Javicaleta",
    "jugador": "Jesús Vázquez",
-   "valor_hoy": 760000,
-   "latente": -240000
+   "valor_hoy": 750000,
+   "latente": -250000
   },
   {
    "user": 11403718,
@@ -7015,8 +7025,8 @@
    "how_in": "cambio",
    "usuario": "Lord Calcius",
    "jugador": "Danjuma",
-   "valor_hoy": 2290000,
-   "latente": 0
+   "valor_hoy": 2360000,
+   "latente": 70000
   },
   {
    "user": 9961358,
@@ -7070,8 +7080,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Revivo",
-   "valor_hoy": 1650000,
-   "latente": -237030
+   "valor_hoy": 1670000,
+   "latente": -217030
   },
   {
    "user": 9962213,
@@ -7081,8 +7091,8 @@
    "how_in": "market",
    "usuario": "NICOLAISON FC",
    "jugador": "Mikautadze",
-   "valor_hoy": 8520000,
-   "latente": -1480000
+   "valor_hoy": 8500000,
+   "latente": -1500000
   },
   {
    "user": 9962213,
@@ -7092,8 +7102,8 @@
    "how_in": "market",
    "usuario": "NICOLAISON FC",
    "jugador": "Olasagasti",
-   "valor_hoy": 3540000,
-   "latente": -360000
+   "valor_hoy": 3480000,
+   "latente": -420000
   },
   {
    "user": 14237999,
@@ -7103,8 +7113,8 @@
    "how_in": "market",
    "usuario": "La Javicaleta",
    "jugador": "Grimaldo",
-   "valor_hoy": 5330000,
-   "latente": -45211
+   "valor_hoy": 5430000,
+   "latente": 54789
   },
   {
    "user": 9961449,
@@ -7114,8 +7124,8 @@
    "how_in": "market",
    "usuario": "FERDORTMUND FC",
    "jugador": "Giménez",
-   "valor_hoy": 3360000,
-   "latente": 70000
+   "valor_hoy": 3390000,
+   "latente": 100000
   },
   {
    "user": 9963115,
@@ -7125,8 +7135,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Isco",
-   "valor_hoy": 8080000,
-   "latente": -808888
+   "valor_hoy": 8110000,
+   "latente": -778888
   },
   {
    "user": 11403768,
@@ -7147,8 +7157,8 @@
    "how_in": "market",
    "usuario": "TABASCO FC",
    "jugador": "Cancelo",
-   "valor_hoy": 5690000,
-   "latente": -76666
+   "valor_hoy": 5700000,
+   "latente": -66666
   },
   {
    "user": 9961358,
@@ -7169,8 +7179,8 @@
    "how_in": "market",
    "usuario": "Richard The III",
    "jugador": "Dieng",
-   "valor_hoy": 860000,
-   "latente": -140000
+   "valor_hoy": 840000,
+   "latente": -160000
   },
   {
    "user": 9961690,
@@ -7180,8 +7190,8 @@
    "how_in": "market",
    "usuario": "JABALINOS FC",
    "jugador": "Azón",
-   "valor_hoy": 1640000,
-   "latente": -526840
+   "valor_hoy": 1790000,
+   "latente": -376840
   },
   {
    "user": 11403718,
@@ -7191,8 +7201,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Yangel Herrera",
-   "valor_hoy": 2700000,
-   "latente": -100800
+   "valor_hoy": 2680000,
+   "latente": -120800
   },
   {
    "user": 11369052,
@@ -7213,8 +7223,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Moleiro",
-   "valor_hoy": 7300000,
-   "latente": -1266999
+   "valor_hoy": 7440000,
+   "latente": -1126999
   },
   {
    "user": 11403718,
@@ -7224,8 +7234,8 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Félix Correia",
-   "valor_hoy": 2190000,
-   "latente": -90000
+   "valor_hoy": 2250000,
+   "latente": -30000
   },
   {
    "user": 9961690,
@@ -7235,8 +7245,8 @@
    "how_in": "clause",
    "usuario": "JABALINOS FC",
    "jugador": "Akhomach",
-   "valor_hoy": 1380000,
-   "latente": -1945000
+   "valor_hoy": 1630000,
+   "latente": -1695000
   },
   {
    "user": 11369052,
@@ -7268,8 +7278,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Villares",
-   "valor_hoy": 560000,
-   "latente": -157000
+   "valor_hoy": 580000,
+   "latente": -137000
   },
   {
    "user": 11403768,
@@ -7279,8 +7289,8 @@
    "how_in": "market",
    "usuario": "ASTON JIMA",
    "jugador": "Areso",
-   "valor_hoy": 2020000,
-   "latente": -246999
+   "valor_hoy": 2070000,
+   "latente": -196999
   },
   {
    "user": 9961358,
@@ -7290,8 +7300,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Budimir",
-   "valor_hoy": 12260000,
-   "latente": -1065000
+   "valor_hoy": 12340000,
+   "latente": -985000
   },
   {
    "user": 9961358,
@@ -7301,8 +7311,8 @@
    "how_in": "market",
    "usuario": "REAL PANCH FC",
    "jugador": "Pablo Durán",
-   "valor_hoy": 800000,
-   "latente": -623000
+   "valor_hoy": 960000,
+   "latente": -463000
   },
   {
    "user": 9961449,
@@ -7334,8 +7344,8 @@
    "how_in": "market",
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Aleñá",
-   "valor_hoy": 700000,
-   "latente": -20000
+   "valor_hoy": 690000,
+   "latente": -30000
   },
   {
    "user": 12809840,
@@ -7345,8 +7355,8 @@
    "how_in": "market",
    "usuario": "andreputin",
    "jugador": "Febas",
-   "valor_hoy": 3470000,
-   "latente": -418888
+   "valor_hoy": 3420000,
+   "latente": -468888
   },
   {
    "user": 11403718,
@@ -7356,8 +7366,19 @@
    "how_in": "market",
    "usuario": "Lord Calcius",
    "jugador": "Djené",
-   "valor_hoy": 1770000,
-   "latente": -45000
+   "valor_hoy": 1760000,
+   "latente": -55000
+  },
+  {
+   "user": 9961449,
+   "player": 2044,
+   "cost": 4750000,
+   "date_in": 1790169035,
+   "how_in": "transfer",
+   "usuario": "FERDORTMUND FC",
+   "jugador": "Ceballos",
+   "valor_hoy": 4200000,
+   "latente": -550000
   }
  ]
 }
