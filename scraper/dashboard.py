@@ -38,20 +38,10 @@ def build() -> Path:
         for uid in series:
             series[uid].append(del_dia.get(uid))
 
-    # Alineaciones: solo lo que pinta la web, sin los identificadores de la fuente.
-    ruta_alin = DATA / "alineaciones.json"
-    alin = json.loads(ruta_alin.read_text(encoding="utf-8")) if ruta_alin.exists() else None
-    if alin:
-        util = ("nombre", "probabilidad", "titular", "etiqueta", "dueno", "dueno_nombre", "x", "y")
-        for p in alin["partidos"]:
-            for g in ("once_local", "once_visitante", "banquillo"):
-                p[g] = [{k: j[k] for k in util if k in j} for j in p[g]]
-
     payload = {
         "liga": liga["liga"], "actualizado": liga["actualizado"], "yo": liga["usuario_propio"],
         "usuarios": liga["usuarios"], "cerradas": cerradas, "abiertas": abiertas,
         "evolucion": {"fechas": fechas, "series": series},
-        "alineaciones": alin,
     }
     html = PLANTILLA.replace("__DATOS__", json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -72,7 +62,6 @@ PLANTILLA = r"""<title>Fantacis</title>
   --serie-1:#2a78d6; --serie-2:#eb6834; --serie-3:#1baf7a; --serie-4:#eda100;
   --serie-5:#e87ba4; --serie-6:#008300; --serie-7:#4a3aa7; --serie-8:#e34948;
   --sube:#0a7d0a; --baja:#c23636; --sube-f:rgba(10,125,10,.12); --baja-f:rgba(194,54,54,.12);
-  --cesped:#e9efe9; --cesped-raya:rgba(11,11,11,.13);
   --radio:10px;
   --sans:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
   --titular:"Archivo Narrow","Archivo Narrow Fallback",system-ui,sans-serif;
@@ -86,7 +75,6 @@ PLANTILLA = r"""<title>Fantacis</title>
   --serie-1:#3987e5; --serie-2:#d95926; --serie-3:#199e70; --serie-4:#c98500;
   --serie-5:#d55181; --serie-6:#008300; --serie-7:#9085e9; --serie-8:#e66767;
   --sube:#2cb72c; --baja:#e66767; --sube-f:rgba(44,183,44,.16); --baja-f:rgba(230,103,103,.16);
-  --cesped:#182018; --cesped-raya:rgba(255,255,255,.13);
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
@@ -97,7 +85,6 @@ PLANTILLA = r"""<title>Fantacis</title>
   --serie-1:#3987e5; --serie-2:#d95926; --serie-3:#199e70; --serie-4:#c98500;
   --serie-5:#d55181; --serie-6:#008300; --serie-7:#9085e9; --serie-8:#e66767;
   --sube:#2cb72c; --baja:#e66767; --sube-f:rgba(44,183,44,.16); --baja-f:rgba(230,103,103,.16);
-  --cesped:#182018; --cesped-raya:rgba(255,255,255,.13);
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -151,39 +138,6 @@ section{margin-top:40px}
 .celda-barra .cifra{position:relative}
 .puesto{font-family:var(--titular);font-size:17px;color:var(--tinta-3);font-weight:600}
 .equipo{font-family:var(--titular);font-size:17px;font-weight:600;line-height:1.15;overflow-wrap:anywhere}
-/* Próxima jornada */
-.jor-partido{background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);
-  padding:14px 16px;margin-bottom:12px}
-.jor-cab{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;justify-content:space-between;margin-bottom:12px}
-.jor-equipos{font-family:var(--titular);font-size:17px;font-weight:600}
-.jor-meta{font-size:12.5px;color:var(--tinta-3)}
-.insignia{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-  border:1px solid var(--borde);border-radius:999px;padding:2px 8px;color:var(--tinta-2)}
-.campos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.campo{position:relative;aspect-ratio:3/4;border-radius:8px;overflow:hidden;
-  background:var(--cesped);border:1px solid var(--borde)}
-.campo .raya{position:absolute;border:1px solid var(--cesped-raya);border-radius:2px}
-.campo .medio{left:0;right:0;top:50%;border-width:1px 0 0 0;border-radius:0}
-.campo .area{left:22%;right:22%;bottom:0;height:16%;border-bottom:0}
-.campo .circulo{left:50%;top:50%;width:26%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%}
-.pieza{position:absolute;transform:translate(-50%,-50%);width:74px;text-align:center;line-height:1.15}
-.ficha-jug{width:26px;height:26px;margin:0 auto;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:10.5px;font-weight:600;font-variant-numeric:tabular-nums;
-  background:var(--tarjeta);border:2px solid var(--eje);color:var(--tinta-2)}
-.pieza.libre .ficha-jug{border-style:dashed}
-.pieza.mio .ficha-jug{border-color:var(--acento);background:var(--acento);color:#fff}
-.pieza.rival .ficha-jug{border-color:var(--serie-2);color:var(--tinta)}
-.pieza .etq{font-size:10px;margin-top:2px;color:var(--tinta-2);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pieza .quien{font-size:9px;color:var(--tinta-3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.jor-resumen{background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);
-  padding:14px 16px;margin-bottom:14px}
-.jor-resumen ul{list-style:none;margin:8px 0 0;padding:0;display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 14px}
-.jor-resumen li{display:flex;justify-content:space-between;gap:10px;font-size:13px;
-  border-bottom:1px solid var(--linea);padding-bottom:4px}
-@media (max-width:640px){.campos{grid-template-columns:1fr}.pieza{width:62px}}
-
 /* Filtros de la gráfica */
 .fichas{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
 .ficha{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:5px 11px;
@@ -308,22 +262,6 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
         <div class="globo" id="res-globo" style="display:none"></div>
       </div>
     </div>
-  </section>
-
-  <section id="s-jornada">
-    <div class="encabezado-seccion">
-      <h2 id="jor-titulo">Próxima jornada</h2>
-      <p class="nota">Onces probables de <a href="https://www.futbolfantasy.com/laliga/posibles-alineaciones"
-        target="_blank" rel="noopener">FutbolFantasy</a>. Cuando aún hay dudas publican un porcentaje;
-        cuando se deciden, marcan el once como definitivo.</p>
-    </div>
-    <div id="jor-resumen"></div>
-    <div class="mandos" id="jor-filtro">
-      <button type="button" class="alterna" data-jor="mios" aria-pressed="true">Solo mis jugadores</button>
-      <button type="button" class="alterna" data-jor="liga" aria-pressed="false">Los de la liga</button>
-      <button type="button" class="alterna" data-jor="todos" aria-pressed="false">Todos</button>
-    </div>
-    <div id="jor-partidos"></div>
   </section>
 
   <section id="s-detalle">
@@ -593,76 +531,6 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
   document.getElementById("btn-cerradas").onclick = function(){ cambiarVista("cerradas"); };
   document.getElementById("btn-abiertas").onclick = function(){ cambiarVista("abiertas"); };
   pintarDetalle();
-
-  // Próxima jornada
-  var AL = D.alineaciones, filtroJor = "mios";
-  function pintarJornada(){
-    var cont = document.getElementById("jor-partidos"), res = document.getElementById("jor-resumen");
-    if (!AL || !AL.partidos || !AL.partidos.length){
-      document.getElementById("jor-filtro").style.display = "none";
-      res.innerHTML = "";
-      cont.innerHTML = '<div class="marco"><p class="vacio">Todavía no hay onces probables publicados ' +
-        'para la próxima jornada.</p></div>';
-      return;
-    }
-    document.getElementById("jor-titulo").textContent = "Jornada " + AL.jornada;
-
-    var mios = [];
-    AL.partidos.forEach(function(p){
-      ["once_local","once_visitante","banquillo"].forEach(function(g){
-        p[g].forEach(function(j){
-          if (j.dueno === D.yo) mios.push({j:j, p:p, campo:g !== "banquillo"});
-        });
-      });
-    });
-    mios.sort(function(a,b){ return b.j.probabilidad - a.j.probabilidad; });
-    var enOnce = mios.filter(function(m){ return m.campo; }).length;
-    res.innerHTML = '<div class="jor-resumen"><div class="rotulo">Tus jugadores</div>' +
-      '<div style="font-size:14px;margin-top:4px">' + enOnce + ' de tus ' + mios.length +
-      ' jugadores aparecen en un once probable.</div><ul>' + mios.map(function(m){
-        return '<li><span>' + esc(m.j.nombre) + '</span><span class="num ' +
-          (m.campo ? "pos" : "") + '">' + (m.campo ? "once" : "banquillo") + '</span></li>';
-      }).join("") + '</ul></div>';
-
-    cont.innerHTML = AL.partidos.map(function(p){
-      function campo(lista, equipo){
-        var piezas = lista.map(function(j){
-          var suyo = j.dueno === D.yo, deLaLiga = j.dueno != null;
-          if (filtroJor === "mios" && !suyo) return "";
-          if (filtroJor === "liga" && !deLaLiga) return "";
-          var marca = j.etiqueta && !/%/.test(j.etiqueta) ? (j.titular ? "XI" : "S")
-                                                         : j.probabilidad + "%";
-          return '<div class="pieza ' + (suyo ? "mio" : deLaLiga ? "rival" : "libre") +
-            '" style="left:' + j.x + '%;top:' + j.y + '%" title="' + esc(j.nombre) +
-            (deLaLiga ? " — " + esc(j.dueno_nombre) : " — sin dueño") + '">' +
-            '<span class="ficha-jug">' + marca + '</span>' +
-            '<span class="etq">' + esc(j.nombre) + '</span>' +
-            (deLaLiga ? '<span class="quien">' + esc(j.dueno_nombre) + '</span>' : '') + '</div>';
-        }).join("");
-        return '<div><div class="jor-meta" style="margin-bottom:5px">' + esc(equipo) + '</div>' +
-          '<div class="campo"><span class="raya medio"></span><span class="raya circulo"></span>' +
-          '<span class="raya area"></span>' + piezas + '</div></div>';
-      }
-      var f = new Date(p.fecha);
-      var cuando = f.toLocaleDateString("es-ES", {weekday:"short", day:"numeric", month:"short"}) +
-        " · " + f.toLocaleTimeString("es-ES", {hour:"2-digit", minute:"2-digit"});
-      return '<div class="jor-partido"><div class="jor-cab">' +
-        '<span class="jor-equipos">' + esc(p.local) + " – " + esc(p.visitante) + '</span>' +
-        '<span class="jor-meta">' + cuando +
-        (p.confirmado ? ' <span class="insignia">once definitivo</span>' : '') + '</span></div>' +
-        '<div class="campos">' + campo(p.once_local, p.local) + campo(p.once_visitante, p.visitante) +
-        '</div></div>';
-    }).join("");
-  }
-  document.getElementById("jor-filtro").addEventListener("click", function(e){
-    var b = e.target.closest("[data-jor]");
-    if (!b) return;
-    filtroJor = b.dataset.jor;
-    this.querySelectorAll("[data-jor]").forEach(function(x){
-      x.setAttribute("aria-pressed", x.dataset.jor === filtroJor); });
-    pintarJornada();
-  });
-  pintarJornada();
 
   // Evolución del patrimonio
   var FECHAS = D.evolucion.fechas, SERIES = D.evolucion.series;

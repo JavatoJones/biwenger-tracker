@@ -6,7 +6,6 @@ import json
 from datetime import date, datetime
 from pathlib import Path
 
-from .alineaciones import claves_equipos, descargar, enlazar_con_biwenger
 from .balances import current_season_events, money_flows
 from .client import BiwengerClient
 from .fetch import RAW, fetch_all, load_cached, load_daily_prices, precio_lookup
@@ -120,28 +119,13 @@ def run(offline: bool = False) -> dict:
 
     # El histórico se recalcula entero cada vez, así que cubre desde el primer día de liga
     # y se corrige solo si algún día se afina el modelo.
-    # Alineaciones probables. Es una fuente externa y prescindible: si falla, el resto de la
-    # actualización debe salir igual, así que se conserva lo último que se descargó bien.
-    aviso_alineaciones = None
-    if not offline:
-        try:
-            equipos = d["teams"]
-            alin = descargar(claves_equipos(equipos))
-            propietarios = {p["id"]: (uid, nombres[uid])
-                            for uid, sq in squads.items() if uid in nombres for p in sq}
-            _save(DATA / "alineaciones.json",
-                  enlazar_con_biwenger(alin, players, equipos, propietarios))
-        except Exception as e:
-            aviso_alineaciones = f"{type(e).__name__}: {e}"
-
     hist = serie_diaria(season, squads, reset_ts, altas,
                         {u["id"]: u["saldo_inicial"] for u in users},
                         precio, int(datetime.now().timestamp()))
     _save(DATA / "historico.json", hist)
 
     return {"users": users, "closed": closed, "open": openpos, "dias": len(hist),
-            "my_balance": mi_saldo, "my_id": mi_id, "sin_precio": sin_precio,
-            "aviso_alineaciones": aviso_alineaciones}
+            "my_balance": mi_saldo, "my_id": mi_id, "sin_precio": sin_precio}
 
 
 if __name__ == "__main__":
@@ -158,5 +142,3 @@ if __name__ == "__main__":
         print(f"AVISO: {len(r['sin_precio'])} jugadores del reparto sin precio -> {r['sin_precio'][:6]}")
     else:
         print("Todos los jugadores del reparto tienen precio en su fecha de inicio")
-    if r["aviso_alineaciones"]:
-        print("AVISO: no se pudieron descargar las alineaciones ->", r["aviso_alineaciones"])
