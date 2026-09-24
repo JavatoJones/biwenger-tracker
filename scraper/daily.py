@@ -10,6 +10,7 @@ from .balances import current_season_events, money_flows
 from .client import BiwengerClient
 from .fetch import RAW, fetch_all, load_cached, load_daily_prices, precio_lookup
 from .initial import initial_squads, start_dates, yymmdd
+from .mercado import flujos, resumen_por_manager
 from .series import serie_diaria
 from .trades import compute_positions, summarize
 
@@ -119,6 +120,13 @@ def run(offline: bool = False) -> dict:
 
     # El histórico se recalcula entero cada vez, así que cubre desde el primer día de liga
     # y se corrige solo si algún día se afina el modelo.
+    trapicheos = flujos(season)
+    _save(DATA / "mercado.json", {
+        "flujos": [{**f, "jugadores": [{**j, "jugador": nom_jug(j["jugador"])} for j in f["jugadores"]]}
+                   for f in trapicheos],
+        "por_manager": resumen_por_manager(trapicheos),
+    })
+
     hist = serie_diaria(season, squads, reset_ts, altas,
                         {u["id"]: u["saldo_inicial"] for u in users},
                         precio, int(datetime.now().timestamp()))

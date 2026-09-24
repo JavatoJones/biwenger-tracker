@@ -38,7 +38,11 @@ def build() -> Path:
         for uid in series:
             series[uid].append(del_dia.get(uid))
 
+    ruta_mer = DATA / "mercado.json"
+    mercado = json.loads(ruta_mer.read_text(encoding="utf-8")) if ruta_mer.exists() else None
+
     payload = {
+        "mercado": mercado,
         "liga": liga["liga"], "actualizado": liga["actualizado"], "yo": liga["usuario_propio"],
         "usuarios": liga["usuarios"], "cerradas": cerradas, "abiertas": abiertas,
         "evolucion": {"fechas": fechas, "series": series},
@@ -138,6 +142,24 @@ section{margin-top:40px}
 .celda-barra .cifra{position:relative}
 .puesto{font-family:var(--titular);font-size:17px;color:var(--tinta-3);font-weight:600}
 .equipo{font-family:var(--titular);font-size:17px;font-weight:600;line-height:1.15;overflow-wrap:anywhere}
+/* Mapa de trapicheos */
+.mapa-caja{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(250px,1fr);gap:18px;align-items:start}
+.mapa svg{width:100%;height:auto;display:block;overflow:visible}
+.nodo{cursor:pointer}
+.nodo circle{transition:none}
+.nodo text{font-size:12px;font-family:var(--sans);fill:var(--tinta-2)}
+.nodo.activo text{fill:var(--tinta);font-weight:600}
+.arco{fill:none;cursor:pointer}
+.mapa-lista{display:grid;gap:2px}
+.mapa-lista .fila-rel{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:baseline;
+  font-size:13px;padding:6px 8px;border-radius:6px}
+.mapa-lista .fila-rel:hover{background:var(--hueco)}
+.mapa-lista .via{border:0;background:none;padding:0;color:var(--tinta-3)}
+.mapa-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.mapa-tiles div{background:var(--hueco);border-radius:8px;padding:9px 11px}
+.mapa-tiles .v{font-family:var(--titular);font-size:19px;font-weight:700;margin-top:2px}
+@media (max-width:860px){.mapa-caja{grid-template-columns:1fr}}
+
 /* Filtros de la gráfica */
 .fichas{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
 .ficha{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;padding:5px 11px;
@@ -260,6 +282,24 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
       <div class="lienzo">
         <div class="filas-div" id="divergente"></div>
         <div class="globo" id="res-globo" style="display:none"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s-mapa">
+    <div class="encabezado-seccion">
+      <h2>Quién le compra a quién</h2>
+      <p class="nota">Cada hilo es dinero que ha cambiado de manos entre vosotros, con la flecha
+        apuntando a quien cobra. Pulsa un equipo para seguir solo sus tratos.</p>
+    </div>
+    <div class="marco">
+      <div class="mapa-caja">
+        <div class="mapa lienzo" id="mapa-lienzo"></div>
+        <div>
+          <div class="mapa-tiles" id="mapa-tiles"></div>
+          <div class="rotulo" id="mapa-rotulo">Mayores tratos</div>
+          <div class="mapa-lista" id="mapa-lista"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -504,6 +544,7 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
     });
     pintarDetalle();
     pintarGrafica();
+    pintarMapa();
     if (mover) document.getElementById("s-detalle").scrollIntoView({behavior:"smooth", block:"start"});
   }
   document.getElementById("clasificacion").addEventListener("click", function(e){
@@ -531,6 +572,140 @@ footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--linea);color:
   document.getElementById("btn-cerradas").onclick = function(){ cambiarVista("cerradas"); };
   document.getElementById("btn-abiertas").onclick = function(){ cambiarVista("abiertas"); };
   pintarDetalle();
+
+  // Mapa de trapicheos
+  var MER = D.mercado, lienzoMapa = document.getElementById("mapa-lienzo");
+  var CX = 430, CY = 430, R = 292;
+  var puestoDe = {};
+  U.forEach(function(u, i){ puestoDe[u.id] = i; });
+
+  function angulo(id){ return (puestoDe[id] / U.length) * 2 * Math.PI - Math.PI / 2; }
+  function punto(id, radio){
+    var a = angulo(id);
+    return {x: CX + radio * Math.cos(a), y: CY + radio * Math.sin(a), a: a};
+  }
+
+  function pintarMapa(){
+    if (!MER || !MER.flujos.length){
+      lienzoMapa.innerHTML = '<p class="vacio">Todavía no hay tratos entre vosotros.</p>';
+      return;
+    }
+    var tope = MER.flujos[0].euros;
+    var volumen = {};
+    MER.flujos.forEach(function(f){
+      volumen[f.pagador] = (volumen[f.pagador] || 0) + f.euros;
+      volumen[f.cobrador] = (volumen[f.cobrador] || 0) + f.euros;
+    });
+    var topeVol = Math.max.apply(null, U.map(function(u){ return volumen[u.id] || 0; })) || 1;
+
+    // Los hilos ajenos se dibujan antes para que los del equipo elegido queden encima.
+    var ordenados = MER.flujos.slice().sort(function(a, b){
+      var ea = a.pagador === sel || a.cobrador === sel, eb = b.pagador === sel || b.cobrador === sel;
+      return (ea ? 1 : 0) - (eb ? 1 : 0);
+    });
+
+    var arcos = ordenados.map(function(f, i){
+      var A = punto(f.pagador, R), B = punto(f.cobrador, R);
+      var mx = (A.x + B.x) / 2, my = (A.y + B.y) / 2;
+      var cx = CX + (mx - CX) * 0.28, cy = CY + (my - CY) * 0.28;  // curva hacia dentro
+      var grosor = 1.2 + 7 * Math.sqrt(f.euros / tope);
+      var suyo = f.pagador === sel, para = f.cobrador === sel;
+      var color = suyo ? "var(--baja)" : para ? "var(--sube)" : "var(--eje)";
+      var op = (suyo || para) ? 0.85 : 0.16;
+      return '<path class="arco" d="M' + A.x.toFixed(1) + ' ' + A.y.toFixed(1) + ' Q' +
+        cx.toFixed(1) + ' ' + cy.toFixed(1) + ' ' + B.x.toFixed(1) + ' ' + B.y.toFixed(1) +
+        '" stroke="' + color + '" stroke-width="' + grosor.toFixed(2) + '" stroke-opacity="' + op +
+        '" stroke-linecap="round" marker-end="url(#punta-' + (suyo ? "baja" : para ? "sube" : "gris") +
+        ')" data-flujo="' + MER.flujos.indexOf(f) + '"></path>';
+    }).join("");
+
+    var nodos = U.map(function(u){
+      var p = punto(u.id, R), fuera = punto(u.id, R + 16);
+      var r = 5 + 7 * Math.sqrt((volumen[u.id] || 0) / topeVol);
+      var cosA = Math.cos(p.a);
+      var anclaje = cosA > 0.15 ? "start" : cosA < -0.15 ? "end" : "middle";
+      var dy = Math.sin(p.a) > 0.9 ? 12 : Math.sin(p.a) < -0.9 ? -6 : 4;
+      var activo = u.id === sel;
+      return '<g class="nodo' + (activo ? " activo" : "") + '" data-nodo="' + u.id + '">' +
+        '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + r.toFixed(1) +
+        '" fill="' + (activo ? "var(--acento)" : "var(--tarjeta)") + '" stroke="' +
+        (activo ? "var(--acento)" : "var(--eje)") + '" stroke-width="2"></circle>' +
+        '<text x="' + fuera.x.toFixed(1) + '" y="' + (fuera.y + dy).toFixed(1) + '" text-anchor="' +
+        anclaje + '">' + esc(u.nombre.length > 18 ? u.nombre.slice(0, 17) + "…" : u.nombre) + '</text></g>';
+    }).join("");
+
+    // Las puntas no heredan la opacidad del trazo, así que la gris la lleva propia.
+    var puntas = [["gris", "var(--eje)", .3], ["sube", "var(--sube)", 1],
+                  ["baja", "var(--baja)", 1]].map(function(t){
+      return '<marker id="punta-' + t[0] + '" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" ' +
+        'markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="' + t[1] +
+        '" fill-opacity="' + t[2] + '"></path></marker>';
+    }).join("");
+
+    lienzoMapa.innerHTML = '<svg viewBox="0 0 860 860" role="img" aria-label="Mapa del dinero ' +
+      'que ha cambiado de manos entre los equipos de la liga"><defs>' + puntas + '</defs>' +
+      arcos + nodos + '</svg><div class="globo" id="mapa-globo" style="display:none"></div>';
+
+    var r = (MER.por_manager || {})[sel] || {pagado:0, cobrado:0, neto:0, socios:0, operaciones:0};
+    document.getElementById("mapa-tiles").innerHTML = [
+      ["Ha cobrado", eur(r.cobrado), "sube"],
+      ["Ha pagado", eur(r.pagado), "baja"],
+      ["Saldo del trapicheo", eurFirmado(r.neto), clase(r.neto)]
+    ].map(function(t){
+      return '<div><div class="rotulo">' + t[0] + '</div><div class="v num ' + t[2] + '">' +
+        t[1] + '</div></div>';
+    }).join("");
+
+    var suyos = MER.flujos.filter(function(f){ return f.pagador === sel || f.cobrador === sel; });
+    document.getElementById("mapa-rotulo").textContent = suyos.length
+      ? "Tratos de " + porId[sel].nombre + " (" + r.socios + " socios)"
+      : porId[sel].nombre + " no ha hecho tratos con nadie";
+    document.getElementById("mapa-lista").innerHTML = (suyos.length ? suyos : MER.flujos.slice(0, 10))
+      .map(function(f){
+        var cobra = f.cobrador === sel;
+        return '<div class="fila-rel" data-flujo="' + MER.flujos.indexOf(f) + '">' +
+          '<span>' + (f.pagador === sel || cobra
+            ? (cobra ? "← cobra de " : "→ paga a ") + esc(porId[cobra ? f.pagador : f.cobrador].nombre)
+            : esc(porId[f.pagador].nombre) + " → " + esc(porId[f.cobrador].nombre)) +
+          ' <span class="via">' + f.operaciones + (f.operaciones === 1 ? " op" : " ops") + '</span></span>' +
+          '<span class="num ' + (f.pagador === sel ? "neg" : cobra ? "pos" : "") + '">' +
+          eur(f.euros) + '</span></div>';
+      }).join("");
+  }
+
+  function globoFlujo(e, idx){
+    var globo = document.getElementById("mapa-globo");
+    if (!globo) return;
+    var f = MER.flujos[idx];
+    globo.innerHTML = '<b>' + esc(porId[f.pagador].nombre) + " → " + esc(porId[f.cobrador].nombre) + '</b>' +
+      f.jugadores.slice(0, 6).map(function(j){
+        return '<div><span>' + esc(j.jugador) + ' <span class="via">' + esc(j.via) + '</span></span>' +
+          '<span class="num">' + eur(j.euros) + '</span></div>';
+      }).join("") +
+      (f.jugadores.length > 6 ? '<div><span class="via">y ' + (f.jugadores.length - 6) + ' más</span></div>' : "") +
+      '<div class="total"><span>Total</span><span class="num">' + eur(f.euros) + '</span></div>';
+    globo.style.display = "";
+    var caja = globo.parentElement.getBoundingClientRect();
+    globo.style.left = Math.max(2, Math.min(e.clientX - caja.left + 14,
+      caja.width - globo.offsetWidth - 4)) + "px";
+    globo.style.top = Math.max(2, Math.min(e.clientY - caja.top + 12,
+      caja.height - globo.offsetHeight - 4)) + "px";
+  }
+  lienzoMapa.addEventListener("mousemove", function(e){
+    var a = e.target.closest("[data-flujo]");
+    var globo = document.getElementById("mapa-globo");
+    if (a) globoFlujo(e, Number(a.dataset.flujo));
+    else if (globo) globo.style.display = "none";
+  });
+  lienzoMapa.addEventListener("mouseleave", function(){
+    var g = document.getElementById("mapa-globo");
+    if (g) g.style.display = "none";
+  });
+  lienzoMapa.addEventListener("click", function(e){
+    var n = e.target.closest("[data-nodo]");
+    if (n) elegirEquipo(Number(n.dataset.nodo), false);
+  });
+  pintarMapa();
 
   // Evolución del patrimonio
   var FECHAS = D.evolucion.fechas, SERIES = D.evolucion.series;

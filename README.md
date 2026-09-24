@@ -46,6 +46,7 @@ En GitHub hacen falta tres secretos del repositorio: `BIWENGER_EMAIL`, `BIWENGER
 | `scraper/initial.py` | Plantillas de partida y precios históricos |
 | `scraper/trades.py` | Rentabilidad de cada operación |
 | `scraper/series.py` | Patrimonio de cada día desde el reparto inicial |
+| `scraper/mercado.py` | Dinero que se mueve entre mánagers, quién paga a quién |
 | `scraper/daily.py` | Orquesta todo y escribe `data/` |
 | `scraper/dashboard.py` | Genera `docs/index.html` |
 | `data/historico.json` | Una foto por día; es lo que alimenta el gráfico de evolución |

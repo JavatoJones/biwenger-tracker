@@ -1,0 +1,815 @@
+{
+ "flujos": [
+  {
+   "pagador": 11369052,
+   "cobrador": 9961358,
+   "euros": 24530000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Bellingham",
+     "euros": 18650000,
+     "fecha": 1789725884,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Pablo García",
+     "euros": 5880000,
+     "fecha": 1788628056,
+     "via": "clause"
+    }
+   ]
+  },
+  {
+   "pagador": 14237999,
+   "cobrador": 11369052,
+   "euros": 16200000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Arda Güler",
+     "euros": 16200000,
+     "fecha": 1789725884,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 11369052,
+   "euros": 13350000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Budimir",
+     "euros": 12000000,
+     "fecha": 1788718894,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Raul García",
+     "euros": 1350000,
+     "fecha": 1788285660,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9962118,
+   "cobrador": 11403718,
+   "euros": 11800000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Pépé",
+     "euros": 11800000,
+     "fecha": 1788987226,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 14237999,
+   "euros": 9300000,
+   "operaciones": 3,
+   "jugadores": [
+    {
+     "jugador": "Ratiu",
+     "euros": 4000000,
+     "fecha": 1789733983,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Bryan Zaragoza",
+     "euros": 3950000,
+     "fecha": 1789725884,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Christensen",
+     "euros": 1350000,
+     "fecha": 1788793642,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 11403768,
+   "euros": 9107547,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Amatucci",
+     "euros": 7647547,
+     "fecha": 1787958451,
+     "via": "clause"
+    },
+    {
+     "jugador": "Areso",
+     "euros": 1460000,
+     "fecha": 1787215704,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 9962213,
+   "euros": 6700000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Ayoze",
+     "euros": 5350000,
+     "fecha": 1787693053,
+     "via": "cambio"
+    },
+    {
+     "jugador": "Tete Morente",
+     "euros": 1350000,
+     "fecha": 1789122270,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9963115,
+   "cobrador": 11403718,
+   "euros": 6420001,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Mariano",
+     "euros": 4520000,
+     "fecha": 1786968762,
+     "via": "clause"
+    },
+    {
+     "jugador": "Manu Sánchez",
+     "euros": 1900001,
+     "fecha": 1789462287,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 14237999,
+   "cobrador": 11403718,
+   "euros": 6150000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Bryan Zaragoza",
+     "euros": 5150000,
+     "fecha": 1788791430,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Jesús Vázquez",
+     "euros": 1000000,
+     "fecha": 1789734713,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9963115,
+   "cobrador": 11403768,
+   "euros": 5765000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Roro Riquelme",
+     "euros": 5500000,
+     "fecha": 1788086007,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Iván Villar",
+     "euros": 265000,
+     "fecha": 1787224670,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961449,
+   "cobrador": 11403768,
+   "euros": 4750000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Ceballos",
+     "euros": 4750000,
+     "fecha": 1790169035,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403768,
+   "cobrador": 9962118,
+   "euros": 4700000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Ángel Pérez",
+     "euros": 4700000,
+     "fecha": 1789047085,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11651461,
+   "cobrador": 11403718,
+   "euros": 4300000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Guedes",
+     "euros": 4300000,
+     "fecha": 1789480248,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 9962118,
+   "euros": 3725000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Akhomach",
+     "euros": 3325000,
+     "fecha": 1789973791,
+     "via": "clause"
+    },
+    {
+     "jugador": "Javi Morcillo",
+     "euros": 400000,
+     "fecha": 1788432362,
+     "via": "admin"
+    }
+   ]
+  },
+  {
+   "pagador": 14237999,
+   "cobrador": 9961690,
+   "euros": 3650000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Koke",
+     "euros": 3350000,
+     "fecha": 1789455357,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Angel Ortiz",
+     "euros": 300000,
+     "fecha": 1789743617,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9962213,
+   "cobrador": 9961690,
+   "euros": 3500000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Jorge Salinas",
+     "euros": 3500000,
+     "fecha": 1786437679,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403768,
+   "cobrador": 11651461,
+   "euros": 3270000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Dituro",
+     "euros": 3270000,
+     "fecha": 1787897103,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 9963115,
+   "euros": 2775000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Torró",
+     "euros": 1500000,
+     "fecha": 1786801894,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Rubén Sánchez",
+     "euros": 1275000,
+     "fecha": 1788561733,
+     "via": "clause"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 11651461,
+   "euros": 2700000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Mario Soriano",
+     "euros": 2700000,
+     "fecha": 1786694063,
+     "via": "cambio"
+    }
+   ]
+  },
+  {
+   "pagador": 9962118,
+   "cobrador": 9961690,
+   "euros": 2600020,
+   "operaciones": 3,
+   "jugadores": [
+    {
+     "jugador": "Raul García",
+     "euros": 1800000,
+     "fecha": 1788431157,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Javi Morcillo",
+     "euros": 400020,
+     "fecha": 1788434619,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Javi Morcillo",
+     "euros": 400000,
+     "fecha": 1788431157,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 11369052,
+   "euros": 2600000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Espart",
+     "euros": 2600000,
+     "fecha": 1787510764,
+     "via": "clause"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 9961358,
+   "euros": 2210000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Bretones",
+     "euros": 2210000,
+     "fecha": 1789467840,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 11369052,
+   "euros": 2000000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Alemão",
+     "euros": 2000000,
+     "fecha": 1786525640,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11651461,
+   "cobrador": 11403768,
+   "euros": 2000000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Buonanotte",
+     "euros": 2000000,
+     "fecha": 1789727746,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11369052,
+   "cobrador": 9961690,
+   "euros": 1975000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Pedrosa",
+     "euros": 1500000,
+     "fecha": 1789409914,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Iturbe",
+     "euros": 475000,
+     "fecha": 1789060654,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961449,
+   "cobrador": 9961274,
+   "euros": 1800000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Mario Martín",
+     "euros": 1800000,
+     "fecha": 1787907774,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 9961358,
+   "euros": 1800000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Raba",
+     "euros": 1800000,
+     "fecha": 1789738826,
+     "via": "cambio"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 9961690,
+   "euros": 1600000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Christensen",
+     "euros": 1600000,
+     "fecha": 1789733983,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403768,
+   "cobrador": 9963115,
+   "euros": 1505000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Buonanotte",
+     "euros": 1505000,
+     "fecha": 1788341725,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 12809840,
+   "euros": 1402500,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Pedrosa",
+     "euros": 1402500,
+     "fecha": 1787936726,
+     "via": "clause"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 9961274,
+   "euros": 1000000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Tárrega",
+     "euros": 1000000,
+     "fecha": 1788271288,
+     "via": "cambio"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 11651461,
+   "euros": 1000000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Eddahchouri",
+     "euros": 1000000,
+     "fecha": 1789480248,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9962213,
+   "cobrador": 11369052,
+   "euros": 950000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Recio",
+     "euros": 600000,
+     "fecha": 1788103948,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Lobete",
+     "euros": 350000,
+     "fecha": 1788364324,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403768,
+   "cobrador": 11403718,
+   "euros": 722500,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Hinojo",
+     "euros": 722500,
+     "fecha": 1786905755,
+     "via": "clause"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 11651461,
+   "euros": 600000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Boselli",
+     "euros": 600000,
+     "fecha": 1786778537,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9962213,
+   "cobrador": 9961449,
+   "euros": 550000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Sannadi",
+     "euros": 550000,
+     "fecha": 1788537733,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9962118,
+   "cobrador": 11369052,
+   "euros": 500000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Beitia",
+     "euros": 500000,
+     "fecha": 1789054159,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 9961449,
+   "euros": 350000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "jugador": "Córdoba",
+     "euros": 175000,
+     "fecha": 1789057534,
+     "via": "traspaso"
+    },
+    {
+     "jugador": "Fariñas",
+     "euros": 175000,
+     "fecha": 1789057534,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 9961690,
+   "euros": 300000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Paco Cortés",
+     "euros": 300000,
+     "fecha": 1789060654,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961690,
+   "cobrador": 11403718,
+   "euros": 300000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Paco Cortés",
+     "euros": 300000,
+     "fecha": 1789460655,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961274,
+   "cobrador": 9963115,
+   "euros": 300000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Zakharyan",
+     "euros": 300000,
+     "fecha": 1789725884,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11651461,
+   "cobrador": 11369052,
+   "euros": 250000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Barzic",
+     "euros": 250000,
+     "fecha": 1787907774,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 14237999,
+   "euros": 225000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Becerra",
+     "euros": 225000,
+     "fecha": 1789478234,
+     "via": "traspaso"
+    }
+   ]
+  },
+  {
+   "pagador": 9961449,
+   "cobrador": 11403718,
+   "euros": 175000,
+   "operaciones": 1,
+   "jugadores": [
+    {
+     "jugador": "Córdoba",
+     "euros": 175000,
+     "fecha": 1789057534,
+     "via": "traspaso"
+    }
+   ]
+  }
+ ],
+ "por_manager": {
+  "11369052": {
+   "pagado": 26505000,
+   "cobrado": 35850000,
+   "neto": 9345000,
+   "socios": 8,
+   "operaciones": 13
+  },
+  "9961358": {
+   "pagado": 0,
+   "cobrado": 28540000,
+   "neto": 28540000,
+   "socios": 3,
+   "operaciones": 4
+  },
+  "14237999": {
+   "pagado": 26000000,
+   "cobrado": 9525000,
+   "neto": -16475000,
+   "socios": 3,
+   "operaciones": 9
+  },
+  "9961690": {
+   "pagado": 32452500,
+   "cobrado": 13625020,
+   "neto": -18827480,
+   "socios": 9,
+   "operaciones": 23
+  },
+  "9962118": {
+   "pagado": 14900020,
+   "cobrado": 8425000,
+   "neto": -6475020,
+   "socios": 4,
+   "operaciones": 8
+  },
+  "11403718": {
+   "pagado": 12975000,
+   "cobrado": 29867501,
+   "neto": 16892501,
+   "socios": 10,
+   "operaciones": 18
+  },
+  "9961274": {
+   "pagado": 17917547,
+   "cobrado": 2800000,
+   "neto": -15117547,
+   "socios": 7,
+   "operaciones": 9
+  },
+  "11403768": {
+   "pagado": 10197500,
+   "cobrado": 21622547,
+   "neto": 11425047,
+   "socios": 6,
+   "operaciones": 10
+  },
+  "9962213": {
+   "pagado": 5000000,
+   "cobrado": 6700000,
+   "neto": 1700000,
+   "socios": 4,
+   "operaciones": 6
+  },
+  "9963115": {
+   "pagado": 12185001,
+   "cobrado": 4580000,
+   "neto": -7605001,
+   "socios": 4,
+   "operaciones": 8
+  },
+  "9961449": {
+   "pagado": 6725000,
+   "cobrado": 900000,
+   "neto": -5825000,
+   "socios": 4,
+   "operaciones": 6
+  },
+  "11651461": {
+   "pagado": 6550000,
+   "cobrado": 7570000,
+   "neto": 1020000,
+   "socios": 5,
+   "operaciones": 7
+  },
+  "12809840": {
+   "pagado": 0,
+   "cobrado": 1402500,
+   "neto": 1402500,
+   "socios": 1,
+   "operaciones": 1
+  }
+ }
+}
