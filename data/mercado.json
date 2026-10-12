@@ -13,8 +13,8 @@
      "via": "traspaso",
      "jugador": "Bellingham",
      "estado": "en plantilla",
-     "salida": 18870000,
-     "resultado": 220000,
+     "salida": 18740000,
+     "resultado": 90000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -45,8 +45,8 @@
      "via": "traspaso",
      "jugador": "Arda Güler",
      "estado": "en plantilla",
-     "salida": 15050000,
-     "resultado": -1150000,
+     "salida": 15070000,
+     "resultado": -1130000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -65,8 +65,8 @@
      "via": "traspaso",
      "jugador": "Grimaldo",
      "estado": "en plantilla",
-     "salida": 6270000,
-     "resultado": -80000,
+     "salida": 6400000,
+     "resultado": 50000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -77,8 +77,8 @@
      "via": "traspaso",
      "jugador": "Ratiu",
      "estado": "en plantilla",
-     "salida": 3510000,
-     "resultado": -490000,
+     "salida": 3410000,
+     "resultado": -590000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -173,8 +173,8 @@
      "via": "clause",
      "jugador": "Amatucci",
      "estado": "en plantilla",
-     "salida": 3840000,
-     "resultado": -3807547,
+     "salida": 3800000,
+     "resultado": -3847547,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -217,8 +217,8 @@
      "via": "traspaso",
      "jugador": "Tete Morente",
      "estado": "en plantilla",
-     "salida": 1530000,
-     "resultado": 180000,
+     "salida": 1520000,
+     "resultado": 170000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -281,8 +281,8 @@
      "via": "traspaso",
      "jugador": "Jesús Vázquez",
      "estado": "en plantilla",
-     "salida": 670000,
-     "resultado": -330000,
+     "salida": 660000,
+     "resultado": -340000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -333,8 +333,8 @@
      "via": "traspaso",
      "jugador": "Ceballos",
      "estado": "en plantilla",
-     "salida": 3610000,
-     "resultado": -1140000,
+     "salida": 3580000,
+     "resultado": -1170000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -353,8 +353,8 @@
      "via": "traspaso",
      "jugador": "Ángel Pérez",
      "estado": "en plantilla",
-     "salida": 4300000,
-     "resultado": -400000,
+     "salida": 4050000,
+     "resultado": -650000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -373,8 +373,8 @@
      "via": "traspaso",
      "jugador": "Guedes",
      "estado": "en plantilla",
-     "salida": 3210000,
-     "resultado": -1090000,
+     "salida": 3230000,
+     "resultado": -1070000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -393,8 +393,8 @@
      "via": "clause",
      "jugador": "Akhomach",
      "estado": "en plantilla",
-     "salida": 3610000,
-     "resultado": 285000,
+     "salida": 3650000,
+     "resultado": 325000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -425,8 +425,8 @@
      "via": "traspaso",
      "jugador": "Koke",
      "estado": "en plantilla",
-     "salida": 3680000,
-     "resultado": 330000,
+     "salida": 3720000,
+     "resultado": 370000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -457,8 +457,8 @@
      "via": "traspaso",
      "jugador": "Jorge Salinas",
      "estado": "en plantilla",
-     "salida": 2060000,
-     "resultado": -1440000,
+     "salida": 2040000,
+     "resultado": -1460000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -509,8 +509,8 @@
      "via": "clause",
      "jugador": "Rubén Sánchez",
      "estado": "en plantilla",
-     "salida": 620000,
-     "resultado": -655000,
+     "salida": 650000,
+     "resultado": -625000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -549,8 +549,40 @@
      "via": "traspaso",
      "jugador": "Gulácsi",
      "estado": "en plantilla",
-     "salida": 2280000,
-     "resultado": -420000,
+     "salida": 2310000,
+     "resultado": -390000,
+     "fecha_salida": null,
+     "via_salida": null
+    }
+   ]
+  },
+  {
+   "pagador": 11403718,
+   "cobrador": 9961358,
+   "euros": 2607500,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "id": 24509,
+     "euros": 1800000,
+     "fecha": 1789738826,
+     "via": "cambio",
+     "jugador": "Danjuma",
+     "estado": "en plantilla",
+     "salida": 2420000,
+     "resultado": 130000,
+     "fecha_salida": null,
+     "via_salida": null
+    },
+    {
+     "id": 11633,
+     "euros": 807500,
+     "fecha": 1791745815,
+     "via": "clause",
+     "jugador": "Raba",
+     "estado": "en plantilla",
+     "salida": 270000,
+     "resultado": -537500,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -633,8 +665,8 @@
      "via": "traspaso",
      "jugador": "Bretones",
      "estado": "en plantilla",
-     "salida": 1140000,
-     "resultado": -1070000,
+     "salida": 1130000,
+     "resultado": -1080000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -693,8 +725,8 @@
      "via": "traspaso",
      "jugador": "Pedrosa",
      "estado": "en plantilla",
-     "salida": 3120000,
-     "resultado": 1620000,
+     "salida": 3130000,
+     "resultado": 1630000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -737,8 +769,8 @@
      "via": "cambio",
      "jugador": "Aleñá",
      "estado": "en plantilla",
-     "salida": 620000,
-     "resultado": -80000,
+     "salida": 600000,
+     "resultado": -100000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -761,26 +793,6 @@
      "resultado": -297900,
      "fecha_salida": 1789854578,
      "via_salida": "transfer"
-    }
-   ]
-  },
-  {
-   "pagador": 11403718,
-   "cobrador": 9961358,
-   "euros": 1800000,
-   "operaciones": 1,
-   "jugadores": [
-    {
-     "id": 24509,
-     "euros": 1800000,
-     "fecha": 1789738826,
-     "via": "cambio",
-     "jugador": "Danjuma",
-     "estado": "en plantilla",
-     "salida": 2420000,
-     "resultado": 130000,
-     "fecha_salida": null,
-     "via_salida": null
     }
    ]
   },
@@ -849,8 +861,8 @@
      "via": "traspaso",
      "jugador": "Zakharyan",
      "estado": "en plantilla",
-     "salida": 150000,
-     "resultado": 0,
+     "salida": 200000,
+     "resultado": 50000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -889,8 +901,8 @@
      "via": "traspaso",
      "jugador": "Recio",
      "estado": "en plantilla",
-     "salida": 1130000,
-     "resultado": 530000,
+     "salida": 1180000,
+     "resultado": 580000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -1171,10 +1183,10 @@
   },
   "9961358": {
    "pagado": 0,
-   "cobrado": 28540000,
-   "neto": 28540000,
+   "cobrado": 29347500,
+   "neto": 29347500,
    "socios": 3,
-   "operaciones": 4
+   "operaciones": 5
   },
   "14237999": {
    "pagado": 26000000,
@@ -1198,11 +1210,11 @@
    "operaciones": 8
   },
   "11403718": {
-   "pagado": 12975000,
+   "pagado": 13782500,
    "cobrado": 30713501,
-   "neto": 17738501,
+   "neto": 16931001,
    "socios": 10,
-   "operaciones": 19
+   "operaciones": 20
   },
   "9961274": {
    "pagado": 17917547,
