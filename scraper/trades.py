@@ -14,18 +14,22 @@ def _open(positions, uid, pid, cost, date, how):
     positions[pid] = {"user": uid, "player": pid, "cost": cost, "date_in": date, "how_in": how}
 
 
-def _reparte(positions, uid, pids, total, when, mkt):
-    """Reparte un coste conjunto entre varios jugadores, en proporción a su precio."""
-    if not pids:
-        return
+def _prorratea(pids, total, mkt):
+    """Reparte un importe entre varios jugadores en proporción a su precio: [(pid, parte)]."""
     pesos = [mkt(p) for p in pids]
-    suma = sum(pesos) or len(pids)
     if not sum(pesos):
         pesos = [1] * len(pids)
-    repartido = 0
+    suma, repartido, partes = sum(pesos), 0, []
     for i, pid in enumerate(pids):
-        cost = total - repartido if i == len(pids) - 1 else total * pesos[i] // suma
-        repartido += cost
+        parte = total - repartido if i == len(pids) - 1 else total * pesos[i] // suma
+        repartido += parte
+        partes.append((pid, parte))
+    return partes
+
+
+def _reparte(positions, uid, pids, total, when, mkt):
+    """Reparte un coste conjunto entre varios jugadores, en proporción a su precio."""
+    for pid, cost in _prorratea(pids, total, mkt):
         _open(positions, uid, pid, cost, when, "cambio")
 
 
@@ -79,14 +83,22 @@ def compute_positions(season_events, squads, reset_ts, precio, altas=None):
             src, dst = c["from"]["id"], c["to"]["id"]
             neto = c["amount"] - c["requestedAmount"]  # efectivo que va de `src` a `dst`
             salen = {src: c["offeredPlayers"], dst: c["requestedPlayers"]}
+            llegan = {src: c["requestedPlayers"], dst: c["offeredPlayers"]}
+            caja = {src: neto, dst: -neto}  # efectivo que pone cada uno
             for uid, pids in salen.items():
-                for pid in pids:
-                    close(uid, pid, when, mkt(pid), "cambio")
+                if llegan[uid]:
+                    for pid in pids:
+                        close(uid, pid, when, mkt(pid), "cambio")
+                else:
+                    # Quien solo recibe dinero está vendiendo: cobra lo pactado, no el valor
+                    # de mercado, porque no hay jugadores nuevos que absorban la diferencia.
+                    for pid, cobro in _prorratea(pids, -caja[uid], mkt):
+                        close(uid, pid, when, cobro, "cambio")
             # Lo que cuesta cada jugador que llega es lo que su nuevo dueño entregó por él:
             # el valor de los jugadores que dio más el efectivo que puso.
-            for uid, llegan, caja in ((src, c["requestedPlayers"], neto), (dst, c["offeredPlayers"], -neto)):
-                total = sum(mkt(p) for p in salen[uid]) + caja
-                _reparte(positions, uid, llegan, total, when, mkt)
+            for uid in salen:
+                total = sum(mkt(p) for p in salen[uid]) + caja[uid]
+                _reparte(positions, uid, llegan[uid], total, when, mkt)
 
     return closed, list(positions.values())
 
