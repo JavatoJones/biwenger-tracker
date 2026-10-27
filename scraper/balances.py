@@ -24,12 +24,12 @@ def money_flows(events: list[dict]) -> dict[int, int]:
             for x in c:
                 flow[x["user"]["id"]] += x["amount"]
         elif t == "roundFinished":
-            # Una jornada aplazada se liquida dos veces: la segunda (part 2) paga el bonus
-            # recalculado completo y retira el que se abonó en la primera.
+            # Una jornada aplazada se liquida varias veces: cada nueva parte (part 2, 3...)
+            # paga el bonus recalculado completo y retira el que se abonó en la anterior.
             key = c["round"]["name"].replace(" (aplazada)", "").strip()
             for x in c["results"]:
                 uid, bonus = x["user"]["id"], x.get("bonus", 0)
-                if c["round"].get("part") == 2 and (key, uid) in paid:
+                if c["round"].get("part", 1) > 1 and (key, uid) in paid:
                     flow[uid] -= paid[(key, uid)]
                 flow[uid] += bonus
                 paid[(key, uid)] = bonus
