@@ -8524,9 +8524,9 @@
    },
    {
     "id": 9961690,
-    "saldo": -5788364,
-    "valor_equipo": 55890000,
-    "patrimonio": 50101636
+    "saldo": -4089064,
+    "valor_equipo": 54220000,
+    "patrimonio": 50130936
    },
    {
     "id": 9963115,
@@ -8569,6 +8569,95 @@
     "saldo": -5336207,
     "valor_equipo": 29480000,
     "patrimonio": 24143793
+   }
+  ]
+ },
+ {
+  "fecha": "2026-11-06",
+  "usuarios": [
+   {
+    "id": 11403768,
+    "saldo": 214859,
+    "valor_equipo": 67120000,
+    "patrimonio": 67334859
+   },
+   {
+    "id": 9961358,
+    "saldo": 6704198,
+    "valor_equipo": 60110000,
+    "patrimonio": 66814198
+   },
+   {
+    "id": 11403718,
+    "saldo": 2048901,
+    "valor_equipo": 57790000,
+    "patrimonio": 59838901
+   },
+   {
+    "id": 11369052,
+    "saldo": 8467792,
+    "valor_equipo": 47500000,
+    "patrimonio": 55967792
+   },
+   {
+    "id": 14237999,
+    "saldo": 334259,
+    "valor_equipo": 52200000,
+    "patrimonio": 52534259
+   },
+   {
+    "id": 11651461,
+    "saldo": 6115696,
+    "valor_equipo": 44970000,
+    "patrimonio": 51085696
+   },
+   {
+    "id": 9961690,
+    "saldo": 328144,
+    "valor_equipo": 50420000,
+    "patrimonio": 50748144
+   },
+   {
+    "id": 9963115,
+    "saldo": 262617,
+    "valor_equipo": 41620000,
+    "patrimonio": 41882617
+   },
+   {
+    "id": 9962118,
+    "saldo": 27704,
+    "valor_equipo": 40950000,
+    "patrimonio": 40977704
+   },
+   {
+    "id": 12809840,
+    "saldo": 5835693,
+    "valor_equipo": 33880000,
+    "patrimonio": 39715693
+   },
+   {
+    "id": 11403720,
+    "saldo": 2235106,
+    "valor_equipo": 34980000,
+    "patrimonio": 37215106
+   },
+   {
+    "id": 9961449,
+    "saldo": 3354400,
+    "valor_equipo": 31780000,
+    "patrimonio": 35134400
+   },
+   {
+    "id": 9962213,
+    "saldo": 1060291,
+    "valor_equipo": 28510000,
+    "patrimonio": 29570291
+   },
+   {
+    "id": 9961274,
+    "saldo": 684993,
+    "valor_equipo": 23420000,
+    "patrimonio": 24104993
    }
   ]
  }
