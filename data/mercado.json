@@ -13,8 +13,8 @@
      "via": "traspaso",
      "jugador": "Bellingham",
      "estado": "en plantilla",
-     "salida": 18800000,
-     "resultado": 150000,
+     "salida": 18940000,
+     "resultado": 290000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -45,8 +45,8 @@
      "via": "traspaso",
      "jugador": "Arda Güler",
      "estado": "en plantilla",
-     "salida": 17000000,
-     "resultado": 800000,
+     "salida": 17160000,
+     "resultado": 960000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -65,8 +65,8 @@
      "via": "traspaso",
      "jugador": "Grimaldo",
      "estado": "en plantilla",
-     "salida": 9610000,
-     "resultado": 3260000,
+     "salida": 9720000,
+     "resultado": 3370000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -205,8 +205,8 @@
      "via": "traspaso",
      "jugador": "Expósito",
      "estado": "en plantilla",
-     "salida": 5130000,
-     "resultado": -870000,
+     "salida": 5150000,
+     "resultado": -850000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -377,8 +377,8 @@
      "via": "traspaso",
      "jugador": "Gulácsi",
      "estado": "en plantilla",
-     "salida": 2090000,
-     "resultado": -610000,
+     "salida": 2060000,
+     "resultado": -640000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -401,8 +401,8 @@
      "via": "traspaso",
      "jugador": "Ochieng",
      "estado": "en plantilla",
-     "salida": 750000,
-     "resultado": -500000,
+     "salida": 740000,
+     "resultado": -510000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -421,8 +421,8 @@
      "via": "traspaso",
      "jugador": "Bellerín",
      "estado": "en plantilla",
-     "salida": 2420000,
-     "resultado": -380000,
+     "salida": 2450000,
+     "resultado": -350000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -453,8 +453,8 @@
      "via": "traspaso",
      "jugador": "Ceballos",
      "estado": "en plantilla",
-     "salida": 2830000,
-     "resultado": -1920000,
+     "salida": 2880000,
+     "resultado": -1870000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -493,8 +493,8 @@
      "via": "traspaso",
      "jugador": "Marcos Alonso",
      "estado": "en plantilla",
-     "salida": 2120000,
-     "resultado": -780000,
+     "salida": 2140000,
+     "resultado": -760000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -525,8 +525,8 @@
      "via": "traspaso",
      "jugador": "Guedes",
      "estado": "en plantilla",
-     "salida": 4300000,
-     "resultado": 0,
+     "salida": 4170000,
+     "resultado": -130000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -545,8 +545,8 @@
      "via": "traspaso",
      "jugador": "Agoumé",
      "estado": "en plantilla",
-     "salida": 3820000,
-     "resultado": -80000,
+     "salida": 3840000,
+     "resultado": -60000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -649,8 +649,8 @@
      "via": "traspaso",
      "jugador": "Rüdiger",
      "estado": "en plantilla",
-     "salida": 1970000,
-     "resultado": -1330000,
+     "salida": 1910000,
+     "resultado": -1390000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -689,8 +689,8 @@
      "via": "traspaso",
      "jugador": "Amatucci",
      "estado": "en plantilla",
-     "salida": 3210000,
-     "resultado": -40008,
+     "salida": 3230000,
+     "resultado": -20008,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -761,8 +761,8 @@
      "via": "cambio",
      "jugador": "Danjuma",
      "estado": "en plantilla",
-     "salida": 2530000,
-     "resultado": 240000,
+     "salida": 2480000,
+     "resultado": 190000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -793,8 +793,8 @@
      "via": "traspaso",
      "jugador": "Raul García",
      "estado": "en plantilla",
-     "salida": 830000,
-     "resultado": -970000,
+     "salida": 820000,
+     "resultado": -980000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -805,8 +805,8 @@
      "via": "traspaso",
      "jugador": "Javi Morcillo",
      "estado": "en plantilla",
-     "salida": 1180000,
-     "resultado": 779980,
+     "salida": 1190000,
+     "resultado": 789980,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -857,8 +857,8 @@
      "via": "traspaso",
      "jugador": "Aramburu",
      "estado": "en plantilla",
-     "salida": 1790000,
-     "resultado": -410000,
+     "salida": 1780000,
+     "resultado": -420000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -1053,8 +1053,8 @@
      "via": "traspaso",
      "jugador": "Recio",
      "estado": "en plantilla",
-     "salida": 1040000,
-     "resultado": 440000,
+     "salida": 990000,
+     "resultado": 390000,
      "fecha_salida": null,
      "via_salida": null
     },
