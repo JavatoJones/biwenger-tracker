@@ -1,8 +1,12 @@
-name: Actualización diaria
+name: Actualización de datos
 
 on:
   schedule:
-    - cron: "30 6 * * *"   # 08:30 en Madrid (horario de verano)
+    # Cada dos horas de 05:47 a 23:47 UTC. GitHub retrasa los cron programados a veces
+    # varias horas, así que una sola ejecución diaria dejaba el saldo del día anterior hasta
+    # la tarde. Si nada ha cambiado no se hace commit. El minuto 47 evita las horas en punto,
+    # que es cuando más se retrasan.
+    - cron: "47 5-23/2 * * *"
   workflow_dispatch:        # permite lanzarlo a mano desde la pestaña Actions
 
 permissions:
