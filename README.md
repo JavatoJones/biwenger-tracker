@@ -1,7 +1,7 @@
 # Biwenger tracker
 
 Sigue una liga de Biwenger: saldo de cada mánager, valor de su plantilla, todas sus operaciones
-y la rentabilidad que ha sacado a cada fichaje. Se actualiza solo cada mañana y publica un
+y la rentabilidad que ha sacado a cada fichaje. Se actualiza solo cada dos horas y publica un
 dashboard en GitHub Pages.
 
 ## Cómo funciona
