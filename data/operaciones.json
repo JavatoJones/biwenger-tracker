@@ -7500,6 +7500,32 @@
    "profit": 3548800,
    "usuario": "TABASCO FC",
    "jugador": "Roberto Fernández"
+  },
+  {
+   "user": 11369052,
+   "player": 26077,
+   "cost": 910000,
+   "date_in": 1792908267,
+   "how_in": "market",
+   "date_out": 1794672613,
+   "revenue": 1888600,
+   "how_out": "transfer",
+   "profit": 978600,
+   "usuario": "GONALTICOS",
+   "jugador": "Sadiq"
+  },
+  {
+   "user": 9961358,
+   "player": 24255,
+   "cost": 116326,
+   "date_in": 1789738826,
+   "how_in": "cambio",
+   "date_out": 1794676074,
+   "revenue": 1212900,
+   "how_out": "transfer",
+   "profit": 1096574,
+   "usuario": "REAL PANCH FC",
+   "jugador": "Fariñas"
   }
  ],
  "abiertas": [
@@ -8228,17 +8254,6 @@
    "jugador": "Danjuma",
    "valor_hoy": 2350000,
    "latente": 60000
-  },
-  {
-   "user": 9961358,
-   "player": 24255,
-   "cost": 116326,
-   "date_in": 1789738826,
-   "how_in": "cambio",
-   "usuario": "REAL PANCH FC",
-   "jugador": "Fariñas",
-   "valor_hoy": 1160000,
-   "latente": 1043674
   },
   {
    "user": 9961358,
@@ -9031,17 +9046,6 @@
    "jugador": "Yeremay",
    "valor_hoy": 7560000,
    "latente": 910000
-  },
-  {
-   "user": 11369052,
-   "player": 26077,
-   "cost": 910000,
-   "date_in": 1792908267,
-   "how_in": "market",
-   "usuario": "GONALTICOS",
-   "jugador": "Sadiq",
-   "valor_hoy": 1880000,
-   "latente": 970000
   },
   {
    "user": 11403718,
