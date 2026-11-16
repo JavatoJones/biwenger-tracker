@@ -13,8 +13,8 @@
      "via": "traspaso",
      "jugador": "Bellingham",
      "estado": "en plantilla",
-     "salida": 19530000,
-     "resultado": 880000,
+     "salida": 19650000,
+     "resultado": 1000000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -45,8 +45,8 @@
      "via": "traspaso",
      "jugador": "Arda Güler",
      "estado": "en plantilla",
-     "salida": 17840000,
-     "resultado": 1640000,
+     "salida": 17960000,
+     "resultado": 1760000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -65,8 +65,8 @@
      "via": "traspaso",
      "jugador": "Grimaldo",
      "estado": "en plantilla",
-     "salida": 10180000,
-     "resultado": 3830000,
+     "salida": 10290000,
+     "resultado": 3940000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -104,6 +104,38 @@
      "salida": 1600000,
      "resultado": 250000,
      "fecha_salida": 1789733983,
+     "via_salida": "transfer"
+    }
+   ]
+  },
+  {
+   "pagador": 11651461,
+   "cobrador": 11369052,
+   "euros": 14250000,
+   "operaciones": 2,
+   "jugadores": [
+    {
+     "id": 29184,
+     "euros": 14000000,
+     "fecha": 1794811123,
+     "via": "cambio",
+     "jugador": "Barrios",
+     "estado": "en plantilla",
+     "salida": 7800000,
+     "resultado": -1605684,
+     "fecha_salida": null,
+     "via_salida": null
+    },
+    {
+     "id": 27575,
+     "euros": 250000,
+     "fecha": 1787907774,
+     "via": "traspaso",
+     "jugador": "Barzic",
+     "estado": "vendido",
+     "salida": 143300,
+     "resultado": -106700,
+     "fecha_salida": 1788763950,
      "via_salida": "transfer"
     }
    ]
@@ -205,8 +237,8 @@
      "via": "traspaso",
      "jugador": "Expósito",
      "estado": "en plantilla",
-     "salida": 5240000,
-     "resultado": -760000,
+     "salida": 5260000,
+     "resultado": -740000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -377,8 +409,8 @@
      "via": "traspaso",
      "jugador": "Gulácsi",
      "estado": "en plantilla",
-     "salida": 1930000,
-     "resultado": -770000,
+     "salida": 1910000,
+     "resultado": -790000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -401,8 +433,8 @@
      "via": "traspaso",
      "jugador": "Ochieng",
      "estado": "en plantilla",
-     "salida": 690000,
-     "resultado": -560000,
+     "salida": 680000,
+     "resultado": -570000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -421,8 +453,8 @@
      "via": "traspaso",
      "jugador": "Bellerín",
      "estado": "en plantilla",
-     "salida": 2660000,
-     "resultado": -140000,
+     "salida": 2680000,
+     "resultado": -120000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -453,8 +485,8 @@
      "via": "traspaso",
      "jugador": "Ceballos",
      "estado": "en plantilla",
-     "salida": 3130000,
-     "resultado": -1620000,
+     "salida": 3150000,
+     "resultado": -1600000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -493,8 +525,8 @@
      "via": "traspaso",
      "jugador": "Marcos Alonso",
      "estado": "en plantilla",
-     "salida": 2330000,
-     "resultado": -570000,
+     "salida": 2350000,
+     "resultado": -550000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -533,6 +565,62 @@
    ]
   },
   {
+   "pagador": 9962118,
+   "cobrador": 9961690,
+   "euros": 4100020,
+   "operaciones": 4,
+   "jugadores": [
+    {
+     "id": 18382,
+     "euros": 1800000,
+     "fecha": 1788431157,
+     "via": "traspaso",
+     "jugador": "Raul García",
+     "estado": "en plantilla",
+     "salida": 760000,
+     "resultado": -1040000,
+     "fecha_salida": null,
+     "via_salida": null
+    },
+    {
+     "id": 38308,
+     "euros": 1500000,
+     "fecha": 1794872182,
+     "via": "traspaso",
+     "jugador": "Dolan",
+     "estado": "en plantilla",
+     "salida": 1140000,
+     "resultado": -360000,
+     "fecha_salida": null,
+     "via_salida": null
+    },
+    {
+     "id": 12734,
+     "euros": 400020,
+     "fecha": 1788434619,
+     "via": "traspaso",
+     "jugador": "Javi Morcillo",
+     "estado": "en plantilla",
+     "salida": 1260000,
+     "resultado": 859980,
+     "fecha_salida": null,
+     "via_salida": null
+    },
+    {
+     "id": 12734,
+     "euros": 400000,
+     "fecha": 1788431157,
+     "via": "traspaso",
+     "jugador": "Javi Morcillo",
+     "estado": "vendido",
+     "salida": 400000,
+     "resultado": 0,
+     "fecha_salida": 1788432362,
+     "via_salida": "admin"
+    }
+   ]
+  },
+  {
    "pagador": 11403768,
    "cobrador": 11369052,
    "euros": 3900000,
@@ -545,8 +633,8 @@
      "via": "traspaso",
      "jugador": "Agoumé",
      "estado": "en plantilla",
-     "salida": 3940000,
-     "resultado": 40000,
+     "salida": 3960000,
+     "resultado": 60000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -649,8 +737,8 @@
      "via": "traspaso",
      "jugador": "Rüdiger",
      "estado": "en plantilla",
-     "salida": 1780000,
-     "resultado": -1520000,
+     "salida": 1760000,
+     "resultado": -1540000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -689,8 +777,8 @@
      "via": "traspaso",
      "jugador": "Amatucci",
      "estado": "en plantilla",
-     "salida": 3330000,
-     "resultado": 79992,
+     "salida": 3350000,
+     "resultado": 99992,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -709,8 +797,8 @@
      "via": "traspaso",
      "jugador": "Pedrosa",
      "estado": "en plantilla",
-     "salida": 2870000,
-     "resultado": -130000,
+     "salida": 2890000,
+     "resultado": -110000,
      "fecha_salida": null,
      "via_salida": null
     }
@@ -781,8 +869,8 @@
      "via": "cambio",
      "jugador": "Danjuma",
      "estado": "en plantilla",
-     "salida": 2330000,
-     "resultado": 40000,
+     "salida": 2310000,
+     "resultado": 20000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -797,50 +885,6 @@
      "resultado": 738600,
      "fecha_salida": 1793614723,
      "via_salida": "transfer"
-    }
-   ]
-  },
-  {
-   "pagador": 9962118,
-   "cobrador": 9961690,
-   "euros": 2600020,
-   "operaciones": 3,
-   "jugadores": [
-    {
-     "id": 18382,
-     "euros": 1800000,
-     "fecha": 1788431157,
-     "via": "traspaso",
-     "jugador": "Raul García",
-     "estado": "en plantilla",
-     "salida": 770000,
-     "resultado": -1030000,
-     "fecha_salida": null,
-     "via_salida": null
-    },
-    {
-     "id": 12734,
-     "euros": 400020,
-     "fecha": 1788434619,
-     "via": "traspaso",
-     "jugador": "Javi Morcillo",
-     "estado": "en plantilla",
-     "salida": 1250000,
-     "resultado": 849980,
-     "fecha_salida": null,
-     "via_salida": null
-    },
-    {
-     "id": 12734,
-     "euros": 400000,
-     "fecha": 1788431157,
-     "via": "traspaso",
-     "jugador": "Javi Morcillo",
-     "estado": "vendido",
-     "salida": 400000,
-     "resultado": 0,
-     "fecha_salida": 1788432362,
-     "via_salida": "admin"
     }
    ]
   },
@@ -877,8 +921,8 @@
      "via": "traspaso",
      "jugador": "Aramburu",
      "estado": "en plantilla",
-     "salida": 1740000,
-     "resultado": -460000,
+     "salida": 1730000,
+     "resultado": -470000,
      "fecha_salida": null,
      "via_salida": null
     },
@@ -1285,26 +1329,6 @@
    ]
   },
   {
-   "pagador": 11651461,
-   "cobrador": 11369052,
-   "euros": 250000,
-   "operaciones": 1,
-   "jugadores": [
-    {
-     "id": 27575,
-     "euros": 250000,
-     "fecha": 1787907774,
-     "via": "traspaso",
-     "jugador": "Barzic",
-     "estado": "vendido",
-     "salida": 143300,
-     "resultado": -106700,
-     "fecha_salida": 1788763950,
-     "via_salida": "transfer"
-    }
-   ]
-  },
-  {
    "pagador": 11403718,
    "cobrador": 14237999,
    "euros": 225000,
@@ -1348,10 +1372,10 @@
  "por_manager": {
   "11369052": {
    "pagado": 30351000,
-   "cobrado": 42550000,
-   "neto": 12199000,
+   "cobrado": 56550000,
+   "neto": 26199000,
    "socios": 9,
-   "operaciones": 17
+   "operaciones": 18
   },
   "9961358": {
    "pagado": 0,
@@ -1369,17 +1393,24 @@
   },
   "9961690": {
    "pagado": 44952500,
-   "cobrado": 21975028,
-   "neto": -22977472,
+   "cobrado": 23475028,
+   "neto": -21477472,
    "socios": 9,
-   "operaciones": 29
+   "operaciones": 30
+  },
+  "11651461": {
+   "pagado": 20550000,
+   "cobrado": 7570000,
+   "neto": -12980000,
+   "socios": 5,
+   "operaciones": 8
   },
   "9962118": {
-   "pagado": 14900020,
+   "pagado": 16400020,
    "cobrado": 8425000,
-   "neto": -6475020,
+   "neto": -7975020,
    "socios": 4,
-   "operaciones": 8
+   "operaciones": 9
   },
   "11403718": {
    "pagado": 15982500,
@@ -1420,13 +1451,6 @@
    "pagado": 10025000,
    "cobrado": 900000,
    "neto": -9125000,
-   "socios": 5,
-   "operaciones": 7
-  },
-  "11651461": {
-   "pagado": 6550000,
-   "cobrado": 7570000,
-   "neto": 1020000,
    "socios": 5,
    "operaciones": 7
   },
