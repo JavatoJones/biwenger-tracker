@@ -9700,6 +9700,17 @@
    "jugador": "Dolan",
    "valor_hoy": 1140000,
    "latente": -360000
+  },
+  {
+   "user": 11369052,
+   "player": 27994,
+   "cost": 169000,
+   "date_in": 1794928356,
+   "how_in": "admin",
+   "usuario": "GONALTICOS",
+   "jugador": "Diego López",
+   "valor_hoy": 170000,
+   "latente": 1000
   }
  ]
 }
