@@ -1228,11 +1228,11 @@
      "fecha": 1789054159,
      "via": "traspaso",
      "jugador": "Beitia",
-     "estado": "en plantilla",
-     "salida": 220000,
-     "resultado": -280000,
-     "fecha_salida": null,
-     "via_salida": null
+     "estado": "vendido",
+     "salida": 214600,
+     "resultado": -285400,
+     "fecha_salida": 1795043702,
+     "via_salida": "transfer"
     }
    ]
   },

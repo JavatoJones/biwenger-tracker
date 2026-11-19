@@ -7643,6 +7643,32 @@
    "profit": -121600,
    "usuario": "Lord Calcius",
    "jugador": "Danjuma"
+  },
+  {
+   "user": 9962118,
+   "player": 33804,
+   "cost": 251111,
+   "date_in": 1786683724,
+   "how_in": "market",
+   "date_out": 1795043702,
+   "revenue": 215600,
+   "how_out": "transfer",
+   "profit": -35511,
+   "usuario": "TABASCO FC",
+   "jugador": "Pelayo"
+  },
+  {
+   "user": 9962118,
+   "player": 36538,
+   "cost": 500000,
+   "date_in": 1789054159,
+   "how_in": "transfer",
+   "date_out": 1795043702,
+   "revenue": 214600,
+   "how_out": "transfer",
+   "profit": -285400,
+   "usuario": "TABASCO FC",
+   "jugador": "Beitia"
   }
  ],
  "abiertas": [
@@ -7879,17 +7905,6 @@
   },
   {
    "user": 9962118,
-   "player": 33804,
-   "cost": 251111,
-   "date_in": 1786683724,
-   "how_in": "market",
-   "usuario": "TABASCO FC",
-   "jugador": "Pelayo",
-   "valor_hoy": 210000,
-   "latente": -41111
-  },
-  {
-   "user": 9962118,
    "player": 11,
    "cost": 5864445,
    "date_in": 1786683724,
@@ -8118,17 +8133,6 @@
    "jugador": "Yeboah",
    "valor_hoy": 200000,
    "latente": -156999
-  },
-  {
-   "user": 9962118,
-   "player": 36538,
-   "cost": 500000,
-   "date_in": 1789054159,
-   "how_in": "transfer",
-   "usuario": "TABASCO FC",
-   "jugador": "Beitia",
-   "valor_hoy": 220000,
-   "latente": -280000
   },
   {
    "user": 9961449,
