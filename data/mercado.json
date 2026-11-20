@@ -64,11 +64,11 @@
      "fecha": 1791371584,
      "via": "traspaso",
      "jugador": "Grimaldo",
-     "estado": "en plantilla",
-     "salida": 10540000,
-     "resultado": 4190000,
-     "fecha_salida": null,
-     "via_salida": null
+     "estado": "vendido",
+     "salida": 10603900,
+     "resultado": 4253900,
+     "fecha_salida": 1795190692,
+     "via_salida": "transfer"
     },
     {
      "id": 26276,
@@ -736,11 +736,11 @@
      "fecha": 1792779553,
      "via": "traspaso",
      "jugador": "Rüdiger",
-     "estado": "en plantilla",
-     "salida": 1690000,
-     "resultado": -1610000,
-     "fecha_salida": null,
-     "via_salida": null
+     "estado": "vendido",
+     "salida": 1720400,
+     "resultado": -1579600,
+     "fecha_salida": 1795190692,
+     "via_salida": "transfer"
     }
    ]
   },

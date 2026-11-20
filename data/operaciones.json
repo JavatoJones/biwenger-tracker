@@ -7708,6 +7708,97 @@
    "profit": -60601,
    "usuario": "JOSAPO FUTBOLCLUB",
    "jugador": "Rueda"
+  },
+  {
+   "user": 9961449,
+   "player": 2253,
+   "cost": 3300000,
+   "date_in": 1792779553,
+   "how_in": "transfer",
+   "date_out": 1795190692,
+   "revenue": 1720400,
+   "how_out": "transfer",
+   "profit": -1579600,
+   "usuario": "FERDORTMUND FC",
+   "jugador": "Rüdiger"
+  },
+  {
+   "user": 9961449,
+   "player": 30141,
+   "cost": 340000,
+   "date_in": 1790139919,
+   "how_in": "market",
+   "date_out": 1795190692,
+   "revenue": 319600,
+   "how_out": "transfer",
+   "profit": -20400,
+   "usuario": "FERDORTMUND FC",
+   "jugador": "Herrando"
+  },
+  {
+   "user": 9961690,
+   "player": 41684,
+   "cost": 6350000,
+   "date_in": 1791371584,
+   "how_in": "transfer",
+   "date_out": 1795190692,
+   "revenue": 10603900,
+   "how_out": "transfer",
+   "profit": 4253900,
+   "usuario": "JABALINOS FC",
+   "jugador": "Grimaldo"
+  },
+  {
+   "user": 9961690,
+   "player": 37726,
+   "cost": 840900,
+   "date_in": 1793772268,
+   "how_in": "market",
+   "date_out": 1795190692,
+   "revenue": 675500,
+   "how_out": "transfer",
+   "profit": -165400,
+   "usuario": "JABALINOS FC",
+   "jugador": "Oriol Rey"
+  },
+  {
+   "user": 11403718,
+   "player": 2169,
+   "cost": 755000,
+   "date_in": 1793772268,
+   "how_in": "market",
+   "date_out": 1795201595,
+   "revenue": 565400,
+   "how_out": "transfer",
+   "profit": -189600,
+   "usuario": "Lord Calcius",
+   "jugador": "Bigas"
+  },
+  {
+   "user": 11403718,
+   "player": 38143,
+   "cost": 895000,
+   "date_in": 1793772268,
+   "how_in": "market",
+   "date_out": 1795201595,
+   "revenue": 734000,
+   "how_out": "transfer",
+   "profit": -161000,
+   "usuario": "Lord Calcius",
+   "jugador": "Toljan"
+  },
+  {
+   "user": 11403718,
+   "player": 33694,
+   "cost": 1896000,
+   "date_in": 1793772268,
+   "how_in": "market",
+   "date_out": 1795201595,
+   "revenue": 1339000,
+   "how_out": "transfer",
+   "profit": -557000,
+   "usuario": "Lord Calcius",
+   "jugador": "Boyomo"
   }
  ],
  "abiertas": [
@@ -8515,17 +8606,6 @@
    "latente": -125000
   },
   {
-   "user": 9961449,
-   "player": 30141,
-   "cost": 340000,
-   "date_in": 1790139919,
-   "how_in": "market",
-   "usuario": "FERDORTMUND FC",
-   "jugador": "Herrando",
-   "valor_hoy": 310000,
-   "latente": -30000
-  },
-  {
    "user": 12809840,
    "player": 19860,
    "cost": 3888888,
@@ -8711,17 +8791,6 @@
    "jugador": "Osorio",
    "valor_hoy": 540000,
    "latente": -480000
-  },
-  {
-   "user": 9961690,
-   "player": 41684,
-   "cost": 6350000,
-   "date_in": 1791371584,
-   "how_in": "transfer",
-   "usuario": "JABALINOS FC",
-   "jugador": "Grimaldo",
-   "valor_hoy": 10540000,
-   "latente": 4190000
   },
   {
    "user": 11403718,
@@ -9120,17 +9189,6 @@
    "latente": -610000
   },
   {
-   "user": 9961449,
-   "player": 2253,
-   "cost": 3300000,
-   "date_in": 1792779553,
-   "how_in": "transfer",
-   "usuario": "FERDORTMUND FC",
-   "jugador": "Rüdiger",
-   "valor_hoy": 1690000,
-   "latente": -1610000
-  },
-  {
    "user": 11369052,
    "player": 41940,
    "cost": 695000,
@@ -9327,50 +9385,6 @@
    "jugador": "Aubameyang",
    "valor_hoy": 10950000,
    "latente": 453940
-  },
-  {
-   "user": 11403718,
-   "player": 33694,
-   "cost": 1896000,
-   "date_in": 1793772268,
-   "how_in": "market",
-   "usuario": "Lord Calcius",
-   "jugador": "Boyomo",
-   "valor_hoy": 1380000,
-   "latente": -516000
-  },
-  {
-   "user": 9961690,
-   "player": 37726,
-   "cost": 840900,
-   "date_in": 1793772268,
-   "how_in": "market",
-   "usuario": "JABALINOS FC",
-   "jugador": "Oriol Rey",
-   "valor_hoy": 660000,
-   "latente": -180900
-  },
-  {
-   "user": 11403718,
-   "player": 38143,
-   "cost": 895000,
-   "date_in": 1793772268,
-   "how_in": "market",
-   "usuario": "Lord Calcius",
-   "jugador": "Toljan",
-   "valor_hoy": 760000,
-   "latente": -135000
-  },
-  {
-   "user": 11403718,
-   "player": 2169,
-   "cost": 755000,
-   "date_in": 1793772268,
-   "how_in": "market",
-   "usuario": "Lord Calcius",
-   "jugador": "Bigas",
-   "valor_hoy": 570000,
-   "latente": -185000
   },
   {
    "user": 11403718,
