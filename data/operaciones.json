@@ -7825,6 +7825,32 @@
    "profit": -260180,
    "usuario": "Richard The III",
    "jugador": "Adrià Altimira"
+  },
+  {
+   "user": 11403768,
+   "player": 30502,
+   "cost": 4056999,
+   "date_in": 1792558991,
+   "how_in": "market",
+   "date_out": 1795453806,
+   "revenue": 2655200,
+   "how_out": "transfer",
+   "profit": -1401799,
+   "usuario": "ASTON JIMA",
+   "jugador": "Bryan Zaragoza"
+  },
+  {
+   "user": 11403768,
+   "player": 40911,
+   "cost": 4356999,
+   "date_in": 1794981696,
+   "how_in": "market",
+   "date_out": 1795453806,
+   "revenue": 4377600,
+   "how_out": "transfer",
+   "profit": 20601,
+   "usuario": "ASTON JIMA",
+   "jugador": "Nsongo"
   }
  ],
  "abiertas": [
@@ -9083,17 +9109,6 @@
    "latente": 2159000
   },
   {
-   "user": 11403768,
-   "player": 30502,
-   "cost": 4056999,
-   "date_in": 1792558991,
-   "how_in": "market",
-   "usuario": "ASTON JIMA",
-   "jugador": "Bryan Zaragoza",
-   "valor_hoy": 2440000,
-   "latente": -1616999
-  },
-  {
    "user": 9961690,
    "player": 39801,
    "cost": 311000,
@@ -9774,17 +9789,6 @@
    "jugador": "Turrientes",
    "valor_hoy": 870000,
    "latente": -229000
-  },
-  {
-   "user": 11403768,
-   "player": 40911,
-   "cost": 4356999,
-   "date_in": 1794981696,
-   "how_in": "market",
-   "usuario": "ASTON JIMA",
-   "jugador": "Nsongo",
-   "valor_hoy": 4190000,
-   "latente": -166999
   },
   {
    "user": 9961358,
