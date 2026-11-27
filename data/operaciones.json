@@ -7981,6 +7981,32 @@
    "profit": -316610,
    "usuario": "WILLOW",
    "jugador": "Johaneko"
+  },
+  {
+   "user": 11369052,
+   "player": 39924,
+   "cost": 2119000,
+   "date_in": 1795327336,
+   "how_in": "market",
+   "date_out": 1795719302,
+   "revenue": 1929500,
+   "how_out": "transfer",
+   "profit": -189500,
+   "usuario": "GONALTICOS",
+   "jugador": "Koski"
+  },
+  {
+   "user": 11369052,
+   "player": 27994,
+   "cost": 169000,
+   "date_in": 1794928356,
+   "how_in": "admin",
+   "date_out": 1795719302,
+   "revenue": 167300,
+   "how_out": "transfer",
+   "profit": -1700,
+   "usuario": "GONALTICOS",
+   "jugador": "Diego López"
   }
  ],
  "abiertas": [
@@ -9789,17 +9815,6 @@
    "latente": -280000
   },
   {
-   "user": 11369052,
-   "player": 27994,
-   "cost": 169000,
-   "date_in": 1794928356,
-   "how_in": "admin",
-   "usuario": "GONALTICOS",
-   "jugador": "Diego López",
-   "valor_hoy": 170000,
-   "latente": 1000
-  },
-  {
    "user": 9962213,
    "player": 24979,
    "cost": 1099000,
@@ -9941,17 +9956,6 @@
    "jugador": "Fornals",
    "valor_hoy": 6520000,
    "latente": -755555
-  },
-  {
-   "user": 11369052,
-   "player": 39924,
-   "cost": 2119000,
-   "date_in": 1795327336,
-   "how_in": "market",
-   "usuario": "GONALTICOS",
-   "jugador": "Koski",
-   "valor_hoy": 1960000,
-   "latente": -159000
   },
   {
    "user": 9961358,
