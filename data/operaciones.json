@@ -8007,6 +8007,19 @@
    "profit": -1700,
    "usuario": "GONALTICOS",
    "jugador": "Diego López"
+  },
+  {
+   "user": 9961358,
+   "player": 42757,
+   "cost": 231000,
+   "date_in": 1789448589,
+   "how_in": "market",
+   "date_out": 1795812341,
+   "revenue": 1399100,
+   "how_out": "transfer",
+   "profit": 1168100,
+   "usuario": "REAL PANCH FC",
+   "jugador": "Ndukwe"
   }
  ],
  "abiertas": [
@@ -8581,17 +8594,6 @@
    "jugador": "El Hilali",
    "valor_hoy": 3950000,
    "latente": 285000
-  },
-  {
-   "user": 9961358,
-   "player": 42757,
-   "cost": 231000,
-   "date_in": 1789448589,
-   "how_in": "market",
-   "usuario": "REAL PANCH FC",
-   "jugador": "Ndukwe",
-   "valor_hoy": 1340000,
-   "latente": 1109000
   },
   {
    "user": 9961358,
